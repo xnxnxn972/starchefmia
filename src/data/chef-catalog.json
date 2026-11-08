@@ -1,0 +1,2844 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "chef-v2-2026-11-08",
+  "gameTitle": "5-Star Chef Restaurant",
+  "studio": "5 Star Studios",
+  "config": {
+    "budgetCents": 5000,
+    "picks": 5,
+    "courses": [
+      "appetizer",
+      "soup",
+      "salad",
+      "main",
+      "dessert"
+    ],
+    "automaticReveal": true,
+    "manualSpinControl": false,
+    "rerolls": 0,
+    "revealDurationMs": 900,
+    "scoreRule": "sum(ratingTenths) / 50",
+    "currency": "USD",
+    "valuesAreFictional": true
+  },
+  "cuisines": [
+    "Italian",
+    "French",
+    "Japanese",
+    "Indian",
+    "Mexican",
+    "American"
+  ],
+  "ingredients": [
+    {
+      "id": "beef",
+      "label": "Beef"
+    },
+    {
+      "id": "chicken",
+      "label": "Chicken"
+    },
+    {
+      "id": "fish",
+      "label": "Fish"
+    },
+    {
+      "id": "shrimp",
+      "label": "Shrimp"
+    },
+    {
+      "id": "egg",
+      "label": "Egg"
+    },
+    {
+      "id": "dairy",
+      "label": "Dairy"
+    },
+    {
+      "id": "rice",
+      "label": "Rice"
+    },
+    {
+      "id": "wheat",
+      "label": "Wheat"
+    },
+    {
+      "id": "potato",
+      "label": "Potato"
+    },
+    {
+      "id": "tomato",
+      "label": "Tomato"
+    },
+    {
+      "id": "mushroom",
+      "label": "Mushroom"
+    },
+    {
+      "id": "corn",
+      "label": "Corn"
+    },
+    {
+      "id": "bean",
+      "label": "Beans"
+    },
+    {
+      "id": "lentil",
+      "label": "Lentils"
+    },
+    {
+      "id": "greens",
+      "label": "Leafy greens"
+    },
+    {
+      "id": "cucumber",
+      "label": "Cucumber"
+    },
+    {
+      "id": "carrot",
+      "label": "Carrot"
+    },
+    {
+      "id": "onion",
+      "label": "Onion"
+    },
+    {
+      "id": "lemon",
+      "label": "Lemon"
+    },
+    {
+      "id": "mango",
+      "label": "Mango"
+    },
+    {
+      "id": "apple",
+      "label": "Apple"
+    },
+    {
+      "id": "banana",
+      "label": "Banana"
+    },
+    {
+      "id": "chocolate",
+      "label": "Chocolate"
+    },
+    {
+      "id": "coconut",
+      "label": "Coconut"
+    },
+    {
+      "id": "strawberry",
+      "label": "Strawberry"
+    }
+  ],
+  "ingredientNotes": {
+    "bean": "Includes soybeans, chickpeas and black beans for this game taxonomy.",
+    "onion": "Includes leeks and other alliums.",
+    "dairy": "Includes milk, cream, cheese, butter and yogurt.",
+    "wheat": "Includes bread, noodles, pastry, wrappers and flour tortillas."
+  },
+  "dishes": [
+    {
+      "id": "it-appetizer-01",
+      "name": "Tomato Bruschetta",
+      "course": "appetizer",
+      "cuisine": "Italian",
+      "ingredientTags": [
+        "tomato",
+        "wheat"
+      ],
+      "costCents": 500,
+      "ratingTenths": 39,
+      "description": "Toasted bread with chopped tomatoes and basil.",
+      "imageSrc": "dishes/it-appetizer-01.webp",
+      "imageAlt": "Tomato Bruschetta served as a appetizer",
+      "artStatus": "ready",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Tomato Bruschetta. Toasted bread with chopped tomatoes and basil."
+    },
+    {
+      "id": "it-appetizer-02",
+      "name": "Beef Carpaccio",
+      "course": "appetizer",
+      "cuisine": "Italian",
+      "ingredientTags": [
+        "beef",
+        "lemon"
+      ],
+      "costCents": 900,
+      "ratingTenths": 45,
+      "description": "Thin raw beef slices with lemon and shaved cheese.",
+      "imageSrc": "dishes/it-appetizer-02.webp",
+      "imageAlt": "Beef Carpaccio served as a appetizer",
+      "artStatus": "ready",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Beef Carpaccio. Thin raw beef slices with lemon and shaved cheese."
+    },
+    {
+      "id": "it-appetizer-03",
+      "name": "Mushroom Arancini",
+      "course": "appetizer",
+      "cuisine": "Italian",
+      "ingredientTags": [
+        "mushroom",
+        "rice",
+        "dairy",
+        "egg",
+        "wheat"
+      ],
+      "costCents": 1200,
+      "ratingTenths": 50,
+      "description": "Golden breaded rice balls with mushrooms and melted cheese.",
+      "imageSrc": null,
+      "imageAlt": "Mushroom Arancini served as a appetizer",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Mushroom Arancini. Golden breaded rice balls with mushrooms and melted cheese."
+    },
+    {
+      "id": "it-soup-01",
+      "name": "Minestrone",
+      "course": "soup",
+      "cuisine": "Italian",
+      "ingredientTags": [
+        "tomato",
+        "bean",
+        "carrot"
+      ],
+      "costCents": 500,
+      "ratingTenths": 38,
+      "description": "Tomato-based vegetable soup with beans and carrots.",
+      "imageSrc": null,
+      "imageAlt": "Minestrone served as a soup",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Minestrone. Tomato-based vegetable soup with beans and carrots."
+    },
+    {
+      "id": "it-soup-02",
+      "name": "Creamy Tomato Soup",
+      "course": "soup",
+      "cuisine": "Italian",
+      "ingredientTags": [
+        "tomato",
+        "dairy"
+      ],
+      "costCents": 700,
+      "ratingTenths": 43,
+      "description": "Smooth tomato soup finished with cream.",
+      "imageSrc": null,
+      "imageAlt": "Creamy Tomato Soup served as a soup",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Creamy Tomato Soup. Smooth tomato soup finished with cream."
+    },
+    {
+      "id": "it-soup-03",
+      "name": "Creamy Porcini Soup",
+      "course": "soup",
+      "cuisine": "Italian",
+      "ingredientTags": [
+        "mushroom",
+        "dairy"
+      ],
+      "costCents": 1000,
+      "ratingTenths": 48,
+      "description": "Rich porcini mushroom soup finished with cream.",
+      "imageSrc": null,
+      "imageAlt": "Creamy Porcini Soup served as a soup",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Creamy Porcini Soup. Rich porcini mushroom soup finished with cream."
+    },
+    {
+      "id": "it-salad-01",
+      "name": "Lemon Arugula Salad",
+      "course": "salad",
+      "cuisine": "Italian",
+      "ingredientTags": [
+        "greens",
+        "lemon"
+      ],
+      "costCents": 400,
+      "ratingTenths": 38,
+      "description": "Arugula leaves with lemon dressing.",
+      "imageSrc": null,
+      "imageAlt": "Lemon Arugula Salad served as a salad",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Lemon Arugula Salad. Arugula leaves with lemon dressing."
+    },
+    {
+      "id": "it-salad-02",
+      "name": "Caprese Salad",
+      "course": "salad",
+      "cuisine": "Italian",
+      "ingredientTags": [
+        "tomato",
+        "dairy"
+      ],
+      "costCents": 800,
+      "ratingTenths": 45,
+      "description": "Tomatoes, mozzarella and fresh basil.",
+      "imageSrc": "dishes/it-salad-02.webp",
+      "imageAlt": "Caprese Salad served as a salad",
+      "artStatus": "ready",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Caprese Salad. Tomatoes, mozzarella and fresh basil."
+    },
+    {
+      "id": "it-salad-03",
+      "name": "Steak and Arugula Salad",
+      "course": "salad",
+      "cuisine": "Italian",
+      "ingredientTags": [
+        "beef",
+        "greens",
+        "lemon"
+      ],
+      "costCents": 1200,
+      "ratingTenths": 48,
+      "description": "Sliced steak over arugula with lemon dressing.",
+      "imageSrc": null,
+      "imageAlt": "Steak and Arugula Salad served as a salad",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Steak and Arugula Salad. Sliced steak over arugula with lemon dressing."
+    },
+    {
+      "id": "it-main-01",
+      "name": "Spaghetti Pomodoro",
+      "course": "main",
+      "cuisine": "Italian",
+      "ingredientTags": [
+        "wheat",
+        "tomato"
+      ],
+      "costCents": 1000,
+      "ratingTenths": 40,
+      "description": "Spaghetti with slow-cooked tomato sauce.",
+      "imageSrc": null,
+      "imageAlt": "Spaghetti Pomodoro served as a main course",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Spaghetti Pomodoro. Spaghetti with slow-cooked tomato sauce."
+    },
+    {
+      "id": "it-main-02",
+      "name": "Lemon Roast Chicken",
+      "course": "main",
+      "cuisine": "Italian",
+      "ingredientTags": [
+        "chicken",
+        "lemon"
+      ],
+      "costCents": 1800,
+      "ratingTenths": 47,
+      "description": "Golden roast chicken with lemon and herbs.",
+      "imageSrc": "dishes/it-main-02.webp",
+      "imageAlt": "Lemon Roast Chicken served as a main course",
+      "artStatus": "ready",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Lemon Roast Chicken. Golden roast chicken with lemon and herbs."
+    },
+    {
+      "id": "it-main-03",
+      "name": "Italian Braised Beef",
+      "course": "main",
+      "cuisine": "Italian",
+      "ingredientTags": [
+        "beef",
+        "onion",
+        "carrot"
+      ],
+      "costCents": 2400,
+      "ratingTenths": 50,
+      "description": "Tender beef braised with onions and carrots.",
+      "imageSrc": null,
+      "imageAlt": "Italian Braised Beef served as a main course",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Italian Braised Beef. Tender beef braised with onions and carrots."
+    },
+    {
+      "id": "it-dessert-01",
+      "name": "Lemon Sorbet",
+      "course": "dessert",
+      "cuisine": "Italian",
+      "ingredientTags": [
+        "lemon"
+      ],
+      "costCents": 500,
+      "ratingTenths": 40,
+      "description": "Pale-yellow lemon sorbet.",
+      "imageSrc": null,
+      "imageAlt": "Lemon Sorbet served as a dessert",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Lemon Sorbet. Pale-yellow lemon sorbet."
+    },
+    {
+      "id": "it-dessert-02",
+      "name": "Panna Cotta",
+      "course": "dessert",
+      "cuisine": "Italian",
+      "ingredientTags": [
+        "dairy"
+      ],
+      "costCents": 800,
+      "ratingTenths": 45,
+      "description": "Softly set cream dessert with a light berry garnish.",
+      "imageSrc": null,
+      "imageAlt": "Panna Cotta served as a dessert",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Panna Cotta. Softly set cream dessert with a light berry garnish."
+    },
+    {
+      "id": "it-dessert-03",
+      "name": "Tiramisu",
+      "course": "dessert",
+      "cuisine": "Italian",
+      "ingredientTags": [
+        "dairy",
+        "egg",
+        "wheat"
+      ],
+      "costCents": 1200,
+      "ratingTenths": 49,
+      "description": "Coffee-soaked sponge and mascarpone cream.",
+      "imageSrc": null,
+      "imageAlt": "Tiramisu served as a dessert",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Tiramisu. Coffee-soaked sponge and mascarpone cream."
+    },
+    {
+      "id": "fr-appetizer-01",
+      "name": "Goat Cheese Toast",
+      "course": "appetizer",
+      "cuisine": "French",
+      "ingredientTags": [
+        "dairy",
+        "wheat"
+      ],
+      "costCents": 500,
+      "ratingTenths": 40,
+      "description": "Toasted bread with warm goat cheese.",
+      "imageSrc": null,
+      "imageAlt": "Goat Cheese Toast served as a appetizer",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Goat Cheese Toast. Toasted bread with warm goat cheese."
+    },
+    {
+      "id": "fr-appetizer-02",
+      "name": "Cheese Gougeres",
+      "course": "appetizer",
+      "cuisine": "French",
+      "ingredientTags": [
+        "dairy",
+        "egg",
+        "wheat"
+      ],
+      "costCents": 800,
+      "ratingTenths": 44,
+      "description": "Airy golden cheese choux puffs.",
+      "imageSrc": null,
+      "imageAlt": "Cheese Gougeres served as a appetizer",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Cheese Gougeres. Airy golden cheese choux puffs."
+    },
+    {
+      "id": "fr-appetizer-03",
+      "name": "Salmon Tartare",
+      "course": "appetizer",
+      "cuisine": "French",
+      "ingredientTags": [
+        "fish",
+        "lemon"
+      ],
+      "costCents": 1200,
+      "ratingTenths": 48,
+      "description": "Diced salmon with lemon and herbs.",
+      "imageSrc": null,
+      "imageAlt": "Salmon Tartare served as a appetizer",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Salmon Tartare. Diced salmon with lemon and herbs."
+    },
+    {
+      "id": "fr-soup-01",
+      "name": "Potato and Leek Soup",
+      "course": "soup",
+      "cuisine": "French",
+      "ingredientTags": [
+        "potato",
+        "onion",
+        "dairy"
+      ],
+      "costCents": 600,
+      "ratingTenths": 39,
+      "description": "Creamy potato and leek soup; leek is grouped with onion.",
+      "imageSrc": null,
+      "imageAlt": "Potato and Leek Soup served as a soup",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Potato and Leek Soup. Creamy potato and leek soup; leek is grouped with onion."
+    },
+    {
+      "id": "fr-soup-02",
+      "name": "French Onion Soup",
+      "course": "soup",
+      "cuisine": "French",
+      "ingredientTags": [
+        "onion",
+        "wheat",
+        "dairy"
+      ],
+      "costCents": 800,
+      "ratingTenths": 45,
+      "description": "Onion broth with a bread crouton and melted cheese.",
+      "imageSrc": "dishes/fr-soup-02.webp",
+      "imageAlt": "French Onion Soup served as a soup",
+      "artStatus": "ready",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: French Onion Soup. Onion broth with a bread crouton and melted cheese."
+    },
+    {
+      "id": "fr-soup-03",
+      "name": "Mushroom Veloute",
+      "course": "soup",
+      "cuisine": "French",
+      "ingredientTags": [
+        "mushroom",
+        "dairy"
+      ],
+      "costCents": 1100,
+      "ratingTenths": 49,
+      "description": "Silky mushroom soup with cream and a mushroom garnish.",
+      "imageSrc": "dishes/fr-soup-03.webp",
+      "imageAlt": "Mushroom Veloute served as a soup",
+      "artStatus": "ready",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Mushroom Veloute. Silky mushroom soup with cream and a mushroom garnish."
+    },
+    {
+      "id": "fr-salad-01",
+      "name": "Cucumber and Dill Salad",
+      "course": "salad",
+      "cuisine": "French",
+      "ingredientTags": [
+        "cucumber",
+        "lemon"
+      ],
+      "costCents": 400,
+      "ratingTenths": 39,
+      "description": "Cucumber slices with dill and lemon dressing.",
+      "imageSrc": null,
+      "imageAlt": "Cucumber and Dill Salad served as a salad",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Cucumber and Dill Salad. Cucumber slices with dill and lemon dressing."
+    },
+    {
+      "id": "fr-salad-02",
+      "name": "Bistro Egg Salad",
+      "course": "salad",
+      "cuisine": "French",
+      "ingredientTags": [
+        "greens",
+        "egg"
+      ],
+      "costCents": 900,
+      "ratingTenths": 45,
+      "description": "Leafy greens topped with a softly cooked egg.",
+      "imageSrc": null,
+      "imageAlt": "Bistro Egg Salad served as a salad",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Bistro Egg Salad. Leafy greens topped with a softly cooked egg."
+    },
+    {
+      "id": "fr-salad-03",
+      "name": "Nicoise Salad",
+      "course": "salad",
+      "cuisine": "French",
+      "ingredientTags": [
+        "fish",
+        "egg",
+        "potato",
+        "greens"
+      ],
+      "costCents": 1300,
+      "ratingTenths": 49,
+      "description": "Tuna, eggs, potatoes and leafy greens.",
+      "imageSrc": null,
+      "imageAlt": "Nicoise Salad served as a salad",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Nicoise Salad. Tuna, eggs, potatoes and leafy greens."
+    },
+    {
+      "id": "fr-main-01",
+      "name": "Mushroom Galette",
+      "course": "main",
+      "cuisine": "French",
+      "ingredientTags": [
+        "mushroom",
+        "wheat",
+        "dairy"
+      ],
+      "costCents": 1100,
+      "ratingTenths": 41,
+      "description": "Rustic pastry filled with mushrooms and cheese.",
+      "imageSrc": null,
+      "imageAlt": "Mushroom Galette served as a main course",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Mushroom Galette. Rustic pastry filled with mushrooms and cheese."
+    },
+    {
+      "id": "fr-main-02",
+      "name": "Chicken Fricassee",
+      "course": "main",
+      "cuisine": "French",
+      "ingredientTags": [
+        "chicken",
+        "mushroom",
+        "dairy"
+      ],
+      "costCents": 1800,
+      "ratingTenths": 47,
+      "description": "Chicken and mushrooms in a creamy sauce.",
+      "imageSrc": null,
+      "imageAlt": "Chicken Fricassee served as a main course",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Chicken Fricassee. Chicken and mushrooms in a creamy sauce."
+    },
+    {
+      "id": "fr-main-03",
+      "name": "Beef Bourguignon",
+      "course": "main",
+      "cuisine": "French",
+      "ingredientTags": [
+        "beef",
+        "carrot",
+        "onion",
+        "mushroom"
+      ],
+      "costCents": 2600,
+      "ratingTenths": 50,
+      "description": "Braised beef with mushrooms, onions and carrots.",
+      "imageSrc": null,
+      "imageAlt": "Beef Bourguignon served as a main course",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Beef Bourguignon. Braised beef with mushrooms, onions and carrots."
+    },
+    {
+      "id": "fr-dessert-01",
+      "name": "Apple Compote",
+      "course": "dessert",
+      "cuisine": "French",
+      "ingredientTags": [
+        "apple"
+      ],
+      "costCents": 400,
+      "ratingTenths": 38,
+      "description": "Softly cooked apple pieces with cinnamon.",
+      "imageSrc": null,
+      "imageAlt": "Apple Compote served as a dessert",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Apple Compote. Softly cooked apple pieces with cinnamon."
+    },
+    {
+      "id": "fr-dessert-02",
+      "name": "Chocolate Mousse",
+      "course": "dessert",
+      "cuisine": "French",
+      "ingredientTags": [
+        "chocolate",
+        "egg",
+        "dairy"
+      ],
+      "costCents": 900,
+      "ratingTenths": 50,
+      "description": "Dark chocolate mousse made with eggs and cream.",
+      "imageSrc": "dishes/fr-dessert-02.webp",
+      "imageAlt": "Chocolate Mousse served as a dessert",
+      "artStatus": "ready",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Chocolate Mousse. Dark chocolate mousse made with eggs and cream."
+    },
+    {
+      "id": "fr-dessert-03",
+      "name": "Creme Brulee",
+      "course": "dessert",
+      "cuisine": "French",
+      "ingredientTags": [
+        "egg",
+        "dairy"
+      ],
+      "costCents": 1200,
+      "ratingTenths": 49,
+      "description": "Vanilla custard beneath a caramelized sugar top.",
+      "imageSrc": null,
+      "imageAlt": "Creme Brulee served as a dessert",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Creme Brulee. Vanilla custard beneath a caramelized sugar top."
+    },
+    {
+      "id": "jp-appetizer-01",
+      "name": "Edamame",
+      "course": "appetizer",
+      "cuisine": "Japanese",
+      "ingredientTags": [
+        "bean"
+      ],
+      "costCents": 400,
+      "ratingTenths": 37,
+      "description": "Green soybeans in pods with sea salt.",
+      "imageSrc": null,
+      "imageAlt": "Edamame served as a appetizer",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Edamame. Green soybeans in pods with sea salt."
+    },
+    {
+      "id": "jp-appetizer-02",
+      "name": "Vegetable Gyoza",
+      "course": "appetizer",
+      "cuisine": "Japanese",
+      "ingredientTags": [
+        "wheat",
+        "greens",
+        "mushroom"
+      ],
+      "costCents": 700,
+      "ratingTenths": 42,
+      "description": "Pan-seared dumplings filled with cabbage and mushrooms.",
+      "imageSrc": null,
+      "imageAlt": "Vegetable Gyoza served as a appetizer",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Vegetable Gyoza. Pan-seared dumplings filled with cabbage and mushrooms."
+    },
+    {
+      "id": "jp-appetizer-03",
+      "name": "Shrimp Tempura",
+      "course": "appetizer",
+      "cuisine": "Japanese",
+      "ingredientTags": [
+        "shrimp",
+        "egg",
+        "wheat"
+      ],
+      "costCents": 1200,
+      "ratingTenths": 48,
+      "description": "Shrimp in a light crisp batter.",
+      "imageSrc": null,
+      "imageAlt": "Shrimp Tempura served as a appetizer",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Shrimp Tempura. Shrimp in a light crisp batter."
+    },
+    {
+      "id": "jp-soup-01",
+      "name": "Miso Soup",
+      "course": "soup",
+      "cuisine": "Japanese",
+      "ingredientTags": [
+        "bean"
+      ],
+      "costCents": 400,
+      "ratingTenths": 38,
+      "description": "Miso broth with tofu and seaweed.",
+      "imageSrc": null,
+      "imageAlt": "Miso Soup served as a soup",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Miso Soup. Miso broth with tofu and seaweed."
+    },
+    {
+      "id": "jp-soup-02",
+      "name": "Corn Potage",
+      "course": "soup",
+      "cuisine": "Japanese",
+      "ingredientTags": [
+        "corn",
+        "dairy"
+      ],
+      "costCents": 700,
+      "ratingTenths": 43,
+      "description": "Creamy corn soup inspired by Japanese cafe cooking.",
+      "imageSrc": null,
+      "imageAlt": "Corn Potage served as a soup",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Corn Potage. Creamy corn soup inspired by Japanese cafe cooking."
+    },
+    {
+      "id": "jp-soup-03",
+      "name": "Chicken Mushroom Broth",
+      "course": "soup",
+      "cuisine": "Japanese",
+      "ingredientTags": [
+        "chicken",
+        "mushroom"
+      ],
+      "costCents": 1000,
+      "ratingTenths": 47,
+      "description": "Clear broth with chicken and mushrooms.",
+      "imageSrc": null,
+      "imageAlt": "Chicken Mushroom Broth served as a soup",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Chicken Mushroom Broth. Clear broth with chicken and mushrooms."
+    },
+    {
+      "id": "jp-salad-01",
+      "name": "Sunomono",
+      "course": "salad",
+      "cuisine": "Japanese",
+      "ingredientTags": [
+        "cucumber"
+      ],
+      "costCents": 400,
+      "ratingTenths": 39,
+      "description": "Cucumber slices in a light sweet-vinegar dressing.",
+      "imageSrc": null,
+      "imageAlt": "Sunomono served as a salad",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Sunomono. Cucumber slices in a light sweet-vinegar dressing."
+    },
+    {
+      "id": "jp-salad-02",
+      "name": "Spinach Sesame Salad",
+      "course": "salad",
+      "cuisine": "Japanese",
+      "ingredientTags": [
+        "greens"
+      ],
+      "costCents": 700,
+      "ratingTenths": 50,
+      "description": "Tender spinach with sesame dressing.",
+      "imageSrc": null,
+      "imageAlt": "Spinach Sesame Salad served as a salad",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Spinach Sesame Salad. Tender spinach with sesame dressing."
+    },
+    {
+      "id": "jp-salad-03",
+      "name": "Sesame Chicken Salad",
+      "course": "salad",
+      "cuisine": "Japanese",
+      "ingredientTags": [
+        "chicken",
+        "greens",
+        "cucumber"
+      ],
+      "costCents": 1100,
+      "ratingTenths": 48,
+      "description": "Chicken, fresh greens and cucumber with sesame dressing.",
+      "imageSrc": null,
+      "imageAlt": "Sesame Chicken Salad served as a salad",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Sesame Chicken Salad. Chicken, fresh greens and cucumber with sesame dressing."
+    },
+    {
+      "id": "jp-main-01",
+      "name": "Tamagoyaki Rice Bowl",
+      "course": "main",
+      "cuisine": "Japanese",
+      "ingredientTags": [
+        "egg",
+        "rice"
+      ],
+      "costCents": 1000,
+      "ratingTenths": 41,
+      "description": "Sliced rolled omelet over rice.",
+      "imageSrc": null,
+      "imageAlt": "Tamagoyaki Rice Bowl served as a main course",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Tamagoyaki Rice Bowl. Sliced rolled omelet over rice."
+    },
+    {
+      "id": "jp-main-02",
+      "name": "Teriyaki Chicken Bowl",
+      "course": "main",
+      "cuisine": "Japanese",
+      "ingredientTags": [
+        "chicken",
+        "rice"
+      ],
+      "costCents": 1700,
+      "ratingTenths": 46,
+      "description": "Glazed teriyaki chicken over rice.",
+      "imageSrc": null,
+      "imageAlt": "Teriyaki Chicken Bowl served as a main course",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Teriyaki Chicken Bowl. Glazed teriyaki chicken over rice."
+    },
+    {
+      "id": "jp-main-03",
+      "name": "Salmon Teriyaki Bowl",
+      "course": "main",
+      "cuisine": "Japanese",
+      "ingredientTags": [
+        "fish",
+        "rice"
+      ],
+      "costCents": 2400,
+      "ratingTenths": 49,
+      "description": "Glazed salmon with steamed rice.",
+      "imageSrc": null,
+      "imageAlt": "Salmon Teriyaki Bowl served as a main course",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Salmon Teriyaki Bowl. Glazed salmon with steamed rice."
+    },
+    {
+      "id": "jp-dessert-01",
+      "name": "Mango Mochi",
+      "course": "dessert",
+      "cuisine": "Japanese",
+      "ingredientTags": [
+        "mango",
+        "rice"
+      ],
+      "costCents": 500,
+      "ratingTenths": 40,
+      "description": "Soft rice mochi with mango filling.",
+      "imageSrc": null,
+      "imageAlt": "Mango Mochi served as a dessert",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Mango Mochi. Soft rice mochi with mango filling."
+    },
+    {
+      "id": "jp-dessert-02",
+      "name": "Strawberry Daifuku",
+      "course": "dessert",
+      "cuisine": "Japanese",
+      "ingredientTags": [
+        "strawberry",
+        "rice",
+        "bean"
+      ],
+      "costCents": 800,
+      "ratingTenths": 45,
+      "description": "Rice mochi around a strawberry and sweet bean paste.",
+      "imageSrc": "dishes/jp-dessert-02.webp",
+      "imageAlt": "Strawberry Daifuku served as a dessert",
+      "artStatus": "ready",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Strawberry Daifuku. Rice mochi around a strawberry and sweet bean paste."
+    },
+    {
+      "id": "jp-dessert-03",
+      "name": "Chocolate Mochi",
+      "course": "dessert",
+      "cuisine": "Japanese",
+      "ingredientTags": [
+        "chocolate",
+        "rice"
+      ],
+      "costCents": 1100,
+      "ratingTenths": 48,
+      "description": "Soft rice mochi with a chocolate center.",
+      "imageSrc": null,
+      "imageAlt": "Chocolate Mochi served as a dessert",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Chocolate Mochi. Soft rice mochi with a chocolate center."
+    },
+    {
+      "id": "in-appetizer-01",
+      "name": "Lentil Papadums",
+      "course": "appetizer",
+      "cuisine": "Indian",
+      "ingredientTags": [
+        "lentil"
+      ],
+      "costCents": 400,
+      "ratingTenths": 37,
+      "description": "Crisp lentil wafers with chutney.",
+      "imageSrc": null,
+      "imageAlt": "Lentil Papadums served as a appetizer",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Lentil Papadums. Crisp lentil wafers with chutney."
+    },
+    {
+      "id": "in-appetizer-02",
+      "name": "Yogurt Aloo Chaat",
+      "course": "appetizer",
+      "cuisine": "Indian",
+      "ingredientTags": [
+        "potato",
+        "dairy",
+        "onion"
+      ],
+      "costCents": 700,
+      "ratingTenths": 43,
+      "description": "Spiced potatoes with yogurt, onions and chutney.",
+      "imageSrc": null,
+      "imageAlt": "Yogurt Aloo Chaat served as a appetizer",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Yogurt Aloo Chaat. Spiced potatoes with yogurt, onions and chutney."
+    },
+    {
+      "id": "in-appetizer-03",
+      "name": "Paneer Tikka",
+      "course": "appetizer",
+      "cuisine": "Indian",
+      "ingredientTags": [
+        "dairy"
+      ],
+      "costCents": 1100,
+      "ratingTenths": 48,
+      "description": "Char-grilled paneer cheese with warm spices.",
+      "imageSrc": null,
+      "imageAlt": "Paneer Tikka served as a appetizer",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Paneer Tikka. Char-grilled paneer cheese with warm spices."
+    },
+    {
+      "id": "in-soup-01",
+      "name": "Tomato Shorba",
+      "course": "soup",
+      "cuisine": "Indian",
+      "ingredientTags": [
+        "tomato",
+        "onion"
+      ],
+      "costCents": 400,
+      "ratingTenths": 50,
+      "description": "Carefully spiced tomato and onion broth; an intentional budget gem.",
+      "imageSrc": null,
+      "imageAlt": "Tomato Shorba served as a soup",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Tomato Shorba. Carefully spiced tomato and onion broth; an intentional budget gem."
+    },
+    {
+      "id": "in-soup-02",
+      "name": "Lentil Carrot Soup",
+      "course": "soup",
+      "cuisine": "Indian",
+      "ingredientTags": [
+        "lentil",
+        "carrot"
+      ],
+      "costCents": 700,
+      "ratingTenths": 43,
+      "description": "Warm spiced lentil and carrot soup.",
+      "imageSrc": null,
+      "imageAlt": "Lentil Carrot Soup served as a soup",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Lentil Carrot Soup. Warm spiced lentil and carrot soup."
+    },
+    {
+      "id": "in-soup-03",
+      "name": "Coconut Chicken Soup",
+      "course": "soup",
+      "cuisine": "Indian",
+      "ingredientTags": [
+        "coconut",
+        "chicken"
+      ],
+      "costCents": 1000,
+      "ratingTenths": 47,
+      "description": "Chicken in a lightly spiced coconut broth.",
+      "imageSrc": null,
+      "imageAlt": "Coconut Chicken Soup served as a soup",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Coconut Chicken Soup. Chicken in a lightly spiced coconut broth."
+    },
+    {
+      "id": "in-salad-01",
+      "name": "Kachumber",
+      "course": "salad",
+      "cuisine": "Indian",
+      "ingredientTags": [
+        "cucumber",
+        "tomato",
+        "onion"
+      ],
+      "costCents": 400,
+      "ratingTenths": 38,
+      "description": "Chopped cucumber, tomato and onion salad.",
+      "imageSrc": null,
+      "imageAlt": "Kachumber served as a salad",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Kachumber. Chopped cucumber, tomato and onion salad."
+    },
+    {
+      "id": "in-salad-02",
+      "name": "Chickpea Salad",
+      "course": "salad",
+      "cuisine": "Indian",
+      "ingredientTags": [
+        "bean",
+        "tomato",
+        "lemon"
+      ],
+      "costCents": 700,
+      "ratingTenths": 44,
+      "description": "Chickpeas and tomatoes with lemon and herbs.",
+      "imageSrc": null,
+      "imageAlt": "Chickpea Salad served as a salad",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Chickpea Salad. Chickpeas and tomatoes with lemon and herbs."
+    },
+    {
+      "id": "in-salad-03",
+      "name": "Paneer Spinach Salad",
+      "course": "salad",
+      "cuisine": "Indian",
+      "ingredientTags": [
+        "dairy",
+        "greens"
+      ],
+      "costCents": 1100,
+      "ratingTenths": 48,
+      "description": "Paneer cheese with spinach and light dressing.",
+      "imageSrc": null,
+      "imageAlt": "Paneer Spinach Salad served as a salad",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Paneer Spinach Salad. Paneer cheese with spinach and light dressing."
+    },
+    {
+      "id": "in-main-01",
+      "name": "Chana Masala with Rice",
+      "course": "main",
+      "cuisine": "Indian",
+      "ingredientTags": [
+        "bean",
+        "tomato",
+        "rice"
+      ],
+      "costCents": 1100,
+      "ratingTenths": 42,
+      "description": "Spiced chickpeas in tomato sauce with rice.",
+      "imageSrc": null,
+      "imageAlt": "Chana Masala with Rice served as a main course",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Chana Masala with Rice. Spiced chickpeas in tomato sauce with rice."
+    },
+    {
+      "id": "in-main-02",
+      "name": "Butter Chicken",
+      "course": "main",
+      "cuisine": "Indian",
+      "ingredientTags": [
+        "chicken",
+        "dairy",
+        "tomato"
+      ],
+      "costCents": 1800,
+      "ratingTenths": 50,
+      "description": "Chicken in a buttery tomato and cream sauce.",
+      "imageSrc": "dishes/in-main-02.webp",
+      "imageAlt": "Butter Chicken served as a main course",
+      "artStatus": "ready",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Butter Chicken. Chicken in a buttery tomato and cream sauce."
+    },
+    {
+      "id": "in-main-03",
+      "name": "Goan Fish Curry",
+      "course": "main",
+      "cuisine": "Indian",
+      "ingredientTags": [
+        "fish",
+        "coconut"
+      ],
+      "costCents": 2400,
+      "ratingTenths": 49,
+      "description": "Fish cooked in a warm coconut curry sauce.",
+      "imageSrc": null,
+      "imageAlt": "Goan Fish Curry served as a main course",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Goan Fish Curry. Fish cooked in a warm coconut curry sauce."
+    },
+    {
+      "id": "in-dessert-01",
+      "name": "Banana Cardamom Yogurt",
+      "course": "dessert",
+      "cuisine": "Indian",
+      "ingredientTags": [
+        "banana",
+        "dairy"
+      ],
+      "costCents": 500,
+      "ratingTenths": 40,
+      "description": "Yogurt with banana and cardamom.",
+      "imageSrc": null,
+      "imageAlt": "Banana Cardamom Yogurt served as a dessert",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Banana Cardamom Yogurt. Yogurt with banana and cardamom."
+    },
+    {
+      "id": "in-dessert-02",
+      "name": "Mango Shrikhand",
+      "course": "dessert",
+      "cuisine": "Indian",
+      "ingredientTags": [
+        "mango",
+        "dairy"
+      ],
+      "costCents": 800,
+      "ratingTenths": 46,
+      "description": "Thick sweetened yogurt flavored with mango.",
+      "imageSrc": null,
+      "imageAlt": "Mango Shrikhand served as a dessert",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Mango Shrikhand. Thick sweetened yogurt flavored with mango."
+    },
+    {
+      "id": "in-dessert-03",
+      "name": "Saffron Kulfi",
+      "course": "dessert",
+      "cuisine": "Indian",
+      "ingredientTags": [
+        "dairy"
+      ],
+      "costCents": 1200,
+      "ratingTenths": 49,
+      "description": "Dense saffron-flavored milk ice cream.",
+      "imageSrc": null,
+      "imageAlt": "Saffron Kulfi served as a dessert",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Saffron Kulfi. Dense saffron-flavored milk ice cream."
+    },
+    {
+      "id": "mx-appetizer-01",
+      "name": "Bean Tostadas",
+      "course": "appetizer",
+      "cuisine": "Mexican",
+      "ingredientTags": [
+        "bean",
+        "corn",
+        "tomato"
+      ],
+      "costCents": 500,
+      "ratingTenths": 39,
+      "description": "Corn tostadas with beans and tomato salsa.",
+      "imageSrc": null,
+      "imageAlt": "Bean Tostadas served as a appetizer",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Bean Tostadas. Corn tostadas with beans and tomato salsa."
+    },
+    {
+      "id": "mx-appetizer-02",
+      "name": "Cheese Quesadillas",
+      "course": "appetizer",
+      "cuisine": "Mexican",
+      "ingredientTags": [
+        "dairy",
+        "wheat"
+      ],
+      "costCents": 800,
+      "ratingTenths": 44,
+      "description": "Toasted flour tortillas filled with cheese.",
+      "imageSrc": null,
+      "imageAlt": "Cheese Quesadillas served as a appetizer",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Cheese Quesadillas. Toasted flour tortillas filled with cheese."
+    },
+    {
+      "id": "mx-appetizer-03",
+      "name": "Shrimp Tostadas",
+      "course": "appetizer",
+      "cuisine": "Mexican",
+      "ingredientTags": [
+        "shrimp",
+        "corn"
+      ],
+      "costCents": 1200,
+      "ratingTenths": 48,
+      "description": "Corn tostadas topped with shrimp and fresh salsa.",
+      "imageSrc": null,
+      "imageAlt": "Shrimp Tostadas served as a appetizer",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Shrimp Tostadas. Corn tostadas topped with shrimp and fresh salsa."
+    },
+    {
+      "id": "mx-soup-01",
+      "name": "Sopa de Fideo",
+      "course": "soup",
+      "cuisine": "Mexican",
+      "ingredientTags": [
+        "wheat",
+        "tomato",
+        "onion"
+      ],
+      "costCents": 400,
+      "ratingTenths": 38,
+      "description": "Tomato soup with thin wheat noodles.",
+      "imageSrc": null,
+      "imageAlt": "Sopa de Fideo served as a soup",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Sopa de Fideo. Tomato soup with thin wheat noodles."
+    },
+    {
+      "id": "mx-soup-02",
+      "name": "Chicken Tortilla Soup",
+      "course": "soup",
+      "cuisine": "Mexican",
+      "ingredientTags": [
+        "chicken",
+        "corn",
+        "tomato"
+      ],
+      "costCents": 700,
+      "ratingTenths": 44,
+      "description": "Chicken and tomato broth with corn tortilla strips.",
+      "imageSrc": null,
+      "imageAlt": "Chicken Tortilla Soup served as a soup",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Chicken Tortilla Soup. Chicken and tomato broth with corn tortilla strips."
+    },
+    {
+      "id": "mx-soup-03",
+      "name": "Shrimp Corn Chowder",
+      "course": "soup",
+      "cuisine": "Mexican",
+      "ingredientTags": [
+        "shrimp",
+        "corn",
+        "dairy"
+      ],
+      "costCents": 1100,
+      "ratingTenths": 48,
+      "description": "Creamy shrimp and corn soup inspired by Mexican flavors.",
+      "imageSrc": null,
+      "imageAlt": "Shrimp Corn Chowder served as a soup",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Shrimp Corn Chowder. Creamy shrimp and corn soup inspired by Mexican flavors."
+    },
+    {
+      "id": "mx-salad-01",
+      "name": "Jicama Cucumber Salad",
+      "course": "salad",
+      "cuisine": "Mexican",
+      "ingredientTags": [
+        "cucumber"
+      ],
+      "costCents": 400,
+      "ratingTenths": 38,
+      "description": "Jicama and cucumber salad with citrus dressing.",
+      "imageSrc": null,
+      "imageAlt": "Jicama Cucumber Salad served as a salad",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Jicama Cucumber Salad. Jicama and cucumber salad with citrus dressing."
+    },
+    {
+      "id": "mx-salad-02",
+      "name": "Mexican Corn Salad",
+      "course": "salad",
+      "cuisine": "Mexican",
+      "ingredientTags": [
+        "corn",
+        "dairy"
+      ],
+      "costCents": 700,
+      "ratingTenths": 45,
+      "description": "Roasted corn with creamy dressing and crumbled cheese.",
+      "imageSrc": "dishes/mx-salad-02.webp",
+      "imageAlt": "Mexican Corn Salad served as a salad",
+      "artStatus": "ready",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Mexican Corn Salad. Roasted corn with creamy dressing and crumbled cheese."
+    },
+    {
+      "id": "mx-salad-03",
+      "name": "Chicken Black Bean Salad",
+      "course": "salad",
+      "cuisine": "Mexican",
+      "ingredientTags": [
+        "chicken",
+        "bean",
+        "tomato",
+        "greens"
+      ],
+      "costCents": 1200,
+      "ratingTenths": 48,
+      "description": "Chicken, black beans, tomatoes and leafy greens.",
+      "imageSrc": null,
+      "imageAlt": "Chicken Black Bean Salad served as a salad",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Chicken Black Bean Salad. Chicken, black beans, tomatoes and leafy greens."
+    },
+    {
+      "id": "mx-main-01",
+      "name": "Bean Enchiladas",
+      "course": "main",
+      "cuisine": "Mexican",
+      "ingredientTags": [
+        "bean",
+        "corn",
+        "tomato",
+        "dairy"
+      ],
+      "costCents": 1000,
+      "ratingTenths": 41,
+      "description": "Corn tortillas with beans, tomato sauce and cheese.",
+      "imageSrc": null,
+      "imageAlt": "Bean Enchiladas served as a main course",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Bean Enchiladas. Corn tortillas with beans, tomato sauce and cheese."
+    },
+    {
+      "id": "mx-main-02",
+      "name": "Chicken Mole with Rice",
+      "course": "main",
+      "cuisine": "Mexican",
+      "ingredientTags": [
+        "chicken",
+        "chocolate",
+        "rice"
+      ],
+      "costCents": 1800,
+      "ratingTenths": 47,
+      "description": "Chicken in savory mole containing cocoa, with rice.",
+      "imageSrc": null,
+      "imageAlt": "Chicken Mole with Rice served as a main course",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Chicken Mole with Rice. Chicken in savory mole containing cocoa, with rice."
+    },
+    {
+      "id": "mx-main-03",
+      "name": "Beef Barbacoa Tacos",
+      "course": "main",
+      "cuisine": "Mexican",
+      "ingredientTags": [
+        "beef",
+        "corn",
+        "onion"
+      ],
+      "costCents": 2500,
+      "ratingTenths": 50,
+      "description": "Corn tortillas with slow-cooked beef and onions.",
+      "imageSrc": null,
+      "imageAlt": "Beef Barbacoa Tacos served as a main course",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Beef Barbacoa Tacos. Corn tortillas with slow-cooked beef and onions."
+    },
+    {
+      "id": "mx-dessert-01",
+      "name": "Cinnamon Bananas",
+      "course": "dessert",
+      "cuisine": "Mexican",
+      "ingredientTags": [
+        "banana"
+      ],
+      "costCents": 500,
+      "ratingTenths": 40,
+      "description": "Warm caramelized banana with cinnamon.",
+      "imageSrc": null,
+      "imageAlt": "Cinnamon Bananas served as a dessert",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Cinnamon Bananas. Warm caramelized banana with cinnamon."
+    },
+    {
+      "id": "mx-dessert-02",
+      "name": "Coconut Rice Pudding",
+      "course": "dessert",
+      "cuisine": "Mexican",
+      "ingredientTags": [
+        "coconut",
+        "rice",
+        "dairy"
+      ],
+      "costCents": 800,
+      "ratingTenths": 45,
+      "description": "Creamy milk and coconut rice pudding.",
+      "imageSrc": null,
+      "imageAlt": "Coconut Rice Pudding served as a dessert",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Coconut Rice Pudding. Creamy milk and coconut rice pudding."
+    },
+    {
+      "id": "mx-dessert-03",
+      "name": "Chocolate Churros",
+      "course": "dessert",
+      "cuisine": "Mexican",
+      "ingredientTags": [
+        "chocolate",
+        "wheat",
+        "dairy"
+      ],
+      "costCents": 1200,
+      "ratingTenths": 49,
+      "description": "Churros with creamy chocolate dipping sauce.",
+      "imageSrc": null,
+      "imageAlt": "Chocolate Churros served as a dessert",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Chocolate Churros. Churros with creamy chocolate dipping sauce."
+    },
+    {
+      "id": "us-appetizer-01",
+      "name": "Corn Fritters",
+      "course": "appetizer",
+      "cuisine": "American",
+      "ingredientTags": [
+        "corn",
+        "egg",
+        "wheat"
+      ],
+      "costCents": 500,
+      "ratingTenths": 39,
+      "description": "Golden corn fritters with egg-and-flour batter.",
+      "imageSrc": null,
+      "imageAlt": "Corn Fritters served as a appetizer",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Corn Fritters. Golden corn fritters with egg-and-flour batter."
+    },
+    {
+      "id": "us-appetizer-02",
+      "name": "Stuffed Mushrooms",
+      "course": "appetizer",
+      "cuisine": "American",
+      "ingredientTags": [
+        "mushroom",
+        "dairy"
+      ],
+      "costCents": 800,
+      "ratingTenths": 44,
+      "description": "Roasted mushrooms filled with cream cheese and herbs.",
+      "imageSrc": null,
+      "imageAlt": "Stuffed Mushrooms served as a appetizer",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Stuffed Mushrooms. Roasted mushrooms filled with cream cheese and herbs."
+    },
+    {
+      "id": "us-appetizer-03",
+      "name": "Shrimp Cakes",
+      "course": "appetizer",
+      "cuisine": "American",
+      "ingredientTags": [
+        "shrimp",
+        "egg",
+        "wheat"
+      ],
+      "costCents": 1300,
+      "ratingTenths": 48,
+      "description": "Pan-fried shrimp cakes with a light crumb crust.",
+      "imageSrc": null,
+      "imageAlt": "Shrimp Cakes served as a appetizer",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Shrimp Cakes. Pan-fried shrimp cakes with a light crumb crust."
+    },
+    {
+      "id": "us-soup-01",
+      "name": "Creamy Tomato Soup",
+      "course": "soup",
+      "cuisine": "American",
+      "ingredientTags": [
+        "tomato",
+        "dairy"
+      ],
+      "costCents": 400,
+      "ratingTenths": 38,
+      "description": "American-style creamy tomato soup.",
+      "imageSrc": null,
+      "imageAlt": "Creamy Tomato Soup served as a soup",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Creamy Tomato Soup. American-style creamy tomato soup."
+    },
+    {
+      "id": "us-soup-02",
+      "name": "Corn Chowder",
+      "course": "soup",
+      "cuisine": "American",
+      "ingredientTags": [
+        "corn",
+        "potato",
+        "dairy"
+      ],
+      "costCents": 700,
+      "ratingTenths": 43,
+      "description": "Creamy corn and potato soup.",
+      "imageSrc": null,
+      "imageAlt": "Corn Chowder served as a soup",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Corn Chowder. Creamy corn and potato soup."
+    },
+    {
+      "id": "us-soup-03",
+      "name": "Chicken Wild Rice Soup",
+      "course": "soup",
+      "cuisine": "American",
+      "ingredientTags": [
+        "chicken",
+        "rice",
+        "dairy",
+        "carrot"
+      ],
+      "costCents": 1100,
+      "ratingTenths": 48,
+      "description": "Chicken and wild rice in creamy broth with carrots.",
+      "imageSrc": null,
+      "imageAlt": "Chicken Wild Rice Soup served as a soup",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Chicken Wild Rice Soup. Chicken and wild rice in creamy broth with carrots."
+    },
+    {
+      "id": "us-salad-01",
+      "name": "Garden Salad",
+      "course": "salad",
+      "cuisine": "American",
+      "ingredientTags": [
+        "greens",
+        "tomato",
+        "cucumber"
+      ],
+      "costCents": 400,
+      "ratingTenths": 38,
+      "description": "Fresh lettuce, tomato and cucumber.",
+      "imageSrc": null,
+      "imageAlt": "Garden Salad served as a salad",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Garden Salad. Fresh lettuce, tomato and cucumber."
+    },
+    {
+      "id": "us-salad-02",
+      "name": "Apple Walnut Salad",
+      "course": "salad",
+      "cuisine": "American",
+      "ingredientTags": [
+        "apple",
+        "greens"
+      ],
+      "costCents": 800,
+      "ratingTenths": 45,
+      "description": "Crisp apple, walnuts and leafy greens.",
+      "imageSrc": null,
+      "imageAlt": "Apple Walnut Salad served as a salad",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Apple Walnut Salad. Crisp apple, walnuts and leafy greens."
+    },
+    {
+      "id": "us-salad-03",
+      "name": "Grilled Chicken Salad",
+      "course": "salad",
+      "cuisine": "American",
+      "ingredientTags": [
+        "chicken",
+        "greens",
+        "tomato"
+      ],
+      "costCents": 1200,
+      "ratingTenths": 48,
+      "description": "Grilled chicken over lettuce and tomatoes.",
+      "imageSrc": null,
+      "imageAlt": "Grilled Chicken Salad served as a salad",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Grilled Chicken Salad. Grilled chicken over lettuce and tomatoes."
+    },
+    {
+      "id": "us-main-01",
+      "name": "Mac and Cheese",
+      "course": "main",
+      "cuisine": "American",
+      "ingredientTags": [
+        "wheat",
+        "dairy"
+      ],
+      "costCents": 1100,
+      "ratingTenths": 41,
+      "description": "Baked macaroni in creamy cheese sauce.",
+      "imageSrc": null,
+      "imageAlt": "Mac and Cheese served as a main course",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Mac and Cheese. Baked macaroni in creamy cheese sauce."
+    },
+    {
+      "id": "us-main-02",
+      "name": "Roast Chicken with Mash",
+      "course": "main",
+      "cuisine": "American",
+      "ingredientTags": [
+        "chicken",
+        "potato",
+        "dairy"
+      ],
+      "costCents": 1800,
+      "ratingTenths": 47,
+      "description": "Roast chicken with buttery mashed potatoes.",
+      "imageSrc": null,
+      "imageAlt": "Roast Chicken with Mash served as a main course",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Roast Chicken with Mash. Roast chicken with buttery mashed potatoes."
+    },
+    {
+      "id": "us-main-03",
+      "name": "Steak and Mash",
+      "course": "main",
+      "cuisine": "American",
+      "ingredientTags": [
+        "beef",
+        "potato",
+        "dairy"
+      ],
+      "costCents": 2700,
+      "ratingTenths": 50,
+      "description": "Seared steak with creamy mashed potatoes.",
+      "imageSrc": null,
+      "imageAlt": "Steak and Mash served as a main course",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Steak and Mash. Seared steak with creamy mashed potatoes."
+    },
+    {
+      "id": "us-dessert-01",
+      "name": "Baked Apples",
+      "course": "dessert",
+      "cuisine": "American",
+      "ingredientTags": [
+        "apple"
+      ],
+      "costCents": 500,
+      "ratingTenths": 40,
+      "description": "Baked apples with cinnamon.",
+      "imageSrc": null,
+      "imageAlt": "Baked Apples served as a dessert",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Baked Apples. Baked apples with cinnamon."
+    },
+    {
+      "id": "us-dessert-02",
+      "name": "Strawberry Shortcake",
+      "course": "dessert",
+      "cuisine": "American",
+      "ingredientTags": [
+        "strawberry",
+        "wheat",
+        "dairy"
+      ],
+      "costCents": 900,
+      "ratingTenths": 46,
+      "description": "Shortcake with strawberries and whipped cream.",
+      "imageSrc": null,
+      "imageAlt": "Strawberry Shortcake served as a dessert",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Strawberry Shortcake. Shortcake with strawberries and whipped cream."
+    },
+    {
+      "id": "us-dessert-03",
+      "name": "Chocolate Brownie Sundae",
+      "course": "dessert",
+      "cuisine": "American",
+      "ingredientTags": [
+        "chocolate",
+        "egg",
+        "wheat",
+        "dairy"
+      ],
+      "costCents": 1300,
+      "ratingTenths": 50,
+      "description": "Chocolate brownie with ice cream and chocolate sauce.",
+      "imageSrc": null,
+      "imageAlt": "Chocolate Brownie Sundae served as a dessert",
+      "artStatus": "not-generated",
+      "imagePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. Hero dish: Chocolate Brownie Sundae. Chocolate brownie with ice cream and chocolate sauce."
+    }
+  ],
+  "supportedPairs": [
+    {
+      "cuisine": "Italian",
+      "ingredient": "beef",
+      "dishIds": [
+        "it-appetizer-02",
+        "it-salad-03",
+        "it-main-03"
+      ],
+      "courses": [
+        "appetizer",
+        "salad",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Italian",
+      "ingredient": "chicken",
+      "dishIds": [
+        "it-main-02"
+      ],
+      "courses": [
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Italian",
+      "ingredient": "egg",
+      "dishIds": [
+        "it-appetizer-03",
+        "it-dessert-03"
+      ],
+      "courses": [
+        "appetizer",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Italian",
+      "ingredient": "dairy",
+      "dishIds": [
+        "it-appetizer-03",
+        "it-soup-02",
+        "it-soup-03",
+        "it-salad-02",
+        "it-dessert-02",
+        "it-dessert-03"
+      ],
+      "courses": [
+        "appetizer",
+        "soup",
+        "salad",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Italian",
+      "ingredient": "rice",
+      "dishIds": [
+        "it-appetizer-03"
+      ],
+      "courses": [
+        "appetizer"
+      ]
+    },
+    {
+      "cuisine": "Italian",
+      "ingredient": "wheat",
+      "dishIds": [
+        "it-appetizer-01",
+        "it-appetizer-03",
+        "it-main-01",
+        "it-dessert-03"
+      ],
+      "courses": [
+        "appetizer",
+        "main",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Italian",
+      "ingredient": "tomato",
+      "dishIds": [
+        "it-appetizer-01",
+        "it-soup-01",
+        "it-soup-02",
+        "it-salad-02",
+        "it-main-01"
+      ],
+      "courses": [
+        "appetizer",
+        "soup",
+        "salad",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Italian",
+      "ingredient": "mushroom",
+      "dishIds": [
+        "it-appetizer-03",
+        "it-soup-03"
+      ],
+      "courses": [
+        "appetizer",
+        "soup"
+      ]
+    },
+    {
+      "cuisine": "Italian",
+      "ingredient": "bean",
+      "dishIds": [
+        "it-soup-01"
+      ],
+      "courses": [
+        "soup"
+      ]
+    },
+    {
+      "cuisine": "Italian",
+      "ingredient": "greens",
+      "dishIds": [
+        "it-salad-01",
+        "it-salad-03"
+      ],
+      "courses": [
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "Italian",
+      "ingredient": "carrot",
+      "dishIds": [
+        "it-soup-01",
+        "it-main-03"
+      ],
+      "courses": [
+        "soup",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Italian",
+      "ingredient": "onion",
+      "dishIds": [
+        "it-main-03"
+      ],
+      "courses": [
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Italian",
+      "ingredient": "lemon",
+      "dishIds": [
+        "it-appetizer-02",
+        "it-salad-01",
+        "it-salad-03",
+        "it-main-02",
+        "it-dessert-01"
+      ],
+      "courses": [
+        "appetizer",
+        "salad",
+        "main",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "French",
+      "ingredient": "beef",
+      "dishIds": [
+        "fr-main-03"
+      ],
+      "courses": [
+        "main"
+      ]
+    },
+    {
+      "cuisine": "French",
+      "ingredient": "chicken",
+      "dishIds": [
+        "fr-main-02"
+      ],
+      "courses": [
+        "main"
+      ]
+    },
+    {
+      "cuisine": "French",
+      "ingredient": "fish",
+      "dishIds": [
+        "fr-appetizer-03",
+        "fr-salad-03"
+      ],
+      "courses": [
+        "appetizer",
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "French",
+      "ingredient": "egg",
+      "dishIds": [
+        "fr-appetizer-02",
+        "fr-salad-02",
+        "fr-salad-03",
+        "fr-dessert-02",
+        "fr-dessert-03"
+      ],
+      "courses": [
+        "appetizer",
+        "salad",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "French",
+      "ingredient": "dairy",
+      "dishIds": [
+        "fr-appetizer-01",
+        "fr-appetizer-02",
+        "fr-soup-01",
+        "fr-soup-02",
+        "fr-soup-03",
+        "fr-main-01",
+        "fr-main-02",
+        "fr-dessert-02",
+        "fr-dessert-03"
+      ],
+      "courses": [
+        "appetizer",
+        "soup",
+        "main",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "French",
+      "ingredient": "wheat",
+      "dishIds": [
+        "fr-appetizer-01",
+        "fr-appetizer-02",
+        "fr-soup-02",
+        "fr-main-01"
+      ],
+      "courses": [
+        "appetizer",
+        "soup",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "French",
+      "ingredient": "potato",
+      "dishIds": [
+        "fr-soup-01",
+        "fr-salad-03"
+      ],
+      "courses": [
+        "soup",
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "French",
+      "ingredient": "mushroom",
+      "dishIds": [
+        "fr-soup-03",
+        "fr-main-01",
+        "fr-main-02",
+        "fr-main-03"
+      ],
+      "courses": [
+        "soup",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "French",
+      "ingredient": "greens",
+      "dishIds": [
+        "fr-salad-02",
+        "fr-salad-03"
+      ],
+      "courses": [
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "French",
+      "ingredient": "cucumber",
+      "dishIds": [
+        "fr-salad-01"
+      ],
+      "courses": [
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "French",
+      "ingredient": "carrot",
+      "dishIds": [
+        "fr-main-03"
+      ],
+      "courses": [
+        "main"
+      ]
+    },
+    {
+      "cuisine": "French",
+      "ingredient": "onion",
+      "dishIds": [
+        "fr-soup-01",
+        "fr-soup-02",
+        "fr-main-03"
+      ],
+      "courses": [
+        "soup",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "French",
+      "ingredient": "lemon",
+      "dishIds": [
+        "fr-appetizer-03",
+        "fr-salad-01"
+      ],
+      "courses": [
+        "appetizer",
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "French",
+      "ingredient": "apple",
+      "dishIds": [
+        "fr-dessert-01"
+      ],
+      "courses": [
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "French",
+      "ingredient": "chocolate",
+      "dishIds": [
+        "fr-dessert-02"
+      ],
+      "courses": [
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Japanese",
+      "ingredient": "chicken",
+      "dishIds": [
+        "jp-soup-03",
+        "jp-salad-03",
+        "jp-main-02"
+      ],
+      "courses": [
+        "soup",
+        "salad",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Japanese",
+      "ingredient": "fish",
+      "dishIds": [
+        "jp-main-03"
+      ],
+      "courses": [
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Japanese",
+      "ingredient": "shrimp",
+      "dishIds": [
+        "jp-appetizer-03"
+      ],
+      "courses": [
+        "appetizer"
+      ]
+    },
+    {
+      "cuisine": "Japanese",
+      "ingredient": "egg",
+      "dishIds": [
+        "jp-appetizer-03",
+        "jp-main-01"
+      ],
+      "courses": [
+        "appetizer",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Japanese",
+      "ingredient": "dairy",
+      "dishIds": [
+        "jp-soup-02"
+      ],
+      "courses": [
+        "soup"
+      ]
+    },
+    {
+      "cuisine": "Japanese",
+      "ingredient": "rice",
+      "dishIds": [
+        "jp-main-01",
+        "jp-main-02",
+        "jp-main-03",
+        "jp-dessert-01",
+        "jp-dessert-02",
+        "jp-dessert-03"
+      ],
+      "courses": [
+        "main",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Japanese",
+      "ingredient": "wheat",
+      "dishIds": [
+        "jp-appetizer-02",
+        "jp-appetizer-03"
+      ],
+      "courses": [
+        "appetizer"
+      ]
+    },
+    {
+      "cuisine": "Japanese",
+      "ingredient": "mushroom",
+      "dishIds": [
+        "jp-appetizer-02",
+        "jp-soup-03"
+      ],
+      "courses": [
+        "appetizer",
+        "soup"
+      ]
+    },
+    {
+      "cuisine": "Japanese",
+      "ingredient": "corn",
+      "dishIds": [
+        "jp-soup-02"
+      ],
+      "courses": [
+        "soup"
+      ]
+    },
+    {
+      "cuisine": "Japanese",
+      "ingredient": "bean",
+      "dishIds": [
+        "jp-appetizer-01",
+        "jp-soup-01",
+        "jp-dessert-02"
+      ],
+      "courses": [
+        "appetizer",
+        "soup",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Japanese",
+      "ingredient": "greens",
+      "dishIds": [
+        "jp-appetizer-02",
+        "jp-salad-02",
+        "jp-salad-03"
+      ],
+      "courses": [
+        "appetizer",
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "Japanese",
+      "ingredient": "cucumber",
+      "dishIds": [
+        "jp-salad-01",
+        "jp-salad-03"
+      ],
+      "courses": [
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "Japanese",
+      "ingredient": "mango",
+      "dishIds": [
+        "jp-dessert-01"
+      ],
+      "courses": [
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Japanese",
+      "ingredient": "chocolate",
+      "dishIds": [
+        "jp-dessert-03"
+      ],
+      "courses": [
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Japanese",
+      "ingredient": "strawberry",
+      "dishIds": [
+        "jp-dessert-02"
+      ],
+      "courses": [
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "ingredient": "chicken",
+      "dishIds": [
+        "in-soup-03",
+        "in-main-02"
+      ],
+      "courses": [
+        "soup",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "ingredient": "fish",
+      "dishIds": [
+        "in-main-03"
+      ],
+      "courses": [
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "ingredient": "dairy",
+      "dishIds": [
+        "in-appetizer-02",
+        "in-appetizer-03",
+        "in-salad-03",
+        "in-main-02",
+        "in-dessert-01",
+        "in-dessert-02",
+        "in-dessert-03"
+      ],
+      "courses": [
+        "appetizer",
+        "salad",
+        "main",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "ingredient": "rice",
+      "dishIds": [
+        "in-main-01"
+      ],
+      "courses": [
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "ingredient": "potato",
+      "dishIds": [
+        "in-appetizer-02"
+      ],
+      "courses": [
+        "appetizer"
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "ingredient": "tomato",
+      "dishIds": [
+        "in-soup-01",
+        "in-salad-01",
+        "in-salad-02",
+        "in-main-01",
+        "in-main-02"
+      ],
+      "courses": [
+        "soup",
+        "salad",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "ingredient": "bean",
+      "dishIds": [
+        "in-salad-02",
+        "in-main-01"
+      ],
+      "courses": [
+        "salad",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "ingredient": "lentil",
+      "dishIds": [
+        "in-appetizer-01",
+        "in-soup-02"
+      ],
+      "courses": [
+        "appetizer",
+        "soup"
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "ingredient": "greens",
+      "dishIds": [
+        "in-salad-03"
+      ],
+      "courses": [
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "ingredient": "cucumber",
+      "dishIds": [
+        "in-salad-01"
+      ],
+      "courses": [
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "ingredient": "carrot",
+      "dishIds": [
+        "in-soup-02"
+      ],
+      "courses": [
+        "soup"
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "ingredient": "onion",
+      "dishIds": [
+        "in-appetizer-02",
+        "in-soup-01",
+        "in-salad-01"
+      ],
+      "courses": [
+        "appetizer",
+        "soup",
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "ingredient": "lemon",
+      "dishIds": [
+        "in-salad-02"
+      ],
+      "courses": [
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "ingredient": "mango",
+      "dishIds": [
+        "in-dessert-02"
+      ],
+      "courses": [
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "ingredient": "banana",
+      "dishIds": [
+        "in-dessert-01"
+      ],
+      "courses": [
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "ingredient": "coconut",
+      "dishIds": [
+        "in-soup-03",
+        "in-main-03"
+      ],
+      "courses": [
+        "soup",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Mexican",
+      "ingredient": "beef",
+      "dishIds": [
+        "mx-main-03"
+      ],
+      "courses": [
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Mexican",
+      "ingredient": "chicken",
+      "dishIds": [
+        "mx-soup-02",
+        "mx-salad-03",
+        "mx-main-02"
+      ],
+      "courses": [
+        "soup",
+        "salad",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Mexican",
+      "ingredient": "shrimp",
+      "dishIds": [
+        "mx-appetizer-03",
+        "mx-soup-03"
+      ],
+      "courses": [
+        "appetizer",
+        "soup"
+      ]
+    },
+    {
+      "cuisine": "Mexican",
+      "ingredient": "dairy",
+      "dishIds": [
+        "mx-appetizer-02",
+        "mx-soup-03",
+        "mx-salad-02",
+        "mx-main-01",
+        "mx-dessert-02",
+        "mx-dessert-03"
+      ],
+      "courses": [
+        "appetizer",
+        "soup",
+        "salad",
+        "main",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Mexican",
+      "ingredient": "rice",
+      "dishIds": [
+        "mx-main-02",
+        "mx-dessert-02"
+      ],
+      "courses": [
+        "main",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Mexican",
+      "ingredient": "wheat",
+      "dishIds": [
+        "mx-appetizer-02",
+        "mx-soup-01",
+        "mx-dessert-03"
+      ],
+      "courses": [
+        "appetizer",
+        "soup",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Mexican",
+      "ingredient": "tomato",
+      "dishIds": [
+        "mx-appetizer-01",
+        "mx-soup-01",
+        "mx-soup-02",
+        "mx-salad-03",
+        "mx-main-01"
+      ],
+      "courses": [
+        "appetizer",
+        "soup",
+        "salad",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Mexican",
+      "ingredient": "corn",
+      "dishIds": [
+        "mx-appetizer-01",
+        "mx-appetizer-03",
+        "mx-soup-02",
+        "mx-soup-03",
+        "mx-salad-02",
+        "mx-main-01",
+        "mx-main-03"
+      ],
+      "courses": [
+        "appetizer",
+        "soup",
+        "salad",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Mexican",
+      "ingredient": "bean",
+      "dishIds": [
+        "mx-appetizer-01",
+        "mx-salad-03",
+        "mx-main-01"
+      ],
+      "courses": [
+        "appetizer",
+        "salad",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Mexican",
+      "ingredient": "greens",
+      "dishIds": [
+        "mx-salad-03"
+      ],
+      "courses": [
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "Mexican",
+      "ingredient": "cucumber",
+      "dishIds": [
+        "mx-salad-01"
+      ],
+      "courses": [
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "Mexican",
+      "ingredient": "onion",
+      "dishIds": [
+        "mx-soup-01",
+        "mx-main-03"
+      ],
+      "courses": [
+        "soup",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "Mexican",
+      "ingredient": "banana",
+      "dishIds": [
+        "mx-dessert-01"
+      ],
+      "courses": [
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Mexican",
+      "ingredient": "chocolate",
+      "dishIds": [
+        "mx-main-02",
+        "mx-dessert-03"
+      ],
+      "courses": [
+        "main",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "Mexican",
+      "ingredient": "coconut",
+      "dishIds": [
+        "mx-dessert-02"
+      ],
+      "courses": [
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "beef",
+      "dishIds": [
+        "us-main-03"
+      ],
+      "courses": [
+        "main"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "chicken",
+      "dishIds": [
+        "us-soup-03",
+        "us-salad-03",
+        "us-main-02"
+      ],
+      "courses": [
+        "soup",
+        "salad",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "shrimp",
+      "dishIds": [
+        "us-appetizer-03"
+      ],
+      "courses": [
+        "appetizer"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "egg",
+      "dishIds": [
+        "us-appetizer-01",
+        "us-appetizer-03",
+        "us-dessert-03"
+      ],
+      "courses": [
+        "appetizer",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "dairy",
+      "dishIds": [
+        "us-appetizer-02",
+        "us-soup-01",
+        "us-soup-02",
+        "us-soup-03",
+        "us-main-01",
+        "us-main-02",
+        "us-main-03",
+        "us-dessert-02",
+        "us-dessert-03"
+      ],
+      "courses": [
+        "appetizer",
+        "soup",
+        "main",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "rice",
+      "dishIds": [
+        "us-soup-03"
+      ],
+      "courses": [
+        "soup"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "wheat",
+      "dishIds": [
+        "us-appetizer-01",
+        "us-appetizer-03",
+        "us-main-01",
+        "us-dessert-02",
+        "us-dessert-03"
+      ],
+      "courses": [
+        "appetizer",
+        "main",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "potato",
+      "dishIds": [
+        "us-soup-02",
+        "us-main-02",
+        "us-main-03"
+      ],
+      "courses": [
+        "soup",
+        "main"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "tomato",
+      "dishIds": [
+        "us-soup-01",
+        "us-salad-01",
+        "us-salad-03"
+      ],
+      "courses": [
+        "soup",
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "mushroom",
+      "dishIds": [
+        "us-appetizer-02"
+      ],
+      "courses": [
+        "appetizer"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "corn",
+      "dishIds": [
+        "us-appetizer-01",
+        "us-soup-02"
+      ],
+      "courses": [
+        "appetizer",
+        "soup"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "greens",
+      "dishIds": [
+        "us-salad-01",
+        "us-salad-02",
+        "us-salad-03"
+      ],
+      "courses": [
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "cucumber",
+      "dishIds": [
+        "us-salad-01"
+      ],
+      "courses": [
+        "salad"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "carrot",
+      "dishIds": [
+        "us-soup-03"
+      ],
+      "courses": [
+        "soup"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "apple",
+      "dishIds": [
+        "us-salad-02",
+        "us-dessert-01"
+      ],
+      "courses": [
+        "salad",
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "chocolate",
+      "dishIds": [
+        "us-dessert-03"
+      ],
+      "courses": [
+        "dessert"
+      ]
+    },
+    {
+      "cuisine": "American",
+      "ingredient": "strawberry",
+      "dishIds": [
+        "us-dessert-02"
+      ],
+      "courses": [
+        "dessert"
+      ]
+    }
+  ],
+  "artReferences": {
+    "dishReferenceSheet": "references/dish-art-examples.png",
+    "uiReference": "references/chef-table-with-mia.png",
+    "sampleDishIds": [
+      "it-appetizer-01",
+      "it-appetizer-02",
+      "fr-soup-02",
+      "fr-soup-03",
+      "it-salad-02",
+      "mx-salad-02",
+      "it-main-02",
+      "in-main-02",
+      "fr-dessert-02",
+      "jp-dessert-02"
+    ],
+    "stylePrompt": "Appetizing semi-realistic editorial food illustration for a warm premium mobile restaurant game. White porcelain plate or bowl, three-quarter overhead view, soft upper-left daylight, natural food colors, refined simple plating, subtle contact shadow, generous empty margins, plain ivory background, no text, no hands, no utensils covering food, no unrelated garnish. ",
+    "status": "Art reference boards, not 90 individual sprites. imageSrc stays null until a real matching asset exists."
+  }
+}

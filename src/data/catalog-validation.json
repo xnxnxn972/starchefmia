@@ -1,0 +1,53 @@
+{
+  "catalogVersion": "chef-v2-2026-11-08",
+  "dishCount": 90,
+  "cuisineCount": 6,
+  "ingredientCount": 25,
+  "supportedPairCount": 91,
+  "dishesPerCourse": {
+    "appetizer": 18,
+    "soup": 18,
+    "salad": 18,
+    "main": 18,
+    "dessert": 18
+  },
+  "dishesPerCuisine": {
+    "Italian": 15,
+    "French": 15,
+    "Japanese": 15,
+    "Indian": 15,
+    "Mexican": 15,
+    "American": 15
+  },
+  "runsSimulated": 2000,
+  "deadEnds": 0,
+  "overspends": 0,
+  "strategyMix": "random, highest available rating, lowest available cost",
+  "simulatedScoreRange": [
+    3.88,
+    4.9
+  ],
+  "perfectMenu": {
+    "dishIds": [
+      "it-appetizer-03",
+      "in-soup-01",
+      "jp-salad-02",
+      "in-main-02",
+      "fr-dessert-02"
+    ],
+    "costCents": 5000,
+    "score": 5.0
+  },
+  "sampleRun": {
+    "dishIds": [
+      "in-main-02",
+      "fr-soup-02",
+      "it-appetizer-01",
+      "mx-salad-02",
+      "jp-dessert-02"
+    ],
+    "costCents": 4600,
+    "score": 4.48
+  },
+  "scope": "Checks validate starter data and a reference affordability simulator, not an implemented web app."
+}
