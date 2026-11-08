@@ -1,4 +1,8 @@
-import { catalog, COURSE_LABEL, COURSES, getDish } from './engine/catalog';
+import { createElement } from 'react';
+import { createRoot } from 'react-dom/client';
+import { flushSync } from 'react-dom';
+import { catalog, COURSE_LABEL, COURSES, Course, getDish } from './engine/catalog';
+import { CoursePlaceholder } from './art/FoodArt';
 import { formatMoney, formatRating, formatStars, scoreHundredths } from './engine/engine';
 
 const BASE = import.meta.env.BASE_URL;
@@ -22,6 +26,16 @@ export function shareText(picks: string[], restaurantName: string, url: string):
   ].join('\n');
 }
 
+/** The same course illustration the game shows for dishes without art, as an image URL. */
+function placeholderSrc(course: Course): string {
+  const host = document.createElement('div');
+  const root = createRoot(host);
+  flushSync(() => root.render(createElement(CoursePlaceholder, { course })));
+  const svg = host.innerHTML;
+  root.unmount();
+  return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+}
+
 function loadImage(src: string): Promise<HTMLImageElement | null> {
   return new Promise((resolve) => {
     const img = new Image();
@@ -41,6 +55,8 @@ export async function shareImage(picks: string[], restaurantName: string): Promi
   const ctx = canvas.getContext('2d');
   if (!ctx) return null;
   try {
+    // Weights only the card uses aren't loaded by the page, so request them explicitly.
+    await Promise.all(['800 140px Inter', '700 76px Fraunces', '600 40px Fraunces'].map((f) => document.fonts.load(f)));
     await document.fonts?.ready;
   } catch {
     /* ignore */
@@ -64,7 +80,7 @@ export async function shareImage(picks: string[], restaurantName: string): Promi
   ctx.fillText(name.length > 26 ? name.slice(0, 25) + '…' : name, W / 2, 188);
 
   const score = formatStars(scoreHundredths(picks));
-  ctx.font = `700 150px ${serif}`;
+  ctx.font = `800 140px ${sans}`; // Fraunces turns hairline-thin at display sizes
   ctx.fillStyle = '#b8323a';
   ctx.fillText(score, W / 2 - 40, 355);
   ctx.font = `600 56px ${sans}`;
@@ -80,7 +96,10 @@ export async function shareImage(picks: string[], restaurantName: string): Promi
   );
 
   const dishes = orderedDishes(picks);
-  const imgs = await Promise.all(dishes.map((d) => (d.imageSrc ? loadImage(BASE + d.imageSrc) : Promise.resolve(null))));
+  const [imgs, placeholders] = await Promise.all([
+    Promise.all(dishes.map((d) => (d.imageSrc ? loadImage(BASE + d.imageSrc) : Promise.resolve(null)))),
+    Promise.all(dishes.map((d) => loadImage(placeholderSrc(d.course)))),
+  ]);
   const rowH = 160;
   let y = 480;
   dishes.forEach((d, i) => {
@@ -97,6 +116,9 @@ export async function shareImage(picks: string[], restaurantName: string): Promi
       ctx.clip();
       ctx.drawImage(img, cx - 72, cy - 72, 144, 144);
       ctx.restore();
+    } else if (placeholders[i]) {
+      // Real art failed or doesn't exist yet: draw the course illustration, as in the game.
+      ctx.drawImage(placeholders[i]!, cx - 72, cy - 72, 144, 144);
     } else {
       ctx.fillStyle = '#ffffff';
       ctx.beginPath();

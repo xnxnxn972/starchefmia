@@ -23,7 +23,7 @@ function Plate({ bowl }: { bowl?: boolean }) {
 /** Course-level illustration used wherever a dish has no production art yet. */
 export function CoursePlaceholder({ course }: { course: Course }) {
   return (
-    <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" className="art-svg">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true" focusable="false" className="art-svg">
       <Plate bowl={course === 'soup'} />
       {course === 'appetizer' && (
         <g>

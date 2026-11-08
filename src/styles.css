@@ -1093,3 +1093,8 @@ textarea {
     font-size: 0.7rem;
   }
 }
+
+/* Fraunces goes hairline-thin at large optical sizes; keep the big score sturdy. */
+.score-num {
+  font-variation-settings: 'opsz' 36;
+}
