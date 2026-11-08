@@ -368,11 +368,8 @@ textarea {
 .dish-art img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* transparent cutouts with their own plate: never crop the vessel */
   display: block;
-  mix-blend-mode: multiply;
-  -webkit-mask-image: radial-gradient(circle closest-side, #000 86%, transparent 99%);
-  mask-image: radial-gradient(circle closest-side, #000 86%, transparent 99%);
 }
 .setting-label {
   margin-top: 2px;

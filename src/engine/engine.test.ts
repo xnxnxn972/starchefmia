@@ -37,6 +37,10 @@ describe('catalog', () => {
     }
   });
 
+  it('all 90 dishes have production art', () => {
+    expect(catalog.dishes.filter((d) => d.imageSrc && d.artStatus === 'ready').length).toBe(catalog.dishes.length);
+  });
+
   it('every imageSrc points at a real local asset', () => {
     for (const d of catalog.dishes) {
       if (d.imageSrc) {

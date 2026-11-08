@@ -98,6 +98,7 @@ export async function shareImage(picks: string[], restaurantName: string): Promi
   const dishes = orderedDishes(picks);
   const [imgs, placeholders] = await Promise.all([
     Promise.all(dishes.map((d) => (d.imageSrc ? loadImage(BASE + d.imageSrc) : Promise.resolve(null)))),
+    // Fallback art is only needed if a real image is missing; it's cheap, so prepare it for every row.
     Promise.all(dishes.map((d) => loadImage(placeholderSrc(d.course)))),
   ]);
   const rowH = 160;
@@ -110,12 +111,8 @@ export async function shareImage(picks: string[], restaurantName: string): Promi
     const cx = 160;
     const cy = y + (rowH - 18) / 2;
     if (img) {
-      ctx.save();
-      ctx.beginPath();
-      ctx.arc(cx, cy, 62, 0, Math.PI * 2);
-      ctx.clip();
-      ctx.drawImage(img, cx - 72, cy - 72, 144, 144);
-      ctx.restore();
+      // Transparent cutout that includes its plate: draw it whole, no clipping.
+      ctx.drawImage(img, cx - 76, cy - 76, 152, 152);
     } else if (placeholders[i]) {
       // Real art failed or doesn't exist yet: draw the course illustration, as in the game.
       ctx.drawImage(placeholders[i]!, cx - 72, cy - 72, 144, 144);

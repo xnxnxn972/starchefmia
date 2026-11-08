@@ -101,6 +101,8 @@ export function DishArt({ dish, decorative = true }: { dish: Dish; decorative?: 
       <img
         src={BASE + dish.imageSrc}
         alt={decorative ? '' : dish.imageAlt}
+        width={512}
+        height={512}
         loading="lazy"
         decoding="async"
         draggable={false}

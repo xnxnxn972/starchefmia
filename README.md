@@ -33,7 +33,7 @@ The build uses a relative base (`./`), so `dist/` works from any static host pat
 | `src/art/` | Chef Mia (SVG, 5 poses), course placeholders, empty plates, flags, ingredient icons. |
 | `src/config.ts` | `CHEF_NAME` and all timings. |
 | `src/copy.ts` | Mia's state-based lines, reserve messages and announcements. |
-| `public/dishes/` | Dish art (WebP, 384×384). |
+| `public/dishes/` | Dish art for all 90 dishes (transparent WebP, 512×512). |
 | `references/` | Original concept boards. Not loaded at runtime. |
 
 ## How the rules are implemented
@@ -65,10 +65,12 @@ Not tested: real iOS/Android devices, native share sheets, or a screen reader en
 
 ## Art coverage
 
-- **10 of 90 dishes have real art**, cut from the supplied `dish-art-examples.png` board using the brief's Appendix E ID mapping: it-appetizer-01, it-appetizer-02, fr-soup-02, fr-soup-03, it-salad-02, mx-salad-02, it-main-02, in-main-02, fr-dessert-02 and jp-dessert-02. They sit on an ivory background (not true alpha). A CSS multiply blend and a round mask fit them onto the linen.
-- **The other 80 dishes use one illustration per course** (an SVG placeholder for each of appetizer, soup, salad, main and dessert). Their names, prices and ratings are always shown as text. If an image fails to load, the dish falls back to the same placeholder.
-- **Chef Mia** is an original SVG character with 5 poses: welcome, curious, thoughtful, serving and celebrate. She's styled after the concept (curly dark hair, white jacket, aubergine apron), but she's a flat drawing, not the painted reference portrait.
-- To add art: drop `public/dishes/<id>.webp` (square, ideally 768×768 with alpha), then set that dish's `imageSrc` to `"dishes/<id>.webp"` and `artStatus` to `"ready"` in the catalog. The per-dish `imagePrompt` fields are ready to use for generation.
+- **All 90 dishes have production art** (5 Star Studios dish art v1, 8 Nov 2026). Each was generated on its own as a transparent cutout with its plate or bowl. The originals were 1254×1254 RGBA PNGs (about 1.4 MB each, 123 MB in total). The game ships them as **512×512 WebP with alpha** in `public/dishes/<id>.webp`, about 44 KB each and 3.9 MB for all 90. The browser loads them lazily, only when a dish appears.
+- The art fields in the catalog (`imageSrc`, `imageAlt`, `imagePrompt`, `artStatus`) come from the art package's catalog. `imageSrc` stays relative (`dishes/<id>.webp`, not the package's `/assets/...`) so the GitHub Pages subfolder works. All other gameplay data is unchanged.
+- `references/asset-manifest.json` (hashes and sizes of the source PNGs) and `references/generation-prompts.json` are kept so future art can match the style. The source PNGs aren't in the repo.
+- The course placeholders in `src/art/FoodArt.tsx` are kept only as a fallback if an image fails to load. Unfilled courses still show an empty plate.
+- **Chef Mia** is an original SVG character with 5 poses (welcome, curious, thoughtful, serving, celebrate).
+- To replace a dish's art: export a square transparent PNG and convert it to 512×512 WebP at quality 82, saved over `public/dishes/<id>.webp`.
 
 ## Not in this version (by design)
 

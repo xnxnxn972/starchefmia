@@ -1,0 +1,1556 @@
+{
+  "schemaVersion": 1,
+  "gameTitle": "5-Star Chef Restaurant",
+  "studio": "5 Star Studios",
+  "sourceCatalogVersion": "chef-v2-2026-11-08",
+  "assetVersion": "chef-dishes-production-v1-2026-11-08",
+  "assetCount": 90,
+  "format": "PNG",
+  "dimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "colorMode": "RGBA",
+  "background": "transparent",
+  "plateIncluded": true,
+  "generationMethod": "Each dish generated individually with built-in image generation; no reference-sheet crops.",
+  "validation": {
+    "allCatalogIdsCovered": true,
+    "allImagesDecode": true,
+    "allImagesHaveAlpha": true,
+    "allFilesUnique": true,
+    "visualReview": "All 90 assets reviewed against their dish names and catalog IDs."
+  },
+  "assets": [
+    {
+      "id": "it-appetizer-01",
+      "name": "Tomato Bruschetta",
+      "cuisine": "Italian",
+      "course": "appetizer",
+      "filename": "assets/dishes/it-appetizer-01.png",
+      "imageSrc": "/assets/dishes/it-appetizer-01.png",
+      "bytes": 1570169,
+      "sha256": "ef1bc4fb8a489708cd937b7f5703209ddf706a3c1a770c71bca645d40e22fa07",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "it-appetizer-02",
+      "name": "Beef Carpaccio",
+      "cuisine": "Italian",
+      "course": "appetizer",
+      "filename": "assets/dishes/it-appetizer-02.png",
+      "imageSrc": "/assets/dishes/it-appetizer-02.png",
+      "bytes": 1716262,
+      "sha256": "51fde9a88cd89571d6453d0622a395be9662f1c5041890f065c040123ac5ddc8",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "it-appetizer-03",
+      "name": "Mushroom Arancini",
+      "cuisine": "Italian",
+      "course": "appetizer",
+      "filename": "assets/dishes/it-appetizer-03.png",
+      "imageSrc": "/assets/dishes/it-appetizer-03.png",
+      "bytes": 1807440,
+      "sha256": "a2ccbc19c714d362edb65acf1b2c3cd666574b5da84afb2621384e4e0a6c0299",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "it-soup-01",
+      "name": "Minestrone",
+      "cuisine": "Italian",
+      "course": "soup",
+      "filename": "assets/dishes/it-soup-01.png",
+      "imageSrc": "/assets/dishes/it-soup-01.png",
+      "bytes": 1361883,
+      "sha256": "53f7377df8bfbb9a882da9eadc45553e74b906c8d0bc1a84c0e112a01234a865",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "it-soup-02",
+      "name": "Creamy Tomato Soup",
+      "cuisine": "Italian",
+      "course": "soup",
+      "filename": "assets/dishes/it-soup-02.png",
+      "imageSrc": "/assets/dishes/it-soup-02.png",
+      "bytes": 1207844,
+      "sha256": "f62d4679b13489315a092a186e7ffd891aa9e365da6f7ab16f3cf2aeb3ff03f4",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "it-soup-03",
+      "name": "Creamy Porcini Soup",
+      "cuisine": "Italian",
+      "course": "soup",
+      "filename": "assets/dishes/it-soup-03.png",
+      "imageSrc": "/assets/dishes/it-soup-03.png",
+      "bytes": 1208321,
+      "sha256": "a7e15751e72c356133e07149b305a19cc0672f7f398de02bd2bf46339de1d576",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "it-salad-01",
+      "name": "Lemon Arugula Salad",
+      "cuisine": "Italian",
+      "course": "salad",
+      "filename": "assets/dishes/it-salad-01.png",
+      "imageSrc": "/assets/dishes/it-salad-01.png",
+      "bytes": 1520293,
+      "sha256": "734d28cb78ed38999e85f64ed03ed08d7577fc9b56ce15e123be56e289304778",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "it-salad-02",
+      "name": "Caprese Salad",
+      "cuisine": "Italian",
+      "course": "salad",
+      "filename": "assets/dishes/it-salad-02.png",
+      "imageSrc": "/assets/dishes/it-salad-02.png",
+      "bytes": 1391477,
+      "sha256": "4d928cd2990839c25124705fc193dd059b0d75f97ab9f8c34bfaaf28fb77dd42",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "it-salad-03",
+      "name": "Steak and Arugula Salad",
+      "cuisine": "Italian",
+      "course": "salad",
+      "filename": "assets/dishes/it-salad-03.png",
+      "imageSrc": "/assets/dishes/it-salad-03.png",
+      "bytes": 1841922,
+      "sha256": "8d9764a57976237df26d3734f235a9343ee7c276ed0cffe8c971cf669fba69a2",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "it-main-01",
+      "name": "Spaghetti Pomodoro",
+      "cuisine": "Italian",
+      "course": "main",
+      "filename": "assets/dishes/it-main-01.png",
+      "imageSrc": "/assets/dishes/it-main-01.png",
+      "bytes": 1383852,
+      "sha256": "6d4016ba567bdd6ccf892d2b94356fc04391ed1e9552bc07badead56d3782040",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "it-main-02",
+      "name": "Lemon Roast Chicken",
+      "cuisine": "Italian",
+      "course": "main",
+      "filename": "assets/dishes/it-main-02.png",
+      "imageSrc": "/assets/dishes/it-main-02.png",
+      "bytes": 1548860,
+      "sha256": "66c247f923d67731ea01f426117314f1801e95fbcfb9c7d06c5ab3bb0787bfdd",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "it-main-03",
+      "name": "Italian Braised Beef",
+      "cuisine": "Italian",
+      "course": "main",
+      "filename": "assets/dishes/it-main-03.png",
+      "imageSrc": "/assets/dishes/it-main-03.png",
+      "bytes": 1645556,
+      "sha256": "6f7308def01e52597b00c717ccc75f2c80b1601078a3a26a87b73e08986d0749",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "it-dessert-01",
+      "name": "Lemon Sorbet",
+      "cuisine": "Italian",
+      "course": "dessert",
+      "filename": "assets/dishes/it-dessert-01.png",
+      "imageSrc": "/assets/dishes/it-dessert-01.png",
+      "bytes": 1195566,
+      "sha256": "78decacd82db47e696c0fb58a1d1ccc963abcad8705543ac4b5e2bdae19f82f0",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "it-dessert-02",
+      "name": "Panna Cotta",
+      "cuisine": "Italian",
+      "course": "dessert",
+      "filename": "assets/dishes/it-dessert-02.png",
+      "imageSrc": "/assets/dishes/it-dessert-02.png",
+      "bytes": 1263207,
+      "sha256": "4471f759d671b6c9af5f3963659ea802f9a69091fc34537464b561351fe3ed63",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "it-dessert-03",
+      "name": "Tiramisu",
+      "cuisine": "Italian",
+      "course": "dessert",
+      "filename": "assets/dishes/it-dessert-03.png",
+      "imageSrc": "/assets/dishes/it-dessert-03.png",
+      "bytes": 1536863,
+      "sha256": "8c46c6f7f3284f1e107f1e34f43c9d8e2fb22c781815f51a52537faa20aba7cb",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "fr-appetizer-01",
+      "name": "Goat Cheese Toast",
+      "cuisine": "French",
+      "course": "appetizer",
+      "filename": "assets/dishes/fr-appetizer-01.png",
+      "imageSrc": "/assets/dishes/fr-appetizer-01.png",
+      "bytes": 1642858,
+      "sha256": "eaa1ec77cfb9eaf8f08f8f174277dbd7455f09b415e6cc4abe65a6d00ad360a2",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "fr-appetizer-02",
+      "name": "Cheese Gougeres",
+      "cuisine": "French",
+      "course": "appetizer",
+      "filename": "assets/dishes/fr-appetizer-02.png",
+      "imageSrc": "/assets/dishes/fr-appetizer-02.png",
+      "bytes": 1428088,
+      "sha256": "50e9b0080540b602718e338e75d94b3ccff84e7fa130b7825937db79c48df543",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "fr-appetizer-03",
+      "name": "Salmon Tartare",
+      "cuisine": "French",
+      "course": "appetizer",
+      "filename": "assets/dishes/fr-appetizer-03.png",
+      "imageSrc": "/assets/dishes/fr-appetizer-03.png",
+      "bytes": 1214964,
+      "sha256": "6b38886b01c228b52a2cac06105925987dffb6758e3deb346d2ab9b39caebc5f",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "fr-soup-01",
+      "name": "Potato and Leek Soup",
+      "cuisine": "French",
+      "course": "soup",
+      "filename": "assets/dishes/fr-soup-01.png",
+      "imageSrc": "/assets/dishes/fr-soup-01.png",
+      "bytes": 1289645,
+      "sha256": "212738726f4cedc88a33581af6698fc0a27cd58e4acc3e03cf372d2d2a7e3c74",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "fr-soup-02",
+      "name": "French Onion Soup",
+      "cuisine": "French",
+      "course": "soup",
+      "filename": "assets/dishes/fr-soup-02.png",
+      "imageSrc": "/assets/dishes/fr-soup-02.png",
+      "bytes": 1307730,
+      "sha256": "72eed75145a501fefc141379ed0c8007acafdbb98d35e4e4cdb817a69c753eea",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "fr-soup-03",
+      "name": "Mushroom Veloute",
+      "cuisine": "French",
+      "course": "soup",
+      "filename": "assets/dishes/fr-soup-03.png",
+      "imageSrc": "/assets/dishes/fr-soup-03.png",
+      "bytes": 1083839,
+      "sha256": "3f8cf30ebe76490e08477d209859e5ecea15646ee8fc008caf3b81f4c66e80cd",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "fr-salad-01",
+      "name": "Cucumber and Dill Salad",
+      "cuisine": "French",
+      "course": "salad",
+      "filename": "assets/dishes/fr-salad-01.png",
+      "imageSrc": "/assets/dishes/fr-salad-01.png",
+      "bytes": 1569766,
+      "sha256": "6de0f0dc16fb5241bfb6955a907ee62d6d2e56ae2c1ce5de42a1ad6c6e11a393",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "fr-salad-02",
+      "name": "Bistro Egg Salad",
+      "cuisine": "French",
+      "course": "salad",
+      "filename": "assets/dishes/fr-salad-02.png",
+      "imageSrc": "/assets/dishes/fr-salad-02.png",
+      "bytes": 1580160,
+      "sha256": "a92d854715e8be3a912c65a4e932788ba85526b20b1200da6896c48055a30ed5",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "fr-salad-03",
+      "name": "Nicoise Salad",
+      "cuisine": "French",
+      "course": "salad",
+      "filename": "assets/dishes/fr-salad-03.png",
+      "imageSrc": "/assets/dishes/fr-salad-03.png",
+      "bytes": 1441446,
+      "sha256": "edc7595f51a4eee251492a9875f03bc2f3c26d33cccf2da7e11d5f73c7b17069",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "fr-main-01",
+      "name": "Mushroom Galette",
+      "cuisine": "French",
+      "course": "main",
+      "filename": "assets/dishes/fr-main-01.png",
+      "imageSrc": "/assets/dishes/fr-main-01.png",
+      "bytes": 1982337,
+      "sha256": "d57e813a65d3d006439c5f56045e5e03fbd26799b1c1aa0cd10d3bf60294a6bb",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "fr-main-02",
+      "name": "Chicken Fricassee",
+      "cuisine": "French",
+      "course": "main",
+      "filename": "assets/dishes/fr-main-02.png",
+      "imageSrc": "/assets/dishes/fr-main-02.png",
+      "bytes": 1228163,
+      "sha256": "2fbdf1c0f86c34065d244213b331a81661da77abac52e239df4d5f0e3543ce4e",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "fr-main-03",
+      "name": "Beef Bourguignon",
+      "cuisine": "French",
+      "course": "main",
+      "filename": "assets/dishes/fr-main-03.png",
+      "imageSrc": "/assets/dishes/fr-main-03.png",
+      "bytes": 1346901,
+      "sha256": "42137e3459d9b5f52a73cddffea0807a76064d09ed3763311cdf2ec0bfc25fe3",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "fr-dessert-01",
+      "name": "Apple Compote",
+      "cuisine": "French",
+      "course": "dessert",
+      "filename": "assets/dishes/fr-dessert-01.png",
+      "imageSrc": "/assets/dishes/fr-dessert-01.png",
+      "bytes": 1200619,
+      "sha256": "56117c5e235305575cd187204c03b7320a0eb1d16c6f0c86cf7f1adce756c93e",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "fr-dessert-02",
+      "name": "Chocolate Mousse",
+      "cuisine": "French",
+      "course": "dessert",
+      "filename": "assets/dishes/fr-dessert-02.png",
+      "imageSrc": "/assets/dishes/fr-dessert-02.png",
+      "bytes": 1302765,
+      "sha256": "d6a2bc92960f9995dc970913b27d52e8a23ce9cf8d52a4adbab563c0cae6a473",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "fr-dessert-03",
+      "name": "Creme Brulee",
+      "cuisine": "French",
+      "course": "dessert",
+      "filename": "assets/dishes/fr-dessert-03.png",
+      "imageSrc": "/assets/dishes/fr-dessert-03.png",
+      "bytes": 1239607,
+      "sha256": "e726bb87d25fc81daa8fbbb4546f009971afc93a35e85014606de8df4682d99d",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "jp-appetizer-01",
+      "name": "Edamame",
+      "cuisine": "Japanese",
+      "course": "appetizer",
+      "filename": "assets/dishes/jp-appetizer-01.png",
+      "imageSrc": "/assets/dishes/jp-appetizer-01.png",
+      "bytes": 1494044,
+      "sha256": "c923b6f525847ea70f3692f1dda74429de52a7d395b665748c986838dc58a63b",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "jp-appetizer-02",
+      "name": "Vegetable Gyoza",
+      "cuisine": "Japanese",
+      "course": "appetizer",
+      "filename": "assets/dishes/jp-appetizer-02.png",
+      "imageSrc": "/assets/dishes/jp-appetizer-02.png",
+      "bytes": 1446907,
+      "sha256": "09ccf1d05399db556a436783979c632416e4175b2116f019e1331b7469767f4a",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "jp-appetizer-03",
+      "name": "Shrimp Tempura",
+      "cuisine": "Japanese",
+      "course": "appetizer",
+      "filename": "assets/dishes/jp-appetizer-03.png",
+      "imageSrc": "/assets/dishes/jp-appetizer-03.png",
+      "bytes": 1474934,
+      "sha256": "3a3073fabb434953a5401f071da9250564d75039e47ce2b9604b5cbcdee13f2b",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "jp-soup-01",
+      "name": "Miso Soup",
+      "cuisine": "Japanese",
+      "course": "soup",
+      "filename": "assets/dishes/jp-soup-01.png",
+      "imageSrc": "/assets/dishes/jp-soup-01.png",
+      "bytes": 1321589,
+      "sha256": "e1b71272981a45f2a64be80ca049a40f1916bb7129d4ffc45a656795af02c4a6",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "jp-soup-02",
+      "name": "Corn Potage",
+      "cuisine": "Japanese",
+      "course": "soup",
+      "filename": "assets/dishes/jp-soup-02.png",
+      "imageSrc": "/assets/dishes/jp-soup-02.png",
+      "bytes": 1098424,
+      "sha256": "8daf3ede0f300751d42164be7595ab641ba0fa490908f3d56a76c38374064a0b",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "jp-soup-03",
+      "name": "Chicken Mushroom Broth",
+      "cuisine": "Japanese",
+      "course": "soup",
+      "filename": "assets/dishes/jp-soup-03.png",
+      "imageSrc": "/assets/dishes/jp-soup-03.png",
+      "bytes": 1175690,
+      "sha256": "9fef5aaa0534fb42d9284978c0424d1d34b6237b660bf1c4183e1bbec0db8089",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "jp-salad-01",
+      "name": "Sunomono",
+      "cuisine": "Japanese",
+      "course": "salad",
+      "filename": "assets/dishes/jp-salad-01.png",
+      "imageSrc": "/assets/dishes/jp-salad-01.png",
+      "bytes": 1321380,
+      "sha256": "3c262d5dbbd17f53c9bc617c90238bafe90e520c8154c1ca4e51002f377c7175",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "jp-salad-02",
+      "name": "Spinach Sesame Salad",
+      "cuisine": "Japanese",
+      "course": "salad",
+      "filename": "assets/dishes/jp-salad-02.png",
+      "imageSrc": "/assets/dishes/jp-salad-02.png",
+      "bytes": 1401606,
+      "sha256": "5dfe05ede9322b3eec930518073749bc83fdfb850087ae10e65bfdab0326077f",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "jp-salad-03",
+      "name": "Sesame Chicken Salad",
+      "cuisine": "Japanese",
+      "course": "salad",
+      "filename": "assets/dishes/jp-salad-03.png",
+      "imageSrc": "/assets/dishes/jp-salad-03.png",
+      "bytes": 1782948,
+      "sha256": "e59ba90796988f1aa0470b09ddda2ee4f8580f23f4c1b97d401bad873ec1b77b",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "jp-main-01",
+      "name": "Tamagoyaki Rice Bowl",
+      "cuisine": "Japanese",
+      "course": "main",
+      "filename": "assets/dishes/jp-main-01.png",
+      "imageSrc": "/assets/dishes/jp-main-01.png",
+      "bytes": 1389913,
+      "sha256": "31dc4ac24e32828bdfee4f7f07accbe5bac4f0e2715c0572622b5706a6e2734e",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "jp-main-02",
+      "name": "Teriyaki Chicken Bowl",
+      "cuisine": "Japanese",
+      "course": "main",
+      "filename": "assets/dishes/jp-main-02.png",
+      "imageSrc": "/assets/dishes/jp-main-02.png",
+      "bytes": 1386553,
+      "sha256": "4b26f35ac2af5a89ce2c7d5ee5d4258ca5ae6c1bf9a110eac5fca2f9dfc8c5ce",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "jp-main-03",
+      "name": "Salmon Teriyaki Bowl",
+      "cuisine": "Japanese",
+      "course": "main",
+      "filename": "assets/dishes/jp-main-03.png",
+      "imageSrc": "/assets/dishes/jp-main-03.png",
+      "bytes": 1528227,
+      "sha256": "13b64a2e87c2ae9210cf6a54466d7c4bd084e2074cbe8fba3373c96a2d529400",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "jp-dessert-01",
+      "name": "Mango Mochi",
+      "cuisine": "Japanese",
+      "course": "dessert",
+      "filename": "assets/dishes/jp-dessert-01.png",
+      "imageSrc": "/assets/dishes/jp-dessert-01.png",
+      "bytes": 1353328,
+      "sha256": "053ba4655785b9f6b5db85d3c8cc3375a814544a1088bf34b499aa5d90a295c6",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "jp-dessert-02",
+      "name": "Strawberry Daifuku",
+      "cuisine": "Japanese",
+      "course": "dessert",
+      "filename": "assets/dishes/jp-dessert-02.png",
+      "imageSrc": "/assets/dishes/jp-dessert-02.png",
+      "bytes": 1148973,
+      "sha256": "7493796ed167b8a005766bbe22f15807b699ad219db885a738988b65a63a1fc6",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "jp-dessert-03",
+      "name": "Chocolate Mochi",
+      "cuisine": "Japanese",
+      "course": "dessert",
+      "filename": "assets/dishes/jp-dessert-03.png",
+      "imageSrc": "/assets/dishes/jp-dessert-03.png",
+      "bytes": 1399462,
+      "sha256": "22da7303341788d83b5dce93d7bf1f04e047f0c674d287331c9c84f1ecad6f13",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "in-appetizer-01",
+      "name": "Lentil Papadums",
+      "cuisine": "Indian",
+      "course": "appetizer",
+      "filename": "assets/dishes/in-appetizer-01.png",
+      "imageSrc": "/assets/dishes/in-appetizer-01.png",
+      "bytes": 1572523,
+      "sha256": "f5f9b1b71093098582c3119215179536f371c429d92888d2329a59b6691c85bd",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "in-appetizer-02",
+      "name": "Yogurt Aloo Chaat",
+      "cuisine": "Indian",
+      "course": "appetizer",
+      "filename": "assets/dishes/in-appetizer-02.png",
+      "imageSrc": "/assets/dishes/in-appetizer-02.png",
+      "bytes": 1352900,
+      "sha256": "e52a18beffbe30ab0dea5e5717da08fec71f13b9db75c920242bb67bdb0c156c",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "in-appetizer-03",
+      "name": "Paneer Tikka",
+      "cuisine": "Indian",
+      "course": "appetizer",
+      "filename": "assets/dishes/in-appetizer-03.png",
+      "imageSrc": "/assets/dishes/in-appetizer-03.png",
+      "bytes": 1690993,
+      "sha256": "27be976220d2f816649a265ad0795bd4861604055e88def5090a87e986c097fa",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "in-soup-01",
+      "name": "Tomato Shorba",
+      "cuisine": "Indian",
+      "course": "soup",
+      "filename": "assets/dishes/in-soup-01.png",
+      "imageSrc": "/assets/dishes/in-soup-01.png",
+      "bytes": 1243865,
+      "sha256": "0dec3085b7c932cde9724b6ece49fd39466d0930297b4041305cfac056dbbd64",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "in-soup-02",
+      "name": "Lentil Carrot Soup",
+      "cuisine": "Indian",
+      "course": "soup",
+      "filename": "assets/dishes/in-soup-02.png",
+      "imageSrc": "/assets/dishes/in-soup-02.png",
+      "bytes": 1174976,
+      "sha256": "de0e4420e5cbbe89857fdd3934903367ea08b59df983f1cdb9f06eb74daa3fa6",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "in-soup-03",
+      "name": "Coconut Chicken Soup",
+      "cuisine": "Indian",
+      "course": "soup",
+      "filename": "assets/dishes/in-soup-03.png",
+      "imageSrc": "/assets/dishes/in-soup-03.png",
+      "bytes": 1329065,
+      "sha256": "522e7f83206e6bdb647d543e4a8a1d49fb6c1097d1b86805860777e50f991cb6",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "in-salad-01",
+      "name": "Kachumber",
+      "cuisine": "Indian",
+      "course": "salad",
+      "filename": "assets/dishes/in-salad-01.png",
+      "imageSrc": "/assets/dishes/in-salad-01.png",
+      "bytes": 1456620,
+      "sha256": "c21bc589cd310922364924f655904c5ba3a46dfe03ada8a6a99ac76b1e96991d",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "in-salad-02",
+      "name": "Chickpea Salad",
+      "cuisine": "Indian",
+      "course": "salad",
+      "filename": "assets/dishes/in-salad-02.png",
+      "imageSrc": "/assets/dishes/in-salad-02.png",
+      "bytes": 1259874,
+      "sha256": "9bafe8f759695d8679621c5c6f1126019af8c24a056d99426a52088fe8809bf3",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "in-salad-03",
+      "name": "Paneer Spinach Salad",
+      "cuisine": "Indian",
+      "course": "salad",
+      "filename": "assets/dishes/in-salad-03.png",
+      "imageSrc": "/assets/dishes/in-salad-03.png",
+      "bytes": 1794916,
+      "sha256": "27768d2f6ea6bd1ef717e5227889c9448a0776f7deb1d759a7ef86fb00e651c4",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "in-main-01",
+      "name": "Chana Masala with Rice",
+      "cuisine": "Indian",
+      "course": "main",
+      "filename": "assets/dishes/in-main-01.png",
+      "imageSrc": "/assets/dishes/in-main-01.png",
+      "bytes": 1596685,
+      "sha256": "73335cec4bbb2390c876c6af60ab4d09448f201b5820b4155b692fbf2773be36",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "in-main-02",
+      "name": "Butter Chicken",
+      "cuisine": "Indian",
+      "course": "main",
+      "filename": "assets/dishes/in-main-02.png",
+      "imageSrc": "/assets/dishes/in-main-02.png",
+      "bytes": 1116712,
+      "sha256": "cc6068982f44ba1d23be6b5ef98a7882d0e3a5b5d0f198051a47c884b8e39a7e",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "in-main-03",
+      "name": "Goan Fish Curry",
+      "cuisine": "Indian",
+      "course": "main",
+      "filename": "assets/dishes/in-main-03.png",
+      "imageSrc": "/assets/dishes/in-main-03.png",
+      "bytes": 1257261,
+      "sha256": "ecf7b82c4a7510d271bfaefb63292431257c9146a728ce685817e4b71d84f642",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "in-dessert-01",
+      "name": "Banana Cardamom Yogurt",
+      "cuisine": "Indian",
+      "course": "dessert",
+      "filename": "assets/dishes/in-dessert-01.png",
+      "imageSrc": "/assets/dishes/in-dessert-01.png",
+      "bytes": 1312497,
+      "sha256": "7fe9a490c3d8f97724d48443f55de67d2c5e38173ff8a63435926a000a1e4972",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "in-dessert-02",
+      "name": "Mango Shrikhand",
+      "cuisine": "Indian",
+      "course": "dessert",
+      "filename": "assets/dishes/in-dessert-02.png",
+      "imageSrc": "/assets/dishes/in-dessert-02.png",
+      "bytes": 1071924,
+      "sha256": "728ab4dcded0363b6f1ac48294db1ec0813c103582a54ab1124762d9311d245b",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "in-dessert-03",
+      "name": "Saffron Kulfi",
+      "cuisine": "Indian",
+      "course": "dessert",
+      "filename": "assets/dishes/in-dessert-03.png",
+      "imageSrc": "/assets/dishes/in-dessert-03.png",
+      "bytes": 1323765,
+      "sha256": "de71f5369d2f022fc6b0fbc92021f2a76340dd8235ea2548082dfca35cdfc0fc",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "mx-appetizer-01",
+      "name": "Bean Tostadas",
+      "cuisine": "Mexican",
+      "course": "appetizer",
+      "filename": "assets/dishes/mx-appetizer-01.png",
+      "imageSrc": "/assets/dishes/mx-appetizer-01.png",
+      "bytes": 1682602,
+      "sha256": "166f58f6841f6ea7f5109da742f507c60ce9ade592d21bc2255a5aa8e1369c62",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "mx-appetizer-02",
+      "name": "Cheese Quesadillas",
+      "cuisine": "Mexican",
+      "course": "appetizer",
+      "filename": "assets/dishes/mx-appetizer-02.png",
+      "imageSrc": "/assets/dishes/mx-appetizer-02.png",
+      "bytes": 1371663,
+      "sha256": "12c25cfb428850cb4cdbd9eae2721bd4a8b2bb323612a19a3e1e651028b4b0bd",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "mx-appetizer-03",
+      "name": "Shrimp Tostadas",
+      "cuisine": "Mexican",
+      "course": "appetizer",
+      "filename": "assets/dishes/mx-appetizer-03.png",
+      "imageSrc": "/assets/dishes/mx-appetizer-03.png",
+      "bytes": 1508186,
+      "sha256": "875a308524059acd3f464645e549e1e8bd5ea85079f3cbb6cc2a84ec45d76c9e",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "mx-soup-01",
+      "name": "Sopa de Fideo",
+      "cuisine": "Mexican",
+      "course": "soup",
+      "filename": "assets/dishes/mx-soup-01.png",
+      "imageSrc": "/assets/dishes/mx-soup-01.png",
+      "bytes": 1056281,
+      "sha256": "c2cd3e404d7cfb5a9e34b97a408cc5aaf05af2ef8f161210720658c75d92570e",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "mx-soup-02",
+      "name": "Chicken Tortilla Soup",
+      "cuisine": "Mexican",
+      "course": "soup",
+      "filename": "assets/dishes/mx-soup-02.png",
+      "imageSrc": "/assets/dishes/mx-soup-02.png",
+      "bytes": 1237963,
+      "sha256": "b18b1c47cc2e8e9b563fe7bd0059d1aa926f7b9d4a144a2a1f99526b8faeea8d",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "mx-soup-03",
+      "name": "Shrimp Corn Chowder",
+      "cuisine": "Mexican",
+      "course": "soup",
+      "filename": "assets/dishes/mx-soup-03.png",
+      "imageSrc": "/assets/dishes/mx-soup-03.png",
+      "bytes": 1319413,
+      "sha256": "37ec9a11b2c413f35727256b061a77ac583330a6dde46d686ffb97526decc10e",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "mx-salad-01",
+      "name": "Jicama Cucumber Salad",
+      "cuisine": "Mexican",
+      "course": "salad",
+      "filename": "assets/dishes/mx-salad-01.png",
+      "imageSrc": "/assets/dishes/mx-salad-01.png",
+      "bytes": 1324431,
+      "sha256": "25809d47a63db8761647b592c6aeed6d444c823250e333b5cd2c8e51688d234d",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "mx-salad-02",
+      "name": "Mexican Corn Salad",
+      "cuisine": "Mexican",
+      "course": "salad",
+      "filename": "assets/dishes/mx-salad-02.png",
+      "imageSrc": "/assets/dishes/mx-salad-02.png",
+      "bytes": 1350715,
+      "sha256": "a8d0c643450b7c4929949e7c66c12534a208ba6720d5a0ecd9dad83e36ee0456",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "mx-salad-03",
+      "name": "Chicken Black Bean Salad",
+      "cuisine": "Mexican",
+      "course": "salad",
+      "filename": "assets/dishes/mx-salad-03.png",
+      "imageSrc": "/assets/dishes/mx-salad-03.png",
+      "bytes": 1567226,
+      "sha256": "f71fb0d0ac65051217dfd5ef0062abda3d1c897e3152a5c9bfe5ee42fe2898db",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "mx-main-01",
+      "name": "Bean Enchiladas",
+      "cuisine": "Mexican",
+      "course": "main",
+      "filename": "assets/dishes/mx-main-01.png",
+      "imageSrc": "/assets/dishes/mx-main-01.png",
+      "bytes": 1547106,
+      "sha256": "9d560dc2b1c3e820469bac3a461abf0900f4513504944956b87e14c633780ba8",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "mx-main-02",
+      "name": "Chicken Mole with Rice",
+      "cuisine": "Mexican",
+      "course": "main",
+      "filename": "assets/dishes/mx-main-02.png",
+      "imageSrc": "/assets/dishes/mx-main-02.png",
+      "bytes": 1463537,
+      "sha256": "f032fad19fcab9d81bd7010c8a964f48fede9f827a93349b4aeb0cd79fa3fcb5",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "mx-main-03",
+      "name": "Beef Barbacoa Tacos",
+      "cuisine": "Mexican",
+      "course": "main",
+      "filename": "assets/dishes/mx-main-03.png",
+      "imageSrc": "/assets/dishes/mx-main-03.png",
+      "bytes": 1763713,
+      "sha256": "8fc7f6b535ac59b99a034745317df81994c030d27d073f5fb2fbee7e68ca1c12",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "mx-dessert-01",
+      "name": "Cinnamon Bananas",
+      "cuisine": "Mexican",
+      "course": "dessert",
+      "filename": "assets/dishes/mx-dessert-01.png",
+      "imageSrc": "/assets/dishes/mx-dessert-01.png",
+      "bytes": 1415420,
+      "sha256": "58f9378d1fbd43174ddeafd00d1f7ed191cdcc783e675f5615182ed4fb6aa4c6",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "mx-dessert-02",
+      "name": "Coconut Rice Pudding",
+      "cuisine": "Mexican",
+      "course": "dessert",
+      "filename": "assets/dishes/mx-dessert-02.png",
+      "imageSrc": "/assets/dishes/mx-dessert-02.png",
+      "bytes": 1124066,
+      "sha256": "af24b7a58e78d6d6a6e9a5c29b2f10e280e1db14e7b3495e9d66cb9601d9b323",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "mx-dessert-03",
+      "name": "Chocolate Churros",
+      "cuisine": "Mexican",
+      "course": "dessert",
+      "filename": "assets/dishes/mx-dessert-03.png",
+      "imageSrc": "/assets/dishes/mx-dessert-03.png",
+      "bytes": 1403586,
+      "sha256": "211971078d17f6b011bebed43613ab515b5a2ff4d528e72e64adedf26273c82c",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "us-appetizer-01",
+      "name": "Corn Fritters",
+      "cuisine": "American",
+      "course": "appetizer",
+      "filename": "assets/dishes/us-appetizer-01.png",
+      "imageSrc": "/assets/dishes/us-appetizer-01.png",
+      "bytes": 1549356,
+      "sha256": "44c8ebbb73a8851aa24d08fc68d0ea3656214392d0405188a7978953433ac929",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "us-appetizer-02",
+      "name": "Stuffed Mushrooms",
+      "cuisine": "American",
+      "course": "appetizer",
+      "filename": "assets/dishes/us-appetizer-02.png",
+      "imageSrc": "/assets/dishes/us-appetizer-02.png",
+      "bytes": 1680524,
+      "sha256": "54c3f3c28601fa43e333081f35540ab640db8c0717353dc9b16fd4f8bec8c963",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "us-appetizer-03",
+      "name": "Shrimp Cakes",
+      "cuisine": "American",
+      "course": "appetizer",
+      "filename": "assets/dishes/us-appetizer-03.png",
+      "imageSrc": "/assets/dishes/us-appetizer-03.png",
+      "bytes": 1419964,
+      "sha256": "4ec7bc995c9eba8846a8a5333b923ac18604f3d227e04f64b8518e2d652641bf",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "us-soup-01",
+      "name": "Creamy Tomato Soup",
+      "cuisine": "American",
+      "course": "soup",
+      "filename": "assets/dishes/us-soup-01.png",
+      "imageSrc": "/assets/dishes/us-soup-01.png",
+      "bytes": 1272829,
+      "sha256": "7505a5daba26e218f348c509fab58282445e758535449646d0c03887fbd6d23b",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "us-soup-02",
+      "name": "Corn Chowder",
+      "cuisine": "American",
+      "course": "soup",
+      "filename": "assets/dishes/us-soup-02.png",
+      "imageSrc": "/assets/dishes/us-soup-02.png",
+      "bytes": 1377151,
+      "sha256": "87d71b5fcdff2c3bada099f2b26cc9b42d51feb40298da0802b3b8e64862389f",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "us-soup-03",
+      "name": "Chicken Wild Rice Soup",
+      "cuisine": "American",
+      "course": "soup",
+      "filename": "assets/dishes/us-soup-03.png",
+      "imageSrc": "/assets/dishes/us-soup-03.png",
+      "bytes": 1393626,
+      "sha256": "db734bf8ad3e189ed64082d62e7afe0f6eedc2573d76861403272d4471ae5b9b",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "us-salad-01",
+      "name": "Garden Salad",
+      "cuisine": "American",
+      "course": "salad",
+      "filename": "assets/dishes/us-salad-01.png",
+      "imageSrc": "/assets/dishes/us-salad-01.png",
+      "bytes": 1516042,
+      "sha256": "e209cb1e7318820ea0d19789eb8712a8c116b7bbeadf6ba10efe6a9888142d01",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "us-salad-02",
+      "name": "Apple Walnut Salad",
+      "cuisine": "American",
+      "course": "salad",
+      "filename": "assets/dishes/us-salad-02.png",
+      "imageSrc": "/assets/dishes/us-salad-02.png",
+      "bytes": 1469824,
+      "sha256": "7a18336d33b462f17aa30c8a88a9cb42b54252703d99cc7a47788aee30af9f7e",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "us-salad-03",
+      "name": "Grilled Chicken Salad",
+      "cuisine": "American",
+      "course": "salad",
+      "filename": "assets/dishes/us-salad-03.png",
+      "imageSrc": "/assets/dishes/us-salad-03.png",
+      "bytes": 1655180,
+      "sha256": "258ead7496141a7c412e10ff8ed80e3efe23e7d6e0a481d876f94f2e1df2d0f4",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "us-main-01",
+      "name": "Mac and Cheese",
+      "cuisine": "American",
+      "course": "main",
+      "filename": "assets/dishes/us-main-01.png",
+      "imageSrc": "/assets/dishes/us-main-01.png",
+      "bytes": 1717737,
+      "sha256": "38637b7aedcf50d7cd857f8d6d67d6af1e20e71a9091d83d56a928f05e328187",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "us-main-02",
+      "name": "Roast Chicken with Mash",
+      "cuisine": "American",
+      "course": "main",
+      "filename": "assets/dishes/us-main-02.png",
+      "imageSrc": "/assets/dishes/us-main-02.png",
+      "bytes": 1551599,
+      "sha256": "0fb4bf720749eba824a1bdd5fdeab78bfd6e97caf63b44be6b169cb616e234a8",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "us-main-03",
+      "name": "Steak and Mash",
+      "cuisine": "American",
+      "course": "main",
+      "filename": "assets/dishes/us-main-03.png",
+      "imageSrc": "/assets/dishes/us-main-03.png",
+      "bytes": 1885337,
+      "sha256": "5709f17ef69ed22c8eb5015fb705855c90ef39b3fa2de139ef7fe859f4d04c91",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "us-dessert-01",
+      "name": "Baked Apples",
+      "cuisine": "American",
+      "course": "dessert",
+      "filename": "assets/dishes/us-dessert-01.png",
+      "imageSrc": "/assets/dishes/us-dessert-01.png",
+      "bytes": 1327355,
+      "sha256": "d89f5edcacf3fdfd00dcc7fcbb57cb9c9001aab075dde9a7294ffda40d8fd229",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "us-dessert-02",
+      "name": "Strawberry Shortcake",
+      "cuisine": "American",
+      "course": "dessert",
+      "filename": "assets/dishes/us-dessert-02.png",
+      "imageSrc": "/assets/dishes/us-dessert-02.png",
+      "bytes": 1461256,
+      "sha256": "f9cfdf420ae06ce70074ad84523882afe3341f29fbe5b0c88b0ab724b27f2ab3",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "us-dessert-03",
+      "name": "Chocolate Brownie Sundae",
+      "cuisine": "American",
+      "course": "dessert",
+      "filename": "assets/dishes/us-dessert-03.png",
+      "imageSrc": "/assets/dishes/us-dessert-03.png",
+      "bytes": 1246400,
+      "sha256": "a522d268c569d46f7efda73b0c6a6c204d3ce03d04ca9643e3056f0260ea9c3b",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    }
+  ]
+}
