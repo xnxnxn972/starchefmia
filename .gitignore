@@ -1,3 +1,4 @@
+# dist/ is committed on purpose — GitHub Pages serves it at
+# /5-star-chef/dist/. Rebuild with `npm run build` before pushing.
 node_modules/
-dist/
 .claude/

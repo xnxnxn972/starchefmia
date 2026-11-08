@@ -18,6 +18,8 @@ npm run preview    # serve the production build
 
 The build uses a relative base (`./`), so `dist/` works from any static host path, such as a GitHub Pages subfolder.
 
+**Live:** https://xnxnxn972.github.io/gardening-tycoon/5-star-chef/dist/ — `dist/` is committed on purpose (same convention as Brick Tower Defenders). Run `npm run build` and commit `dist/` before pushing to `main`.
+
 ## Layout
 
 | Path | What it is |
