@@ -1487,8 +1487,9 @@ textarea {
     padding: 0 8px;
   }
 }
-/* Safety net for any width or large text setting: the pills give way, the buttons never
-   leave the screen, and nothing can make the page wider than the phone. */
+/* Safety net for any width or large text setting: the pills give way and the buttons never
+   leave the screen. (No overflow rule on <html>: combined with body's overflow-x it turns
+   the body into its own scroller, and the sticky top bar and Serve bar stop sticking.) */
 .topbar .pill {
   min-width: 0;
   flex-shrink: 1;
@@ -1496,9 +1497,6 @@ textarea {
 }
 .topbar-actions {
   flex-shrink: 0;
-}
-html {
-  overflow-x: clip;
 }
 /* Results menu table on very small phones: tighter cells, course names may wrap. */
 @media (max-width: 380px) {
