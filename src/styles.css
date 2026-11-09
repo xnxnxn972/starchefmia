@@ -1218,3 +1218,43 @@ textarea {
     display: inline;
   }
 }
+
+/* ---------- title screen ---------- */
+.intro-pitch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+/* Wide screens: scene + sample table on the left, pitch + Start on the right,
+   so the Start button is above the fold on laptop-height windows. */
+@media (min-width: 900px) {
+  .intro {
+    max-width: 1040px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 48px;
+    align-items: center;
+    padding-top: 24px;
+  }
+  .intro-scene {
+    width: auto;
+    margin: 0;
+  }
+  .intro-pitch {
+    padding: 24px 0;
+  }
+  .intro-pitch .tagline {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-top: 0;
+  }
+  .intro-pitch .intro-explain {
+    font-size: 1.1rem;
+  }
+  .intro .about {
+    grid-column: 1 / -1;
+    max-width: 720px;
+    justify-self: center;
+  }
+}

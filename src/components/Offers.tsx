@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { COURSE_LABEL, getDish } from '../engine/catalog';
 import { formatMoney, formatRating, isLegal, RunState } from '../engine/engine';
 import { DishArt } from '../art/FoodArt';
@@ -12,15 +11,10 @@ interface Props {
   onSelect: (id: string | null) => void;
 }
 
-const INITIAL = 3;
-
 export function Offers({ run, selected, disabled, onSelect }: Props) {
   const offer = run.offer!;
-  const [expandedTurn, setExpandedTurn] = useState<number | null>(null);
-  const expanded = expandedTurn === offer.turn;
   const ids = offer.dishIds;
   const legalCount = ids.filter((id) => isLegal(run, id)).length;
-  const shown = expanded ? ids : ids.slice(0, INITIAL);
 
   return (
     <section className="offers" aria-label="Dishes you can choose" aria-busy={disabled}>
@@ -29,7 +23,8 @@ export function Offers({ run, selected, disabled, onSelect }: Props) {
         {legalCount < ids.length ? ` · ${legalCount} you can serve` : ''}
       </p>
       <ul className="offer-list">
-        {shown.map((id) => {
+        {/* Every matching dish, always: a turn offers only a handful. */}
+        {ids.map((id) => {
           const d = getDish(id);
           const note = ineligibleNote(run, id);
           const isSel = selected === id;
@@ -62,11 +57,6 @@ export function Offers({ run, selected, disabled, onSelect }: Props) {
           );
         })}
       </ul>
-      {ids.length > INITIAL && (
-        <button type="button" className="link-btn" onClick={() => setExpandedTurn(expanded ? null : offer.turn)} aria-expanded={expanded}>
-          {expanded ? 'Show fewer' : `Show all ${ids.length} dishes`}
-        </button>
-      )}
     </section>
   );
 }

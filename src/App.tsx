@@ -364,21 +364,24 @@ export function Intro(props: {
           <Table picks={preview} compact />
         </div>
       </div>
-      <p className="tagline">Five picks. Fifty dollars. Your five-star dinner.</p>
-      <p className="intro-explain">Build five courses within $50. Your choices become your restaurant’s rating.</p>
-      {props.restoreFailed && (
-        <p className="notice" role="status">
-          Your previous table couldn’t be restored, so let’s start a fresh one.
-        </p>
-      )}
-      <button type="button" className="btn primary big" onClick={props.onStart}>
-        Start cooking
-      </button>
-      <button type="button" className="link-btn" onClick={props.onHelp}>
-        How to play
-      </button>
-      {best && <p className="best-line">Personal best: {formatStars(best.hundredths)} / 5</p>}
-      <p className="fineprint">Prices and ratings are fictional game values.</p>
+      {/* Beside the scene on wide screens (so Start is above the fold), below it on phones. */}
+      <div className="intro-pitch">
+        <p className="tagline">Five picks. Fifty dollars. Your five-star dinner.</p>
+        <p className="intro-explain">Build five courses within $50. Your choices become your restaurant’s rating.</p>
+        {props.restoreFailed && (
+          <p className="notice" role="status">
+            Your previous table couldn’t be restored, so let’s start a fresh one.
+          </p>
+        )}
+        <button type="button" className="btn primary big" onClick={props.onStart}>
+          Start cooking
+        </button>
+        <button type="button" className="link-btn" onClick={props.onHelp}>
+          How to play
+        </button>
+        {best && <p className="best-line">Personal best: {formatStars(best.hundredths)} / 5</p>}
+        <p className="fineprint">Prices and ratings are fictional game values.</p>
+      </div>
       <AboutGame />
       <HelpDialog open={props.helpOpen} onClose={props.onCloseHelp} />
     </main>
