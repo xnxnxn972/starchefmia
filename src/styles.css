@@ -1193,12 +1193,13 @@ textarea {
   }
 }
 
-/* Top bar on narrow phones: three icon buttons + two pills must fit in 360px.
-   Pills shorten to "$31" and "3/5"; their aria-labels keep the full wording. */
+/* Top bar on phones: four icon buttons + two pills. The full pills ("$31 left",
+   "Pick 3 of 5") need ~490px, so every phone width (up to 520px) gets the compact
+   pills "$31" / "3/5"; their aria-labels keep the full wording. */
 .pill-short {
   display: none;
 }
-@media (max-width: 400px) {
+@media (max-width: 520px) {
   .topbar {
     gap: 6px;
     padding-left: 12px;
@@ -1461,12 +1462,54 @@ textarea {
   min-height: 48px;
 }
 
-/* Top bar on narrow phones now holds four 48px buttons: drop the pill icons there. */
-@media (max-width: 400px) {
+/* ...and drops the pill icons there, so the four 48px buttons fit down to 360px. */
+@media (max-width: 520px) {
   .topbar .pill .ico {
     display: none;
   }
   .topbar .pill {
     padding: 0 10px;
+  }
+}
+
+/* Very small phones (under 360px, e.g. 320px): slightly smaller buttons and spacing. */
+@media (max-width: 359px) {
+  .topbar {
+    gap: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .topbar .icon-btn {
+    width: 44px;
+    height: 44px;
+  }
+  .topbar .pill {
+    padding: 0 8px;
+  }
+}
+/* Safety net for any width or large text setting: the pills give way, the buttons never
+   leave the screen, and nothing can make the page wider than the phone. */
+.topbar .pill {
+  min-width: 0;
+  flex-shrink: 1;
+  overflow: hidden;
+}
+.topbar-actions {
+  flex-shrink: 0;
+}
+html {
+  overflow-x: clip;
+}
+/* Results menu table on very small phones: tighter cells, course names may wrap. */
+@media (max-width: 380px) {
+  .menu-card th,
+  .menu-card td {
+    padding: 8px 6px;
+  }
+  .menu-card tbody th {
+    white-space: normal;
+  }
+  .menu-cuisine {
+    display: none;
   }
 }
