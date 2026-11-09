@@ -111,6 +111,41 @@ export function Results({ run, restaurantName, onRestaurantName, onCookAgain }: 
         </p>
       </div>
 
+      {/* Actions right under the score, so Cook again is above the fold; menu details follow. */}
+      <label className="name-field">
+        <span>Name your restaurant (optional, for sharing)</span>
+        <input
+          type="text"
+          maxLength={40}
+          value={restaurantName}
+          placeholder="e.g. The Linen Table"
+          onChange={(e) => onRestaurantName(e.target.value)}
+        />
+      </label>
+
+      <div className="results-actions">
+        <button type="button" className="btn primary" onClick={onCookAgain}>
+          Cook again
+        </button>
+        <button type="button" className="btn secondary" onClick={onShare} disabled={busy}>
+          {busy ? 'Preparing…' : 'Share menu'}
+        </button>
+      </div>
+
+      {fallback && (
+        <div className="share-fallback">
+          <button type="button" className="btn secondary" onClick={onCopy}>
+            Copy text
+          </button>
+          <button type="button" className="btn secondary" onClick={onDownload}>
+            Download image
+          </button>
+          <textarea readOnly rows={5} value={shareText(run.picks, restaurantName)} aria-label="Share text" />
+        </div>
+      )}
+      <p className="share-status" role="status">
+        {shareStatus}
+      </p>
       <Table picks={run.picks} compact />
 
       <table className="menu-card">
@@ -146,40 +181,6 @@ export function Results({ run, restaurantName, onRestaurantName, onCookAgain }: 
         </tfoot>
       </table>
 
-      <label className="name-field">
-        <span>Name your restaurant (optional, for sharing)</span>
-        <input
-          type="text"
-          maxLength={40}
-          value={restaurantName}
-          placeholder="e.g. The Linen Table"
-          onChange={(e) => onRestaurantName(e.target.value)}
-        />
-      </label>
-
-      <div className="results-actions">
-        <button type="button" className="btn primary" onClick={onCookAgain}>
-          Cook again
-        </button>
-        <button type="button" className="btn secondary" onClick={onShare} disabled={busy}>
-          {busy ? 'Preparing…' : 'Share menu'}
-        </button>
-      </div>
-
-      {fallback && (
-        <div className="share-fallback">
-          <button type="button" className="btn secondary" onClick={onCopy}>
-            Copy text
-          </button>
-          <button type="button" className="btn secondary" onClick={onDownload}>
-            Download image
-          </button>
-          <textarea readOnly rows={5} value={shareText(run.picks, restaurantName)} aria-label="Share text" />
-        </div>
-      )}
-      <p className="share-status" role="status">
-        {shareStatus}
-      </p>
     </section>
   );
 }
