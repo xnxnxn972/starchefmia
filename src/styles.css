@@ -1023,8 +1023,8 @@ textarea {
   margin: 0 -16px;
   padding: 0 var(--scene-pad) 14px;
   background-color: var(--linen);
+  /* Same density rule as the <link rel=preload> pair in index.html, so only one file downloads. */
   background-image: url('/scene/table-mia-640.webp');
-  background-image: image-set(url('/scene/table-mia-640.webp') 1x, url('/scene/table-mia.webp') 2x);
   background-position: top center;
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -1128,5 +1128,49 @@ textarea {
   }
   .at-results .scene::after {
     height: 22px;
+  }
+}
+
+/* ---------- about the game (crawlable text below the Start button) ---------- */
+.about {
+  width: 100%;
+  margin-top: 28px;
+  padding: 20px 4px 4px;
+  border-top: 1px solid rgba(90, 35, 67, 0.15);
+  text-align: left;
+  color: var(--ink);
+  line-height: 1.55;
+}
+.about h2 {
+  margin: 0 0 10px;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  line-height: 1.25;
+  color: var(--aubergine);
+}
+.about h3 {
+  margin: 18px 0 6px;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--aubergine);
+}
+.about p,
+.about li {
+  font-size: 0.95rem;
+}
+.about p {
+  margin: 0 0 10px;
+}
+.about ol {
+  margin: 0 0 10px;
+  padding-left: 22px;
+}
+.about li {
+  margin-bottom: 6px;
+}
+
+@media (min-resolution: 1.5dppx) {
+  .scene {
+    background-image: url('/scene/table-mia.webp');
   }
 }

@@ -87,7 +87,13 @@ export function EmptyPlate({ course }: { course: Course }) {
 }
 
 /** Real art when it exists and loads; otherwise the course placeholder. Name/price/rating are always text elsewhere. */
-export function DishArt({ dish, decorative = true }: { dish: Dish; decorative?: boolean }) {
+/** Display widths (CSS px) the image is drawn at, so the browser picks the 256px or 512px file. */
+export const SIZES = {
+  offer: '64px',
+  plate: '(min-width: 900px) 168px, 106px',
+} as const;
+
+export function DishArt({ dish, decorative = true, sizes = SIZES.offer }: { dish: Dish; decorative?: boolean; sizes?: string }) {
   const [failed, setFailed] = useState(false);
   if (!dish.imageSrc || failed) {
     return (
@@ -100,6 +106,8 @@ export function DishArt({ dish, decorative = true }: { dish: Dish; decorative?: 
     <span className="dish-art">
       <img
         src={BASE + dish.imageSrc}
+        srcSet={`${BASE + dish.imageSrc.replace('dishes/', 'dishes/sm/')} 256w, ${BASE + dish.imageSrc} 512w`}
+        sizes={sizes}
         alt={decorative ? '' : dish.imageAlt}
         width={512}
         height={512}

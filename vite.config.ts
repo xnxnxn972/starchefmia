@@ -31,13 +31,32 @@ function serviceWorker(): Plugin {
       const precache = [
         './',
         ...files
-          .filter((f) => !f.startsWith('dishes/') && !['index.html', 'sw.js', 'CNAME'].includes(f))
+          // Not for players: crawler/link-preview files, and dishes (cached as they are shown).
+          .filter((f) => !f.startsWith('dishes/') && !['index.html', 'sw.js', 'CNAME', '404.html', 'robots.txt', 'sitemap.xml', 'og-image.jpg'].includes(f))
           .map((f) => `./${f}`),
       ];
       const sw = readFileSync('sw-template.js', 'utf8')
         .replace('__VERSION__', BUILD_ID.replace(/\D/g, ''))
         .replace('__PRECACHE__', JSON.stringify(precache, null, 2));
       writeFileSync(join(outDir, 'sw.js'), sw);
+    },
+  };
+}
+
+/**
+ * The catalog JSON keeps the full per-dish art prompts (the source of truth for future
+ * art), but the game never shows them. Strip them from what ships: ~60 KB less to download.
+ */
+function slimCatalog(): Plugin {
+  return {
+    name: 'starchef-slim-catalog',
+    enforce: 'pre',
+    transform(code, id) {
+      if (!id.split('\\').join('/').endsWith('/src/data/chef-catalog.json')) return null;
+      const cat = JSON.parse(code);
+      for (const d of cat.dishes) delete d.imagePrompt;
+      delete cat.artReferences;
+      return { code: JSON.stringify(cat), map: null };
     },
   };
 }
@@ -49,6 +68,6 @@ export default defineConfig({
   build: { outDir: 'docs', emptyOutDir: true },
   // Every log row carries the build that produced it.
   define: { __APP_VERSION__: JSON.stringify(BUILD_ID) },
-  plugins: [react(), serviceWorker()],
+  plugins: [slimCatalog(), react(), serviceWorker()],
   test: { environment: 'node' },
 } as never);

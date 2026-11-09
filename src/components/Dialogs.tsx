@@ -19,13 +19,16 @@ function Modal({ open, onClose, title, children }: { open: boolean; onClose: () 
         if (e.target === ref.current) onClose();
       }}
     >
-      <div className="modal-body">
-        <h2 id={`dlg-${title}`}>{title}</h2>
-        {children}
-        <button type="button" className="btn secondary" onClick={onClose}>
-          Close
-        </button>
-      </div>
+      {/* Contents only while open: keeps closed dialogs out of the page outline (and the pre-rendered HTML). */}
+      {open && (
+        <div className="modal-body">
+          <h2 id={`dlg-${title}`}>{title}</h2>
+          {children}
+          <button type="button" className="btn secondary" onClick={onClose}>
+            Close
+          </button>
+        </div>
+      )}
     </dialog>
   );
 }

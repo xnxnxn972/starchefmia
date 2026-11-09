@@ -14,7 +14,7 @@ export interface Dish {
   imageSrc: string | null;
   imageAlt: string;
   artStatus: 'reference-example' | 'not-generated' | 'ready';
-  imagePrompt: string;
+  imagePrompt?: string; // in the JSON for future art; stripped from the shipped bundle (vite.config.ts)
 }
 
 export interface Ingredient {

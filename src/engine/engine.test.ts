@@ -45,6 +45,9 @@ describe('catalog', () => {
     for (const d of catalog.dishes) {
       if (d.imageSrc) {
         expect(existsSync(resolve(__dirname, '../../public', d.imageSrc)), d.imageSrc).toBe(true);
+        // 256px variant used by srcset on small displays
+        const small = d.imageSrc.replace('dishes/', 'dishes/sm/');
+        expect(existsSync(resolve(__dirname, '../../public', small)), small).toBe(true);
         expect(d.artStatus).toBe('ready');
       }
     }

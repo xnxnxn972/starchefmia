@@ -4,8 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#efdfd2" />
-    <meta name="description" content="Build a five-course opening-night dinner within $50 and reveal your restaurant's star rating." />
-    <title>5-Star Chef Restaurant</title>
+    <title>5-Star Chef Restaurant – Free Food &amp; Menu Game with Chef Mia</title>
+    <meta name="description" content="Plan a five-course dinner on a $50 budget. Pick dishes from six cuisines, serve them with Chef Mia and see your restaurant's star rating. Free, no download." />
+    <link rel="canonical" href="https://starchefmia.com/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <!-- Link previews (WhatsApp, iMessage, Facebook, X, LinkedIn, Slack) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="5-Star Chef Restaurant" />
+    <meta property="og:url" content="https://starchefmia.com/" />
+    <meta property="og:title" content="5-Star Chef Restaurant – build a five-star dinner for $50" />
+    <meta property="og:description" content="Five picks. Fifty dollars. Plan an opening-night menu with Chef Mia and see how many stars your restaurant earns. Free in your browser." />
+    <meta property="og:image" content="https://starchefmia.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Chef Mia leaning on a restaurant table set with butter chicken, bruschetta and strawberry daifuku" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="5-Star Chef Restaurant – build a five-star dinner for $50" />
+    <meta name="twitter:description" content="Five picks. Fifty dollars. Plan an opening-night menu with Chef Mia. Free in your browser." />
+    <meta name="twitter:image" content="https://starchefmia.com/og-image.jpg" />
+
+    <!-- What this page is, for search engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://starchefmia.com/#website",
+            "url": "https://starchefmia.com/",
+            "name": "5-Star Chef Restaurant",
+            "alternateName": "Star Chef Mia",
+            "inLanguage": "en"
+          },
+          {
+            "@type": ["VideoGame", "WebApplication"],
+            "@id": "https://starchefmia.com/#game",
+            "name": "5-Star Chef Restaurant",
+            "url": "https://starchefmia.com/",
+            "description": "A free browser game: plan a five-course dinner (appetizer, soup, salad, main course and dessert) on a $50 budget, choosing from 90 dishes across six cuisines, and earn a restaurant star rating.",
+            "image": "https://starchefmia.com/og-image.jpg",
+            "genre": ["Casual", "Simulation", "Puzzle"],
+            "gamePlatform": ["Web browser", "Mobile", "Desktop"],
+            "applicationCategory": "GameApplication",
+            "operatingSystem": "Any",
+            "playMode": "SinglePlayer",
+            "isAccessibleForFree": true,
+            "inLanguage": "en",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "author": { "@type": "Organization", "name": "5 Star Studios" },
+            "publisher": { "@type": "Organization", "name": "5 Star Studios" },
+            "isPartOf": { "@id": "https://starchefmia.com/#website" }
+          }
+        ]
+      }
+    </script>
+    <link rel="icon" href="./favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="48x48" href="./favicon-48.png" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <link rel="manifest" href="./manifest.webmanifest" />
@@ -15,7 +70,13 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- The painted scene is the largest thing on first paint: fetch it straight away. -->
+    <link rel="preload" as="image" href="./scene/table-mia-640.webp" media="(max-resolution: 1.49dppx)" fetchpriority="high" />
+    <link rel="preload" as="image" href="./scene/table-mia.webp" media="(min-resolution: 1.5dppx)" fetchpriority="high" />
+    <!-- Fonts load without blocking the first paint (text shows in the fallback font, then swaps). -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" /></noscript>
   </head>
   <body>
     <div id="root"></div>

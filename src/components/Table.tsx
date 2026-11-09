@@ -1,6 +1,6 @@
 import { COURSE_LABEL, COURSES, Course, Dish, getDish } from '../engine/catalog';
 import { formatMoney, formatRating } from '../engine/engine';
-import { DishArt, EmptyPlate } from '../art/FoodArt';
+import { DishArt, EmptyPlate, SIZES } from '../art/FoodArt';
 import { StarIcon } from '../art/icons';
 
 interface Props {
@@ -29,7 +29,7 @@ export function Table({ picks, previewCourse, servedCourse, compact }: Props) {
             key={c}
             className={`setting setting-${c}${d ? ' filled' : ''}${isPreview ? ' preview' : ''}${servedCourse === c ? ' served' : ''}`}
           >
-            <div className="plate">{d ? <DishArt dish={d} /> : <EmptyPlate course={c} />}</div>
+            <div className="plate">{d ? <DishArt dish={d} sizes={SIZES.plate} /> : <EmptyPlate course={c} />}</div>
             <div className="setting-label">
               <span className="course-name">{COURSE_LABEL[c]}</span>
               {d ? (

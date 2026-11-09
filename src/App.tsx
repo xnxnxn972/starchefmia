@@ -290,7 +290,7 @@ export function App() {
   );
 }
 
-function Intro(props: {
+export function Intro(props: {
   onStart: () => void;
   restoreFailed: boolean;
   miaLine: string;
@@ -301,7 +301,7 @@ function Intro(props: {
   const best = loadBest();
   const preview = ['in-main-02', 'fr-soup-02', 'it-appetizer-01', 'mx-salad-02', 'jp-dessert-02'];
   return (
-    <div className="intro">
+    <main className="intro">
       <div className="scene intro-scene">
         <SceneHead line={props.miaLine} mood="welcome" />
         <div className="brand">
@@ -330,8 +330,49 @@ function Intro(props: {
       </button>
       {best && <p className="best-line">Personal best: {formatStars(best.hundredths)} / 5</p>}
       <p className="fineprint">Prices and ratings are fictional game values.</p>
+      <AboutGame />
       <HelpDialog open={props.helpOpen} onClose={props.onCloseHelp} />
-    </div>
+    </main>
+  );
+}
+
+/**
+ * Real, crawlable text about the game, below the Start button. It is part of the
+ * pre-rendered HTML (tools/prerender.mjs), so search engines read it without
+ * running any JavaScript. Keep it true to the game: every fact here is checkable.
+ */
+function AboutGame() {
+  return (
+    <section className="about" aria-labelledby="about-title">
+      <h2 id="about-title">A free restaurant menu game you can play in your browser</h2>
+      <p>
+        You are opening a restaurant, and tonight is opening night. Chef Mia hands you a budget of $50 per guest. Your job is to
+        build a five-course dinner (appetizer, soup, salad, main course and dessert) and see how many stars your menu earns.
+      </p>
+      <h3>How to play</h3>
+      <ol>
+        <li>Each turn, Chef Mia reveals today’s inspiration: a cuisine and an ingredient, such as Italian and lemon or Indian and mango.</li>
+        <li>Pick one of the matching dishes. Every dish shows its course, its cost and its star rating.</li>
+        <li>Serve it to fill that course. Courses can be filled in any order, but a served course is final.</li>
+        <li>After five picks, your restaurant’s rating is the average of your five dishes, shown to two decimals.</li>
+      </ol>
+      <p>
+        The game always keeps enough money aside to finish every course, so the strategy is choosing when to spend on a
+        five-star dish and when to save. A perfect 5.00 menu exists, but you will need luck to be offered it.
+      </p>
+      <h3>What’s on the menu</h3>
+      <p>
+        90 illustrated dishes from six cuisines: Italian, French, Japanese, Indian, Mexican and American, built from 25
+        ingredients, from butter chicken and beef bourguignon to tiramisu and strawberry daifuku. A game takes about a minute
+        and a half, so it is easy to cook again and chase a better score.
+      </p>
+      <h3>Play anywhere</h3>
+      <p>
+        5-Star Chef Restaurant works on phones, tablets and computers with no download or sign-up. Add it to your home
+        screen to play it like an app, even offline. When your dinner is done, share your menu and star rating with friends.
+      </p>
+      <p className="fineprint">Made by 5 Star Studios. Dish prices and ratings are fictional game values.</p>
+    </section>
   );
 }
 

@@ -4,8 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#efdfd2" />
-    <meta name="description" content="Build a five-course opening-night dinner within $50 and reveal your restaurant's star rating." />
-    <title>5-Star Chef Restaurant</title>
+    <title>5-Star Chef Restaurant – Free Food &amp; Menu Game with Chef Mia</title>
+    <meta name="description" content="Plan a five-course dinner on a $50 budget. Pick dishes from six cuisines, serve them with Chef Mia and see your restaurant's star rating. Free, no download." />
+    <link rel="canonical" href="https://starchefmia.com/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <!-- Link previews (WhatsApp, iMessage, Facebook, X, LinkedIn, Slack) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="5-Star Chef Restaurant" />
+    <meta property="og:url" content="https://starchefmia.com/" />
+    <meta property="og:title" content="5-Star Chef Restaurant – build a five-star dinner for $50" />
+    <meta property="og:description" content="Five picks. Fifty dollars. Plan an opening-night menu with Chef Mia and see how many stars your restaurant earns. Free in your browser." />
+    <meta property="og:image" content="https://starchefmia.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Chef Mia leaning on a restaurant table set with butter chicken, bruschetta and strawberry daifuku" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="5-Star Chef Restaurant – build a five-star dinner for $50" />
+    <meta name="twitter:description" content="Five picks. Fifty dollars. Plan an opening-night menu with Chef Mia. Free in your browser." />
+    <meta name="twitter:image" content="https://starchefmia.com/og-image.jpg" />
+
+    <!-- What this page is, for search engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://starchefmia.com/#website",
+            "url": "https://starchefmia.com/",
+            "name": "5-Star Chef Restaurant",
+            "alternateName": "Star Chef Mia",
+            "inLanguage": "en"
+          },
+          {
+            "@type": ["VideoGame", "WebApplication"],
+            "@id": "https://starchefmia.com/#game",
+            "name": "5-Star Chef Restaurant",
+            "url": "https://starchefmia.com/",
+            "description": "A free browser game: plan a five-course dinner (appetizer, soup, salad, main course and dessert) on a $50 budget, choosing from 90 dishes across six cuisines, and earn a restaurant star rating.",
+            "image": "https://starchefmia.com/og-image.jpg",
+            "genre": ["Casual", "Simulation", "Puzzle"],
+            "gamePlatform": ["Web browser", "Mobile", "Desktop"],
+            "applicationCategory": "GameApplication",
+            "operatingSystem": "Any",
+            "playMode": "SinglePlayer",
+            "isAccessibleForFree": true,
+            "inLanguage": "en",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "author": { "@type": "Organization", "name": "5 Star Studios" },
+            "publisher": { "@type": "Organization", "name": "5 Star Studios" },
+            "isPartOf": { "@id": "https://starchefmia.com/#website" }
+          }
+        ]
+      }
+    </script>
+    <link rel="icon" href="./favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="48x48" href="./favicon-48.png" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <link rel="manifest" href="./manifest.webmanifest" />
@@ -15,11 +70,17 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="./assets/index-By_S1vdG.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BmmXgGlY.css">
+    <!-- The painted scene is the largest thing on first paint: fetch it straight away. -->
+    <link rel="preload" as="image" href="./scene/table-mia-640.webp" media="(max-resolution: 1.49dppx)" fetchpriority="high" />
+    <link rel="preload" as="image" href="./scene/table-mia.webp" media="(min-resolution: 1.5dppx)" fetchpriority="high" />
+    <!-- Fonts load without blocking the first paint (text shows in the fallback font, then swaps). -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" /></noscript>
+    <script type="module" crossorigin src="./assets/index-CsL8K4AD.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DFT5KXox.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><main class="intro"><div class="scene intro-scene"><div class="scene-head mood-welcome"><p class="bubble" aria-hidden="true">Let&#x27;s build your opening-night menu.</p><span class="mia-tag">Chef Mia</span></div><div class="brand"><svg viewBox="0 0 64 56" class="toque" aria-hidden="true"><path d="M16 40c-8-2-12-9-9-16 3-6 10-8 15-5 2-7 8-11 15-10 7 1 11 6 12 12 6-3 13 1 14 8 1 7-4 12-11 12" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"></path><path d="M16 40v8h36v-8" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"></path></svg><h1><span class="brand-name">5-Star Chef Restaurant</span></h1><p class="brand-studio">by <!-- -->5 Star Studios</p></div><div class="intro-table" aria-hidden="true"><ul class="table compact" aria-label="Your dinner table"><li class="setting setting-appetizer filled"><div class="plate"><span class="dish-art"><img src="./dishes/it-appetizer-01.webp" srcSet="./dishes/sm/it-appetizer-01.webp 256w, ./dishes/it-appetizer-01.webp 512w" sizes="(min-width: 900px) 168px, 106px" alt="" width="512" height="512" loading="lazy" decoding="async" draggable="false"/></span></div><div class="setting-label"><span class="course-name">Appetizer</span><span class="setting-dish"><span class="setting-dish-name">Tomato Bruschetta</span><span class="setting-meta">$5<!-- --> · <svg viewBox="0 0 20 20" class="star" aria-hidden="true" focusable="false"><path d="M10 1.6l2.5 5.3 5.8.7-4.3 4 1.1 5.7L10 14.5l-5.1 2.8 1.1-5.7-4.3-4 5.8-.7z" fill="currentColor"></path></svg> <!-- -->3.9</span></span></div></li><li class="setting setting-soup filled"><div class="plate"><span class="dish-art"><img src="./dishes/fr-soup-02.webp" srcSet="./dishes/sm/fr-soup-02.webp 256w, ./dishes/fr-soup-02.webp 512w" sizes="(min-width: 900px) 168px, 106px" alt="" width="512" height="512" loading="lazy" decoding="async" draggable="false"/></span></div><div class="setting-label"><span class="course-name">Soup</span><span class="setting-dish"><span class="setting-dish-name">French Onion Soup</span><span class="setting-meta">$8<!-- --> · <svg viewBox="0 0 20 20" class="star" aria-hidden="true" focusable="false"><path d="M10 1.6l2.5 5.3 5.8.7-4.3 4 1.1 5.7L10 14.5l-5.1 2.8 1.1-5.7-4.3-4 5.8-.7z" fill="currentColor"></path></svg> <!-- -->4.5</span></span></div></li><li class="setting setting-salad filled"><div class="plate"><span class="dish-art"><img src="./dishes/mx-salad-02.webp" srcSet="./dishes/sm/mx-salad-02.webp 256w, ./dishes/mx-salad-02.webp 512w" sizes="(min-width: 900px) 168px, 106px" alt="" width="512" height="512" loading="lazy" decoding="async" draggable="false"/></span></div><div class="setting-label"><span class="course-name">Salad</span><span class="setting-dish"><span class="setting-dish-name">Mexican Corn Salad</span><span class="setting-meta">$7<!-- --> · <svg viewBox="0 0 20 20" class="star" aria-hidden="true" focusable="false"><path d="M10 1.6l2.5 5.3 5.8.7-4.3 4 1.1 5.7L10 14.5l-5.1 2.8 1.1-5.7-4.3-4 5.8-.7z" fill="currentColor"></path></svg> <!-- -->4.5</span></span></div></li><li class="setting setting-main filled"><div class="plate"><span class="dish-art"><img src="./dishes/in-main-02.webp" srcSet="./dishes/sm/in-main-02.webp 256w, ./dishes/in-main-02.webp 512w" sizes="(min-width: 900px) 168px, 106px" alt="" width="512" height="512" loading="lazy" decoding="async" draggable="false"/></span></div><div class="setting-label"><span class="course-name">Main course</span><span class="setting-dish"><span class="setting-dish-name">Butter Chicken</span><span class="setting-meta">$18<!-- --> · <svg viewBox="0 0 20 20" class="star" aria-hidden="true" focusable="false"><path d="M10 1.6l2.5 5.3 5.8.7-4.3 4 1.1 5.7L10 14.5l-5.1 2.8 1.1-5.7-4.3-4 5.8-.7z" fill="currentColor"></path></svg> <!-- -->5.0</span></span></div></li><li class="setting setting-dessert filled"><div class="plate"><span class="dish-art"><img src="./dishes/jp-dessert-02.webp" srcSet="./dishes/sm/jp-dessert-02.webp 256w, ./dishes/jp-dessert-02.webp 512w" sizes="(min-width: 900px) 168px, 106px" alt="" width="512" height="512" loading="lazy" decoding="async" draggable="false"/></span></div><div class="setting-label"><span class="course-name">Dessert</span><span class="setting-dish"><span class="setting-dish-name">Strawberry Daifuku</span><span class="setting-meta">$8<!-- --> · <svg viewBox="0 0 20 20" class="star" aria-hidden="true" focusable="false"><path d="M10 1.6l2.5 5.3 5.8.7-4.3 4 1.1 5.7L10 14.5l-5.1 2.8 1.1-5.7-4.3-4 5.8-.7z" fill="currentColor"></path></svg> <!-- -->4.5</span></span></div></li></ul></div></div><p class="tagline">Five picks. Fifty dollars. Your five-star dinner.</p><p class="intro-explain">Build five courses within $50. Your choices become your restaurant’s rating.</p><button type="button" class="btn primary big">Start cooking</button><button type="button" class="link-btn">How to play</button><p class="fineprint">Prices and ratings are fictional game values.</p><section class="about" aria-labelledby="about-title"><h2 id="about-title">A free restaurant menu game you can play in your browser</h2><p>You are opening a restaurant, and tonight is opening night. Chef Mia hands you a budget of $50 per guest. Your job is to build a five-course dinner (appetizer, soup, salad, main course and dessert) and see how many stars your menu earns.</p><h3>How to play</h3><ol><li>Each turn, Chef Mia reveals today’s inspiration: a cuisine and an ingredient, such as Italian and lemon or Indian and mango.</li><li>Pick one of the matching dishes. Every dish shows its course, its cost and its star rating.</li><li>Serve it to fill that course. Courses can be filled in any order, but a served course is final.</li><li>After five picks, your restaurant’s rating is the average of your five dishes, shown to two decimals.</li></ol><p>The game always keeps enough money aside to finish every course, so the strategy is choosing when to spend on a five-star dish and when to save. A perfect 5.00 menu exists, but you will need luck to be offered it.</p><h3>What’s on the menu</h3><p>90 illustrated dishes from six cuisines: Italian, French, Japanese, Indian, Mexican and American, built from 25 ingredients, from butter chicken and beef bourguignon to tiramisu and strawberry daifuku. A game takes about a minute and a half, so it is easy to cook again and chase a better score.</p><h3>Play anywhere</h3><p>5-Star Chef Restaurant works on phones, tablets and computers with no download or sign-up. Add it to your home screen to play it like an app, even offline. When your dinner is done, share your menu and star rating with friends.</p><p class="fineprint">Made by 5 Star Studios. Dish prices and ratings are fictional game values.</p></section><dialog class="modal" aria-labelledby="dlg-How to play"></dialog></main></div>
   </body>
 </html>

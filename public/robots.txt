@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://starchefmia.com/sitemap.xml

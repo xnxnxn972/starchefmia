@@ -72,6 +72,18 @@ Not tested: real iOS/Android devices, native share sheets, or a screen reader en
 - **Chef Mia and the restaurant** come from one painted background (`public/scene/table-mia.webp`, 1024×1536, plus a 640px version for 1× screens). The wall and Mia fill the top 33.4% of the image, and the table edge sits exactly there; the plates sit on the painted linen. Her speech bubble and name tag are live HTML placed over the wall. Her mood (welcome, curious, thoughtful, serving, celebrate) now shows only through what she says and the bubble's style, since the painting has a single pose.
 - To replace a dish's art: export a square transparent PNG and convert it to 512×512 WebP at quality 82, saved over `public/dishes/<id>.webp`.
 
+## Search and link previews
+
+- **Pre-rendered HTML:** `npm run build` ends with `tools/prerender.mjs`, which renders the title screen (`src/prerender.tsx`) into `docs/index.html`. Crawlers and link previews get real text without running JavaScript: the headline, the Start button, the sample table and an About section with how to play and what's in the game. `main.tsx` then renders the same screen over it. Keep the About text true to the game.
+- **Head** (`index.html`): keyword-bearing title (60 characters) and description, canonical `https://starchefmia.com/`, Open Graph and Twitter tags with `public/og-image.jpg` (1200×630), and JSON-LD for `WebSite` and `VideoGame`/`WebApplication` (free, browser, single player).
+- **Crawl files:** `public/robots.txt` points to `public/sitemap.xml`; the prerender step stamps the sitemap's `lastmod` on each build. `public/404.html` is a branded "not found" page marked `noindex`. `favicon.ico` is included for crawlers that ask for it.
+- **Speed:**
+  - The painted scene is preloaded, with the same screen-density rule as the CSS so only one size downloads.
+  - Google Fonts load without blocking the first paint.
+  - Dish photos come in 256px (`public/dishes/sm/`) and 512px versions, chosen by `srcset`/`sizes`.
+  - The art prompts are stripped from the shipped catalog by a plugin in `vite.config.ts`.
+- **Not controllable on GitHub Pages:** cache headers (10 minutes on every file). The service worker covers repeat visits.
+
 ## Installable app (PWA)
 
 - **Manifest:** `public/manifest.webmanifest` sets the name "Star Chef", standalone display and portrait orientation. Its start address is `./?s=pwa`, so every launch from the home screen arrives tagged.
