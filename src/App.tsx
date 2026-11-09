@@ -13,6 +13,7 @@ import {
 import { loadPrefs, loadRun, Prefs, saveRun, savePrefs, loadBest, type PersonalBest } from './engine/persist';
 import { freshSeed } from './engine/rng';
 import { trackExtra, trackGameEnd, trackGameStart, trackPick } from './telemetry';
+import { playRevealSound, unlockAudio } from './sound';
 import { Table } from './components/Table';
 import { Inspiration } from './components/Inspiration';
 import { Offers } from './components/Offers';
@@ -157,6 +158,19 @@ export function App() {
     }
   }, [phase, turn, reduceMotion]);
 
+  // Reveal sound: only for reveals the player caused (Start cooking / Serve), never for a
+  // game restored on load, and not with reduced motion (the labels don't roll then).
+  const userActed = useRef(false);
+  useEffect(() => {
+    if (phase === 'revealing' && userActed.current && !prefs.muted && !reduceMotion) playRevealSound();
+  }, [phase, turn]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  function toggleMute() {
+    unlockAudio();
+    setPrefs((p) => ({ ...p, muted: !p.muted }));
+    trackExtra('sound_muted', !prefs.muted);
+  }
+
   // Move focus to the offers once a reveal settles, so keyboard users land on the choices.
   const offersRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -164,6 +178,8 @@ export function App() {
   }, [phase, turn]);
 
   function start() {
+    unlockAudio();
+    userActed.current = true;
     setRestoreFailed(false);
     const s = freshSeed();
     trackGameStart(s);
@@ -196,12 +212,36 @@ export function App() {
     <div className={`app${reduceMotion ? ' reduce-motion' : ''}${run.phase === 'results' ? ' at-results' : ''}`}>
       <header className="topbar">
         <div className="pill budget" aria-label={`${formatMoney(remaining)} left`}>
-          <WalletIcon /> <strong>{formatMoney(remaining)}</strong>&nbsp;left
+          <WalletIcon /> <strong>{formatMoney(remaining)}</strong>
+          <span className="pill-long">&nbsp;left</span>
         </div>
         <div className="pill progress" aria-label={run.phase === 'results' ? 'Menu complete' : `Pick ${pickNo} of 5`}>
-          <ForkIcon /> {run.phase === 'results' ? 'Complete' : `Pick ${pickNo} of 5`}
+          <ForkIcon />{' '}
+          {run.phase === 'results' ? (
+            <>
+              <span className="pill-long">Complete</span>
+              <span className="pill-short">5/5</span>
+            </>
+          ) : (
+            <span>
+              <span className="pill-long">Pick&nbsp;</span>
+              {pickNo}
+              <span className="pill-long">&nbsp;of 5</span>
+              <span className="pill-short">/5</span>
+            </span>
+          )}
         </div>
         <div className="topbar-actions">
+          <button
+            type="button"
+            className="icon-btn"
+            onClick={toggleMute}
+            aria-pressed={prefs.muted}
+            aria-label={prefs.muted ? 'Turn sound on' : 'Mute sound'}
+            title={prefs.muted ? 'Turn sound on' : 'Mute sound'}
+          >
+            {prefs.muted ? <SoundOffIcon /> : <SoundOnIcon />}
+          </button>
           <button type="button" className="icon-btn" onClick={() => setHelpOpen(true)} aria-label="How to play">
             ?
           </button>
@@ -252,7 +292,12 @@ export function App() {
             type="button"
             className="btn primary serve"
             disabled={!selDish || !selLegal || run.phase !== 'choosing'}
-            onClick={() => selected && dispatch({ type: 'commit', id: selected })}
+            onClick={() => {
+              if (!selected) return;
+              unlockAudio();
+              userActed.current = true;
+              dispatch({ type: 'commit', id: selected });
+            }}
           >
             {run.phase === 'revealing'
               ? 'Finding inspiration…'
@@ -276,6 +321,8 @@ export function App() {
         reduceMotion={prefs.reduceMotion}
         systemReduced={systemReduced}
         onReduceMotion={(v) => setPrefs((p) => ({ ...p, reduceMotion: v }))}
+        muted={prefs.muted}
+        onToggleMute={toggleMute}
         onNewRun={() => {
           setSettingsOpen(false);
           start();
@@ -390,6 +437,22 @@ function SceneHead({ line, mood }: { line: string; mood: string }) {
   );
 }
 
+function SoundOnIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="ico" aria-hidden="true">
+      <path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+      <path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  );
+}
+function SoundOffIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="ico" aria-hidden="true">
+      <path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+      <path d="M16 9.5l5 5M21 9.5l-5 5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  );
+}
 function WalletIcon() {
   return (
     <svg viewBox="0 0 24 24" className="ico" aria-hidden="true">

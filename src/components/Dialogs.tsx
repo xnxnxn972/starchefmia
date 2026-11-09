@@ -62,6 +62,8 @@ export function SettingsDialog(props: {
   reduceMotion: boolean;
   systemReduced: boolean;
   onReduceMotion: (v: boolean) => void;
+  muted: boolean;
+  onToggleMute: () => void;
   onNewRun: () => void;
   onQuit: () => void;
 }) {
@@ -76,7 +78,10 @@ export function SettingsDialog(props: {
         />
         <span>Reduce motion{props.systemReduced ? ' (on in your device settings)' : ''}</span>
       </label>
-      <p className="fineprint">Sound is off. The game has no audio in this version.</p>
+      <label className="toggle">
+        <input type="checkbox" checked={!props.muted} onChange={props.onToggleMute} />
+        <span>Sound effects</span>
+      </label>
       <div className="settings-actions">
         <button type="button" className="btn secondary" onClick={props.onNewRun}>
           Start a new menu

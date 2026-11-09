@@ -1192,3 +1192,29 @@ textarea {
     background-image: url('/scene/table-mia.webp');
   }
 }
+
+/* Top bar on narrow phones: three icon buttons + two pills must fit in 360px.
+   Pills shorten to "$31" and "3/5"; their aria-labels keep the full wording. */
+.pill-short {
+  display: none;
+}
+@media (max-width: 400px) {
+  .topbar {
+    gap: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .topbar .pill {
+    padding: 0 11px;
+    gap: 5px;
+  }
+  .topbar-actions {
+    gap: 4px;
+  }
+  .pill-long {
+    display: none;
+  }
+  .pill-short {
+    display: inline;
+  }
+}

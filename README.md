@@ -72,6 +72,12 @@ Not tested: real iOS/Android devices, native share sheets, or a screen reader en
 - **Chef Mia and the restaurant** come from one painted background (`public/scene/table-mia.webp`, 1024×1536, plus a 640px version for 1× screens). The wall and Mia fill the top 33.4% of the image, and the table edge sits exactly there; the plates sit on the painted linen. Her speech bubble and name tag are live HTML placed over the wall. Her mood (welcome, curious, thoughtful, serving, celebrate) now shows only through what she says and the bubble's style, since the painting has a single pose.
 - To replace a dish's art: export a square transparent PNG and convert it to 512×512 WebP at quality 82, saved over `public/dishes/<id>.webp`.
 
+## Sound
+
+- **The reveal sound** (`src/sound.ts`) is a kitchen-timer dial: six soft clicks that slow down with the rolling labels, then a tiny "tink" as the inspiration settles. It's synthesised with Web Audio, so there are no audio files.
+- **On by default.** The speaker button in the top bar (or Settings, then Sound effects) mutes it, and the choice is remembered (`muted` in prefs). Mute toggles are logged as `meta.sound_muted`.
+- **When it plays:** only for reveals the player caused (Start cooking, Serve). It doesn't play for a game restored on load or with reduced motion, and it respects the iPhone silent switch (`audioSession` is set to `ambient`). Browsers allow audio only after a tap, so `unlockAudio()` runs on those taps.
+
 ## Search and link previews
 
 - **Pre-rendered HTML:** `npm run build` ends with `tools/prerender.mjs`, which renders the title screen (`src/prerender.tsx`) into `docs/index.html`. Crawlers and link previews get real text without running JavaScript: the headline, the Start button, the sample table and an About section with how to play and what's in the game. `main.tsx` then renders the same screen over it. Keep the About text true to the game.
@@ -110,4 +116,4 @@ Modelled on Chasing P1's telemetry, in the same shared Supabase project.
 
 ## Not in this version (by design)
 
-No spin/reroll controls, no audio (the settings say so), no backend or accounts, no daily challenge or leaderboard.
+No spin/reroll controls, no backend or accounts, no daily challenge or leaderboard.

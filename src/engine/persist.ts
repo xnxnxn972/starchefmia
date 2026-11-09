@@ -14,6 +14,8 @@ export interface PersonalBest {
 export interface Prefs {
   reduceMotion: boolean;
   restaurantName: string;
+  /** Reveal sound is on by default; this remembers a mute. */
+  muted: boolean;
 }
 
 function read(key: string): unknown {
@@ -65,7 +67,11 @@ export function recordBest(candidate: PersonalBest): boolean {
 
 export function loadPrefs(): Prefs {
   const p = (read(PREFS_KEY) as Partial<Prefs>) || {};
-  return { reduceMotion: !!p.reduceMotion, restaurantName: typeof p.restaurantName === 'string' ? p.restaurantName : '' };
+  return {
+    reduceMotion: !!p.reduceMotion,
+    restaurantName: typeof p.restaurantName === 'string' ? p.restaurantName : '',
+    muted: !!p.muted,
+  };
 }
 
 export function savePrefs(p: Prefs) {
