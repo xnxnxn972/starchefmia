@@ -5,6 +5,7 @@ import { loadBest, PersonalBest, recordBest } from '../engine/persist';
 import { Table } from './Table';
 import { StarIcon } from '../art/icons';
 import { copyText, downloadBlob, nativeShare, shareImage, shareText } from '../share';
+import { trackShare } from '../telemetry';
 
 interface Props {
   run: RunState;
@@ -55,7 +56,8 @@ export function Results({ run, restaurantName, onRestaurantName, onCookAgain }: 
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => headingRef.current?.focus(), []);
 
-  const url = location.origin + location.pathname;
+  // Tagged so arrivals from shared menus are attributable: WhatsApp/iMessage strip the referrer.
+  const url = location.origin + location.pathname + '?s=share';
 
   async function onShare() {
     setBusy(true);
@@ -64,6 +66,7 @@ export function Results({ run, restaurantName, onRestaurantName, onCookAgain }: 
     const image = await shareImage(run.picks, restaurantName);
     const outcome = await nativeShare(text, image);
     setBusy(false);
+    trackShare(outcome);
     if (outcome === 'unsupported') {
       setFallback(true);
       setShareStatus('Sharing isn’t available here. Copy the text or save the image instead.');
@@ -72,6 +75,7 @@ export function Results({ run, restaurantName, onRestaurantName, onCookAgain }: 
 
   async function onCopy() {
     const ok = await copyText(shareText(run.picks, restaurantName, url));
+    if (ok) trackShare('copied');
     setShareStatus(ok ? 'Menu copied to clipboard.' : 'Copy failed. Select the text below instead.');
   }
 
@@ -79,6 +83,7 @@ export function Results({ run, restaurantName, onRestaurantName, onCookAgain }: 
     const image = await shareImage(run.picks, restaurantName);
     if (image) {
       downloadBlob(image, 'my-opening-night-menu.png');
+      trackShare('downloaded');
       setShareStatus('Image saved.');
     } else setShareStatus('Could not create the image on this device.');
   }

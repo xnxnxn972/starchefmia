@@ -3,3 +3,8 @@
 node_modules/
 dist/
 .claude/
+
+# Analytics output and admin token: never commit (this repo is public).
+dashboard.html
+dashboard.data.json
+.sc-token

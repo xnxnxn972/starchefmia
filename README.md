@@ -72,6 +72,17 @@ Not tested: real iOS/Android devices, native share sheets, or a screen reader en
 - **Chef Mia and the restaurant** come from one painted background (`public/scene/table-mia.webp`, 1024×1536, plus a 640px version for 1× screens). The wall and Mia fill the top 33.4% of the image, and the table edge sits exactly there; the plates sit on the painted linen. Her speech bubble and name tag are live HTML placed over the wall. Her mood (welcome, curious, thoughtful, serving, celebrate) now shows only through what she says and the bubble's style, since the painting has a single pose.
 - To replace a dish's art: export a square transparent PNG and convert it to 512×512 WebP at quality 82, saved over `public/dishes/<id>.webp`.
 
+## Play log and dashboard
+
+Modelled on Chasing P1's telemetry, in the same shared Supabase project.
+
+- **Tables:** `sc_games` has one row per game (five picks), updated as the game goes: picks, finished, score, spend, share outcome. `sc_loads` has one row per arrival, so people who land and leave are counted. Schema and functions are in [`supabase/starchef-telemetry.sql`](supabase/starchef-telemetry.sql); run it in the Supabase SQL editor (safe to re-run).
+- **Client:** [`src/telemetry.ts`](src/telemetry.ts). It never blocks the game and fails silently. It sends no IP and makes no location lookup; country is read server-side from Cloudflare's header. Nothing the player types is sent (a restaurant name is logged only as `named: true/false`). Bots, local files and previews are skipped.
+- **Excluding your own testing:** open `https://starchefmia.com/?dev=1` once in every browser you test with (`?dev=0` undoes it). `?tel=force` forces logging from an automated browser to verify the write path.
+- **Visits:** a visit is a sitting that ends after 30 idle minutes. A refreshed game keeps its own row (the id comes from the run's seed). A persistent `player_id` in localStorage gives returning players.
+- **Sources:** links inside shared menus carry `?s=share`, because WhatsApp and iMessage strip the referrer. Any `?s=`, `utm_*`, `src` or `ref` tag is recorded, so a post can use its own tag (for example `?s=reddit`).
+- **Dashboard:** `npm run dashboard` writes `dashboard.html` and `dashboard.data.json`, both gitignored. Reads use the Chasing P1 admin token (`public.cp_admin`), taken from `SC_TOKEN`, `.sc-token` or `../chasing-p1/.cp1-token`.
+
 ## Not in this version (by design)
 
 No spin/reroll controls, no audio (the settings say so), no backend or accounts, no daily challenge or leaderboard.

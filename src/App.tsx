@@ -12,6 +12,7 @@ import {
 } from './engine/engine';
 import { loadPrefs, loadRun, Prefs, saveRun, savePrefs, loadBest } from './engine/persist';
 import { freshSeed } from './engine/rng';
+import { trackExtra, trackGameEnd, trackGameStart, trackPick } from './telemetry';
 import { Table } from './components/Table';
 import { Inspiration } from './components/Inspiration';
 import { Offers } from './components/Offers';
@@ -119,6 +120,26 @@ export function App() {
 
   useEffect(() => savePrefs(prefs), [prefs]);
 
+  // Play log. Effects keyed on engine state, so the pure reducer stays pure and a
+  // restored game updates its own row (the row id derives from the run's seed).
+  const seed = run?.seed;
+  useEffect(() => {
+    if (!run) return;
+    trackGameStart(run.seed, { resumed: true, picks: run.picks.length, spentCents: run.spentCents });
+  }, [seed]); // eslint-disable-line react-hooks/exhaustive-deps
+  const pickCount = run?.picks.length ?? 0;
+  useEffect(() => {
+    if (!run || pickCount === 0) return;
+    trackPick(pickCount, run.spentCents, run.picks, run.picks.map((id) => getDish(id).course));
+  }, [seed, pickCount]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (run?.phase === 'results') trackGameEnd(scoreHundredths(run.picks), run.spentCents);
+  }, [seed, run?.phase]); // eslint-disable-line react-hooks/exhaustive-deps
+  const named = prefs.restaurantName.trim().length > 0;
+  useEffect(() => {
+    if (run?.phase === 'results') trackExtra('named', named);
+  }, [named, run?.phase]); // eslint-disable-line react-hooks/exhaustive-deps
+
   // Turn-transition timers. They only advance phases; offers are drawn in the reducer.
   const phase = run?.phase;
   const turn = run?.offer?.turn ?? 0;
@@ -144,7 +165,9 @@ export function App() {
 
   function start() {
     setRestoreFailed(false);
-    dispatch({ type: 'start', seed: freshSeed() });
+    const s = freshSeed();
+    trackGameStart(s);
+    dispatch({ type: 'start', seed: s });
     window.scrollTo(0, 0);
   }
 
