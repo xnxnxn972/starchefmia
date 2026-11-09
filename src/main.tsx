@@ -9,10 +9,16 @@ initTelemetry();
 
 // Installable app + offline play. Production builds only: the dev server has no sw.js.
 if (import.meta.env.PROD && 'serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
+  // Registered once the page is idle after loading, so the offline download never
+  // competes with a first visit's own requests.
+  const register = () =>
     navigator.serviceWorker.register('./sw.js').catch(() => {
       /* no offline mode; the game itself is unaffected */
     });
+  window.addEventListener('load', () => {
+    const idle = (window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
+    if (idle) idle(register, { timeout: 5000 });
+    else setTimeout(register, 3000);
   });
 }
 

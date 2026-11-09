@@ -32,7 +32,12 @@ function serviceWorker(): Plugin {
         './',
         ...files
           // Not for players: crawler/link-preview files, and dishes (cached as they are shown).
-          .filter((f) => !f.startsWith('dishes/') && !['index.html', 'sw.js', 'CNAME', '404.html', 'robots.txt', 'sitemap.xml', 'og-image.jpg'].includes(f))
+          // Large install-time icons are fetched by the browser itself when someone installs.
+          .filter(
+            (f) =>
+              !f.startsWith('dishes/') &&
+              !['index.html', 'sw.js', 'CNAME', '404.html', 'robots.txt', 'sitemap.xml', 'og-image.jpg', 'icon-512.png', 'icon-maskable-512.png'].includes(f),
+          )
           .map((f) => `./${f}`),
       ];
       const sw = readFileSync('sw-template.js', 'utf8')
