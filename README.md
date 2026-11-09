@@ -44,7 +44,7 @@ The build uses a relative base (`./`), so `docs/` works at the domain root and a
 - **Restore**: on load, the saved run is checked against the catalog version, the purchases, the money spent and the offer's legality. If any check fails, the title screen offers a clean new run with a notice; dishes are never quietly swapped.
 - **Score**: `sum(ratingTenths) × 2` hundredths, shown to two decimals (`4.48 / 5`). Money saved is shown separately and doesn't change the score. Mia's lines come only from the game state and never affect scoring.
 - **Personal best**: stored locally (stars first, then money saved).
-- **Sharing**: `navigator.share` with a PNG card made from your real menu, when the browser supports it. Otherwise the game shows **Copy text** and **Download image**. The card shows the real dishes, prices and score only: no reviews, rankings or percentiles.
+- **Sharing**: `navigator.share` with a PNG card made from your real menu, when the browser supports it. Otherwise the game shows **Copy text** and **Download image**. The card shows the real dishes, prices and score only: no reviews, rankings or percentiles. The share text (`src/shareText.ts`) is four short lines: name and score, a Wordle-style emoji row of the five courses in menu order, one sentence saying what the game is plus the "Can you beat my menu?" challenge, and `https://starchefmia.com/?s=share`. The full menu stays in the picture card, and the link's preview card shows the game.
 
 ## Tests performed
 

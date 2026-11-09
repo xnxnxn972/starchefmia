@@ -56,13 +56,11 @@ export function Results({ run, restaurantName, onRestaurantName, onCookAgain }: 
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => headingRef.current?.focus(), []);
 
-  // Tagged so arrivals from shared menus are attributable: WhatsApp/iMessage strip the referrer.
-  const url = location.origin + location.pathname + '?s=share';
 
   async function onShare() {
     setBusy(true);
     setShareStatus('');
-    const text = shareText(run.picks, restaurantName, url);
+    const text = shareText(run.picks, restaurantName);
     const image = await shareImage(run.picks, restaurantName);
     const outcome = await nativeShare(text, image);
     setBusy(false);
@@ -74,7 +72,7 @@ export function Results({ run, restaurantName, onRestaurantName, onCookAgain }: 
   }
 
   async function onCopy() {
-    const ok = await copyText(shareText(run.picks, restaurantName, url));
+    const ok = await copyText(shareText(run.picks, restaurantName));
     if (ok) trackShare('copied');
     setShareStatus(ok ? 'Menu copied to clipboard.' : 'Copy failed. Select the text below instead.');
   }
@@ -176,7 +174,7 @@ export function Results({ run, restaurantName, onRestaurantName, onCookAgain }: 
           <button type="button" className="btn secondary" onClick={onDownload}>
             Download image
           </button>
-          <textarea readOnly rows={8} value={shareText(run.picks, restaurantName, url)} aria-label="Share text" />
+          <textarea readOnly rows={5} value={shareText(run.picks, restaurantName)} aria-label="Share text" />
         </div>
       )}
       <p className="share-status" role="status">

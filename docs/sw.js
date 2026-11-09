@@ -11,12 +11,12 @@
  *  - Google Fonts: cached after first use so typography survives offline.
  *  - Anything else cross-origin (the Supabase play log) is never touched.
  */
-const VERSION = '202611090930';
+const VERSION = '202611090943';
 const PRECACHE = [
   "./",
   "./apple-touch-icon.png",
   "./assets/index-CcmysvH5.css",
-  "./assets/index-ms2UxVUP.js",
+  "./assets/index-DFWPbaS2.js",
   "./favicon-48.png",
   "./favicon.ico",
   "./fonts/fraunces-latin.woff2",

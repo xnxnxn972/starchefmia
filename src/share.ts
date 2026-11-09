@@ -11,20 +11,7 @@ function orderedDishes(picks: string[]) {
   return COURSES.map((c) => picks.map(getDish).find((d) => d.course === c)!).filter(Boolean);
 }
 
-export function shareText(picks: string[], restaurantName: string, url: string): string {
-  const spent = picks.reduce((s, id) => s + getDish(id).costCents, 0);
-  const name = restaurantName.trim() || 'My restaurant';
-  const lines = orderedDishes(picks).map(
-    (d) => `${COURSE_LABEL[d.course]}: ${d.name} (${formatMoney(d.costCents)}, ★${formatRating(d.ratingTenths)})`,
-  );
-  return [
-    `${name}: opening night`,
-    `★ ${formatStars(scoreHundredths(picks))} / 5 · spent ${formatMoney(spent)} of ${formatMoney(catalog.config.budgetCents)}`,
-    ...lines,
-    `${catalog.gameTitle} by ${catalog.studio}`,
-    url,
-  ].join('\n');
-}
+export { shareText } from './shareText';
 
 /** The same course illustration the game shows for dishes without art, as an image URL. */
 function placeholderSrc(course: Course): string {
