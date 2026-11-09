@@ -9,6 +9,7 @@ import {
   purchase,
   remainingCents,
   RunState,
+  type Offer,
 } from './engine/engine';
 import { loadPrefs, loadRun, Prefs, saveRun, savePrefs, loadBest, type PersonalBest } from './engine/persist';
 import { freshSeed } from './engine/rng';
@@ -28,6 +29,9 @@ interface State {
   selected: string | null;
   lastServed: string | null;
   announce: string;
+  /** The turn just served. Its labels stay on screen while the food is placed; the next
+   *  turn's offer is already drawn (and saved) but must not show until its reveal. */
+  prevOffer: Offer | null;
 }
 
 type Action =
@@ -43,7 +47,7 @@ function reducer(state: State, action: Action): State {
   switch (action.type) {
     case 'start': {
       const r = newRun(action.seed);
-      return { run: r, selected: null, lastServed: null, announce: '' };
+      return { run: r, selected: null, lastServed: null, announce: '', prevOffer: null };
     }
     case 'select':
       if (!run || run.phase !== 'choosing') return state;
@@ -58,6 +62,7 @@ function reducer(state: State, action: Action): State {
         run: res.run,
         selected: null,
         lastServed: action.id,
+        prevOffer: run.offer,
         announce: `Served ${d.name} as ${COURSE_SHORT[d.course]}. ${formatMoney(remainingCents(res.run))} left.`,
       };
     }
@@ -79,16 +84,16 @@ function reducer(state: State, action: Action): State {
       return { ...state, run: next, announce: inspirationAnnouncement(next) };
     }
     case 'quit':
-      return { run: null, selected: null, lastServed: null, announce: '' };
+      return { run: null, selected: null, lastServed: null, announce: '', prevOffer: null };
   }
 }
 
 function initState(): State & { restoreFailed: boolean } {
   const r = loadRun();
   if (r.kind === 'ok') {
-    return { run: r.run, selected: null, lastServed: r.run.picks[r.run.picks.length - 1] ?? null, announce: '', restoreFailed: false };
+    return { run: r.run, selected: null, lastServed: r.run.picks[r.run.picks.length - 1] ?? null, announce: '', prevOffer: null, restoreFailed: false };
   }
-  return { run: null, selected: null, lastServed: null, announce: '', restoreFailed: r.kind === 'invalid' };
+  return { run: null, selected: null, lastServed: null, announce: '', prevOffer: null, restoreFailed: r.kind === 'invalid' };
 }
 
 function useSystemReducedMotion() {
@@ -176,6 +181,11 @@ export function App() {
   useEffect(() => {
     if (phase === 'choosing') offersRef.current?.querySelector<HTMLButtonElement>('.offer:not(:disabled)')?.focus({ preventScroll: true });
   }, [phase, turn]);
+  // Height of the dish list when Serve was tapped, held until the next list appears.
+  const [holdHeight, setHoldHeight] = useState<number | null>(null);
+  useEffect(() => {
+    if (phase === 'choosing' || !phase) setHoldHeight(null);
+  }, [phase, turn]);
 
   function start() {
     unlockAudio();
@@ -207,6 +217,8 @@ export function App() {
   const selLegal = selected ? isLegal(run, selected) : false;
   const pickNo = Math.min(run.picks.length + (run.phase === 'serving' ? 0 : 1), catalog.config.picks);
   const servedCourse = run.phase === 'serving' && lastServed ? getDish(lastServed).course : null;
+  // While the food is placed, keep the turn just played on screen; the next offer waits for its reveal.
+  const shownOffer = run.phase === 'serving' ? state.prevOffer : run.offer;
 
   return (
     <div className={`app${reduceMotion ? ' reduce-motion' : ''}${run.phase === 'results' ? ' at-results' : ''}`}>
@@ -265,11 +277,13 @@ export function App() {
               onRestaurantName={(s) => setPrefs((p) => ({ ...p, restaurantName: s }))}
               onCookAgain={start}
             />
-          ) : run.offer ? (
+          ) : shownOffer ? (
             <>
-              <Inspiration offer={run.offer} revealing={run.phase === 'revealing'} reduceMotion={reduceMotion} />
-              <div ref={offersRef} className={`offers-wrap${run.phase === 'revealing' ? ' hidden-during-reveal' : ''}`}>
-                {run.phase !== 'revealing' && (
+              <Inspiration offer={shownOffer} revealing={run.phase === 'revealing'} reduceMotion={reduceMotion} />
+              {/* Dishes only while choosing: gone the moment Serve is tapped, back once the labels stop.
+                  The wrapper keeps its height meanwhile so the page doesn't jump. */}
+              <div ref={offersRef} className="offers-wrap" style={holdHeight ? { minHeight: holdHeight } : undefined}>
+                {run.phase === 'choosing' && (
                   <Offers
                     run={run}
                     selected={selected}
@@ -294,6 +308,7 @@ export function App() {
             disabled={!selDish || !selLegal || run.phase !== 'choosing'}
             onClick={() => {
               if (!selected) return;
+              setHoldHeight(offersRef.current?.offsetHeight ?? null);
               unlockAudio();
               userActed.current = true;
               dispatch({ type: 'commit', id: selected });
