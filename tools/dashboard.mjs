@@ -20,6 +20,9 @@ const SUPABASE_URL = 'https://hmvxanqkorcfxwsdusuj.supabase.co';
 const ANON_KEY =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhtdnhhbnFrb3JjZnh3c2R1c3VqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk3MjI4OTgsImV4cCI6MjA5NTI5ODg5OH0.7o7OnhikQdgApqPTEIbhjOZ-YcKDU1fBFpcLXPXtEtA';
 const PAGE = 1000;
+const DISH_NAME = new Map(
+  JSON.parse(readFileSync(join(ROOT, 'src', 'data', 'chef-catalog.json'), 'utf8')).dishes.map((d) => [d.id, `${d.name} (${d.cuisine})`]),
+);
 const MAX_PAGES = 200;
 
 function readToken() {
@@ -125,9 +128,13 @@ const median = (xs) => {
   return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
 };
 
+// SC_INCLUDE_DEV=1 includes our own localhost test rows: only for checking the layout.
+const INCLUDE_DEV = process.env.SC_INCLUDE_DEV === '1';
+
 function aggregate(games, loads) {
-  const g = games.filter((r) => r.env === 'prod' && !BOT_REF.test(r.referrer || ''));
-  const l = loads.filter((r) => r.env === 'prod' && !r.webdriver && !BOT_REF.test(r.referrer || ''));
+  const envOk = (r) => r.env === 'prod' || INCLUDE_DEV;
+  const g = games.filter((r) => envOk(r) && !BOT_REF.test(r.referrer || ''));
+  const l = loads.filter((r) => envOk(r) && !r.webdriver && !BOT_REF.test(r.referrer || ''));
 
   const loadByVisit = new Map(l.map((r) => [r.visit_id, r]));
   const gamesByVisit = new Map();
@@ -179,7 +186,7 @@ function aggregate(games, loads) {
 
   const dishCounts = countBy(
     g.flatMap((r) => (Array.isArray(r.meta?.dishes) ? r.meta.dishes : [])),
-    (x) => x,
+    (x) => DISH_NAME.get(x) || x,
   );
 
   const scoreBins = new Map();
@@ -307,7 +314,7 @@ h1{font:700 1.6rem Georgia,serif;margin:0}h2{font-size:.95rem;margin:0 0 10px}
 footer{color:var(--ink2);font-size:.75rem;margin-top:18px}
 </style></head><body><main>
 <h1>Star Chef Dashboard</h1>
-<p class="meta">starchefmia.com · generated ${esc(meta.generatedAt)} UTC · ${meta.games} game rows, ${meta.loads} arrival rows (production only; bots and our own ?dev=1 browsers excluded)</p>
+<p class="meta">starchefmia.com · generated ${esc(meta.generatedAt)} UTC · ${meta.games} game rows, ${meta.loads} arrival rows (${INCLUDE_DEV ? 'INCLUDING DEV TEST ROWS' : 'production only; bots and our own ?dev=1 browsers excluded'})</p>
 ${meta.truncated ? '<p class="banner">Row cap reached: some older rows were not fetched. Numbers undercount.</p>' : ''}
 <div class="tiles">
 ${tile('Visits', t.visits, `${t.arrivals} arrivals logged`)}
@@ -332,7 +339,7 @@ ${barList('Devices', d.devices)}
 ${barList('Platforms', d.platforms)}
 ${barList('Share outcomes', d.shareResults, { note: 'Per game; "cancelled" = share sheet closed' })}
 ${columnChart('Final scores', d.scoreHistogram, { note: 'Finished games, by 0.1 star' })}
-${barList('Most-served dishes', d.topDishes, { note: 'Dish ids, all games' })}
+${barList('Most-served dishes', d.topDishes, { note: 'Every course served, all games' })}
 </div>
 <footer>Visit = one sitting (ends after 30 idle minutes). Visits known only from games (arrival not logged) are included.</footer>
 </main></body></html>`;
