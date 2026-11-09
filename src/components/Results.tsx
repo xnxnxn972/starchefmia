@@ -6,6 +6,7 @@ import { Table } from './Table';
 import { StarIcon } from '../art/icons';
 import { copyText, downloadBlob, nativeShare, shareImage, shareText } from '../share';
 import { trackShare } from '../telemetry';
+import { Leaderboard } from './Leaderboard';
 
 interface Props {
   run: RunState;
@@ -146,6 +147,11 @@ export function Results({ run, restaurantName, onRestaurantName, onCookAgain }: 
       <p className="share-status" role="status">
         {shareStatus}
       </p>
+      <Leaderboard
+        refreshKey={String(run.seed)}
+        entry={{ score: hundredths, dishIds: run.picks, restaurantName, onRestaurantName }}
+      />
+
       <Table picks={run.picks} compact />
 
       <table className="menu-card">

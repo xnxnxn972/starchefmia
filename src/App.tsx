@@ -19,7 +19,7 @@ import { Table } from './components/Table';
 import { Inspiration } from './components/Inspiration';
 import { Offers } from './components/Offers';
 import { Results } from './components/Results';
-import { HelpDialog, SettingsDialog } from './components/Dialogs';
+import { HelpDialog, LeaderboardDialog, SettingsDialog } from './components/Dialogs';
 import { CHEF_NAME, TIMING } from './config';
 import { inspirationAnnouncement, miaFor } from './copy';
 import { formatStars, scoreHundredths } from './engine/engine';
@@ -362,6 +362,7 @@ export function Intro(props: {
 }) {
   // Read after mount so the first render matches the pre-rendered HTML exactly (hydration).
   const [best, setBest] = useState<PersonalBest | null>(null);
+  const [boardOpen, setBoardOpen] = useState(false);
   useEffect(() => setBest(loadBest()), []);
   const preview = ['in-main-02', 'fr-soup-02', 'it-appetizer-01', 'mx-salad-02', 'jp-dessert-02'];
   return (
@@ -391,14 +392,20 @@ export function Intro(props: {
         <button type="button" className="btn primary big" onClick={props.onStart}>
           Start cooking
         </button>
-        <button type="button" className="link-btn" onClick={props.onHelp}>
-          How to play
-        </button>
+        <div className="intro-links">
+          <button type="button" className="link-btn" onClick={props.onHelp}>
+            How to play
+          </button>
+          <button type="button" className="link-btn" onClick={() => setBoardOpen(true)}>
+            Leaderboard
+          </button>
+        </div>
         {best && <p className="best-line">Personal best: {formatStars(best.hundredths)} / 5</p>}
         <p className="fineprint">Prices and ratings are fictional game values.</p>
       </div>
       <AboutGame />
       <HelpDialog open={props.helpOpen} onClose={props.onCloseHelp} />
+      <LeaderboardDialog open={boardOpen} onClose={() => setBoardOpen(false)} />
     </main>
   );
 }

@@ -1,5 +1,6 @@
 import { ReactNode, useEffect, useRef } from 'react';
 import { CHEF_NAME } from '../config';
+import { Leaderboard } from './Leaderboard';
 
 function Modal({ open, onClose, title, children }: { open: boolean; onClose: () => void; title: string; children: ReactNode }) {
   const ref = useRef<HTMLDialogElement>(null);
@@ -30,6 +31,14 @@ function Modal({ open, onClose, title, children }: { open: boolean; onClose: () 
         </div>
       )}
     </dialog>
+  );
+}
+
+export function LeaderboardDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
+  return (
+    <Modal open={open} onClose={onClose} title="Top restaurants">
+      <Leaderboard />
+    </Modal>
   );
 }
 

@@ -17,9 +17,9 @@
  *     only thing that reliably survives a mobile browser being backgrounded.
  */
 
-const SUPABASE_URL = 'https://hmvxanqkorcfxwsdusuj.supabase.co';
+export const SUPABASE_URL = 'https://hmvxanqkorcfxwsdusuj.supabase.co';
 // Public anon key (same shared project as the other games); safe by design.
-const SUPABASE_ANON_KEY =
+export const SUPABASE_ANON_KEY =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhtdnhhbnFrb3JjZnh3c2R1c3VqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk3MjI4OTgsImV4cCI6MjA5NTI5ODg5OH0.7o7OnhikQdgApqPTEIbhjOZ-YcKDU1fBFpcLXPXtEtA';
 const GAME_RPC = `${SUPABASE_URL}/rest/v1/rpc/sc_log_game`;
 const LOAD_RPC = `${SUPABASE_URL}/rest/v1/rpc/sc_log_load`;

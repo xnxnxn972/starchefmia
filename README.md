@@ -72,6 +72,14 @@ Not tested: real iOS/Android devices, native share sheets, or a screen reader en
 - **Chef Mia and the restaurant** come from one painted background (`public/scene/table-mia.webp`, 1024×1536, plus a 640px version for 1× screens). The wall and Mia fill the top 33.4% of the image, and the table edge sits exactly there; the plates sit on the painted linen. Her speech bubble and name tag are live HTML placed over the wall. Her mood (welcome, curious, thoughtful, serving, celebrate) now shows only through what she says and the bubble's style, since the painting has a single pose.
 - To replace a dish's art: export a square transparent PNG and convert it to 512×512 WebP at quality 82, saved over `public/dishes/<id>.webp`.
 
+## Leaderboards
+
+- **Four boards:** Today, This week, This month and All time, all in UTC (day from midnight, week from Monday, month from the 1st). Modelled on Chasing P1's weekly board. SQL: [`supabase/starchef-leaderboard.sql`](supabase/starchef-leaderboard.sql). It's generated: edit `supabase/starchef-leaderboard.template.sql`, then run `python tools/gen_board_sql.py .` to refresh the dish rows from the catalog.
+- **One entry per player per board:** a player is a browser (`sc.board.player.v1`), shown by its restaurant name, and each board keeps the player's best score in that window. Ties go to whoever posted first. Names are unique (case-insensitive) and stay with the first player to post them; posting under a new name renames that player's entry.
+- **Opt-in:** players post from the results screen ("Your 4.52 would place #2 today" → Post as <name>). The title screen has a read-only Leaderboard dialog. Client code is in `src/board.ts` and `src/components/Leaderboard.tsx`. Every call fails quietly, and an unreachable board just doesn't show.
+- **Scores can't be faked:** the browser sends the five dish ids, and `sc_board_post` checks five different courses within $50, then computes the score from `sc_dishes`. Offensive names are blocked with the same list as Chasing P1. `env = 'dev'` (localhost) stays off the public boards, and `player_id` is never returned.
+- **Moderation:** `sc_board_admin(token, days)` lists posts with names (Chasing P1 admin token). Removal SQL is at the bottom of the SQL file.
+
 ## Sound
 
 - **The reveal sound** (`src/sound.ts`) is a kitchen-timer dial: six soft clicks that slow down with the rolling labels, then a tiny "tink" as the inspiration settles. It's synthesised with Web Audio, so there are no audio files.
