@@ -84,9 +84,10 @@ function host(ref) {
 /** Channel + detail for one arrival. Link tags beat the referrer: they survive chat apps. */
 function classify(referrer, meta = {}) {
   const src = (meta.src || meta.utm_source || '').toLowerCase();
+  // App launches from the home screen open ./?s=pwa (manifest start_url); standalone display is the backstop.
+  if (src === 'pwa' || meta.display === 'standalone') return ['Home-screen app', 'installed app'];
   if (src === 'share') return ['Shared menu', 'share link'];
   if (src) return ['Tagged link', src];
-  if (meta.display === 'standalone') return ['Home-screen app', 'standalone'];
   const h = referrer ? host(referrer) : null;
   if (!h || OWN.test(h)) return ['Direct / unknown', 'no referrer'];
   if (SEARCH.test(h + '.')) return ['Search', h.split('.').slice(-2, -1)[0] || h];
@@ -217,6 +218,8 @@ function aggregate(games, loads) {
       hoursPlayed: activeS.reduce((s, x) => s + x, 0) / 3600,
       avgScore: scores.length ? scores.reduce((s, x) => s + x, 0) / scores.length / 100 : null,
       sharedGames: g.filter((r) => r.shared).length,
+      appVisits: visits.filter((v) => v.channel === 'Home-screen app').length,
+      installs: g.filter((r) => r.meta?.installed === true).length,
       players,
       returningGameShare: g.length ? returning / g.length : 0,
     },
@@ -326,13 +329,14 @@ ${tile('Hours played', t.hoursPlayed.toFixed(1))}
 ${tile('Average score', t.avgScore == null ? '–' : t.avgScore.toFixed(2), 'finished games')}
 ${tile('Shares', t.sharedGames, t.games ? `${pct(t.sharedGames / t.games)} of games` : '')}
 ${tile('Players', t.players, `${pct(t.returningGameShare)} of games by returning players`)}
+${tile('Home-screen app', t.appVisits, `visits from the installed app · ${t.installs} installs seen`)}
 </div>
 <div class="grid">
 ${columnChart('Visits per day', d.perDayVisits, { fmtLabel: shortDay, note: 'UTC days' })}
 ${columnChart('Games per day', d.perDayGames, { fmtLabel: shortDay })}
 ${barList('Funnel (visits)', d.funnel, { total: d.funnel[0][1] })}
 ${columnChart('Games per visit', d.gamesPerVisit, { note: 'Visits that started at least one game' })}
-${barList('Traffic sources', d.channels, { note: 'Shared menus are tagged ?s=share; chat apps send no referrer' })}
+${barList('Traffic sources', d.channels, { note: 'Shared menus are tagged ?s=share; home-screen launches ?s=pwa; chat apps send no referrer' })}
 ${barList('Source detail', d.sourceDetail)}
 ${barList('Countries', d.countries, { note: 'From the request (Cloudflare), no IP stored' })}
 ${barList('Devices', d.devices)}

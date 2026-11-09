@@ -72,6 +72,19 @@ Not tested: real iOS/Android devices, native share sheets, or a screen reader en
 - **Chef Mia and the restaurant** come from one painted background (`public/scene/table-mia.webp`, 1024×1536, plus a 640px version for 1× screens). The wall and Mia fill the top 33.4% of the image, and the table edge sits exactly there; the plates sit on the painted linen. Her speech bubble and name tag are live HTML placed over the wall. Her mood (welcome, curious, thoughtful, serving, celebrate) now shows only through what she says and the bubble's style, since the painting has a single pose.
 - To replace a dish's art: export a square transparent PNG and convert it to 512×512 WebP at quality 82, saved over `public/dishes/<id>.webp`.
 
+## Installable app (PWA)
+
+- **Manifest:** `public/manifest.webmanifest` sets the name "Star Chef", standalone display and portrait orientation. Its start address is `./?s=pwa`, so every launch from the home screen arrives tagged.
+- **Icons:** cropped from Chef Mia's portrait in the scene art: 192, 512, a maskable 512 for Android shapes, the 180px apple-touch-icon and a favicon.
+- **Offline play:** `docs/sw.js` is generated at build time from `sw-template.js` by a small plugin in `vite.config.ts`, which stamps it with that release's version and file list.
+  - **Page:** network first, so a new release appears at once.
+  - **App shell** (code, scene art, icons): precached on install.
+  - **Dish photos:** cached as they appear rather than precached, and refreshed in the background.
+  - **Google Fonts:** cached after first use.
+  - **Supabase calls:** never intercepted.
+  - **Offline fallback:** an uncached dish shows its course illustration.
+- **In the play log:** a home-screen launch starts a new visit tagged `src: pwa`; the dashboard counts it as "Home-screen app". Any arrival through a differently tagged link starts a new visit too, as analytics tools do. Installs seen on Chrome, Edge and Android (`appinstalled`) are flagged as `meta.installed` on the next game; iOS doesn't report installs.
+
 ## Play log and dashboard
 
 Modelled on Chasing P1's telemetry, in the same shared Supabase project.

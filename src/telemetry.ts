@@ -129,6 +129,8 @@ interface Visit {
   id: string;
   ts: number;
   games: number;
+  /** The tagged source this sitting arrived through (src / utm_source), if any. */
+  src?: string;
 }
 
 interface Player {
@@ -175,6 +177,8 @@ interface GameRow {
 }
 
 let game: GameRow | null = null;
+/** Flags noticed outside a game (e.g. the app was just installed), applied to the next game row. */
+const pendingMeta: Record<string, unknown> = {};
 let gameStartedMs = 0;
 let activeMs = 0;
 let visibleSince = 0;
@@ -225,8 +229,15 @@ export function initTelemetry(): void {
   if (looksAutomated()) return;
   suppressed = false;
 
+  tags = landingTags();
+  const arrivalSrc = tags.src || tags.utm_source || '';
   const saved = store<Visit>(VISIT_KEY);
-  visit = saved && typeof saved.id === 'string' && Date.now() - saved.ts <= VISIT_IDLE_MS ? saved : { id: newId(), ts: Date.now(), games: 0 };
+  const live = saved && typeof saved.id === 'string' && Date.now() - saved.ts <= VISIT_IDLE_MS;
+  // Arriving through a differently tagged link (home-screen app ?s=pwa, a shared menu, a
+  // campaign) starts a new visit, as analytics tools do. Otherwise the arrival row, which is
+  // written once per visit, would keep the earlier untagged source and the tag would be lost.
+  const newSource = !!arrivalSrc && (saved?.src ?? '') !== arrivalSrc;
+  visit = live && !newSource ? saved! : { id: newId(), ts: Date.now(), games: 0, ...(arrivalSrc ? { src: arrivalSrc } : {}) };
   const isNewVisit = !saved || saved.id !== visit.id;
 
   const p = store<Player>(PLAYER_KEY);
@@ -236,7 +247,6 @@ export function initTelemetry(): void {
       : { id: newId(), visits: 1, games: 0, first_seen: new Date().toISOString().slice(0, 10) };
   store(PLAYER_KEY, player);
 
-  tags = landingTags();
   base = {
     env: /^(localhost|127\.|\[?::1)/.test(location.hostname) ? 'dev' : 'prod',
     referrer: document.referrer.slice(0, 300) || null,
@@ -266,6 +276,12 @@ export function initTelemetry(): void {
     }
   });
   window.addEventListener('pagehide', () => pushGame(true));
+
+  // Installed to the home screen from this page (Chrome/Edge/Android fire this; iOS does not).
+  window.addEventListener('appinstalled', () => {
+    if (game) trackExtra('installed', true);
+    else pendingMeta.installed = true;
+  });
 }
 
 /**
@@ -303,8 +319,10 @@ export function trackGameStart(seed: number, opts: { resumed?: boolean; picks?: 
       player_games: player.games,
       first_seen: player.first_seen,
       ...(opts.resumed ? { resumed: true } : {}),
+      ...pendingMeta,
     },
   };
+  for (const k of Object.keys(pendingMeta)) delete pendingMeta[k];
   gameStartedMs = Date.now();
   activeMs = 0;
   visibleSince = document.visibilityState === 'visible' ? Date.now() : 0;
