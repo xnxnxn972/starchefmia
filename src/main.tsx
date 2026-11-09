@@ -1,8 +1,9 @@
 import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import { App } from './App';
 import './styles.css';
 import { initTelemetry } from './telemetry';
+import { loadRun } from './engine/persist';
 
 initTelemetry();
 
@@ -15,8 +16,20 @@ if (import.meta.env.PROD && 'serviceWorker' in navigator) {
   });
 }
 
-createRoot(document.getElementById('root')!).render(
+const root = document.getElementById('root')!;
+const app = (
   <StrictMode>
     <App />
-  </StrictMode>,
+  </StrictMode>
 );
+
+// The build pre-renders the title screen into #root (tools/prerender.mjs). A visitor with
+// nothing saved sees exactly that screen first, so React adopts the existing markup
+// (hydration) instead of laying the page out a second time. With a saved game (or a
+// failed restore notice) the first screen differs, so start clean.
+if (root.firstElementChild && loadRun().kind === 'none') {
+  hydrateRoot(root, app);
+} else {
+  root.textContent = '';
+  createRoot(root).render(app);
+}

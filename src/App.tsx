@@ -10,7 +10,7 @@ import {
   remainingCents,
   RunState,
 } from './engine/engine';
-import { loadPrefs, loadRun, Prefs, saveRun, savePrefs, loadBest } from './engine/persist';
+import { loadPrefs, loadRun, Prefs, saveRun, savePrefs, loadBest, type PersonalBest } from './engine/persist';
 import { freshSeed } from './engine/rng';
 import { trackExtra, trackGameEnd, trackGameStart, trackPick } from './telemetry';
 import { Table } from './components/Table';
@@ -298,7 +298,9 @@ export function Intro(props: {
   helpOpen: boolean;
   onCloseHelp: () => void;
 }) {
-  const best = loadBest();
+  // Read after mount so the first render matches the pre-rendered HTML exactly (hydration).
+  const [best, setBest] = useState<PersonalBest | null>(null);
+  useEffect(() => setBest(loadBest()), []);
   const preview = ['in-main-02', 'fr-soup-02', 'it-appetizer-01', 'mx-salad-02', 'jp-dessert-02'];
   return (
     <main className="intro">

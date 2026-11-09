@@ -68,15 +68,12 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Star Chef" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- The painted scene is the largest thing on first paint: fetch it straight away. -->
     <link rel="preload" as="image" href="./scene/table-mia-640.webp" media="(max-resolution: 1.49dppx)" fetchpriority="high" />
     <link rel="preload" as="image" href="./scene/table-mia.webp" media="(min-resolution: 1.5dppx)" fetchpriority="high" />
-    <!-- Fonts load without blocking the first paint (text shows in the fallback font, then swaps). -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" /></noscript>
+    <!-- Self-hosted fonts (SIL Open Font License): no third-party connection, cached offline. -->
+    <link rel="preload" as="font" type="font/woff2" href="./fonts/inter-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="./fonts/fraunces-latin.woff2" crossorigin />
   </head>
   <body>
     <div id="root"></div>
