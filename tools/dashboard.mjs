@@ -135,7 +135,12 @@ const INCLUDE_DEV = process.env.SC_INCLUDE_DEV === '1';
 function aggregate(games, loads) {
   const envOk = (r) => r.env === 'prod' || INCLUDE_DEV;
   const g = games.filter((r) => envOk(r) && !BOT_REF.test(r.referrer || ''));
-  const l = loads.filter((r) => envOk(r) && !r.webdriver && !BOT_REF.test(r.referrer || ''));
+  const playedVisits = new Set(g.map((r) => r.visit_id));
+  // Link scanners (Reddit/chat previews, crawlers) render a headless 800x600 window and never
+  // play. A visit with that screen and no game is treated as a bot, not a bounce.
+  const isScanner = (r) => r.screen === '800x600' && !playedVisits.has(r.visit_id);
+  const scanners = loads.filter((r) => envOk(r) && isScanner(r)).length;
+  const l = loads.filter((r) => envOk(r) && !r.webdriver && !BOT_REF.test(r.referrer || '') && !isScanner(r));
 
   const loadByVisit = new Map(l.map((r) => [r.visit_id, r]));
   const gamesByVisit = new Map();
@@ -205,6 +210,7 @@ function aggregate(games, loads) {
   const players = new Set(g.map((r) => r.meta?.player_id).filter(Boolean)).size;
 
   return {
+    excludedScanners: scanners,
     totals: {
       arrivals: l.length,
       visits: visits.length,
@@ -317,7 +323,7 @@ h1{font:700 1.6rem Georgia,serif;margin:0}h2{font-size:.95rem;margin:0 0 10px}
 footer{color:var(--ink2);font-size:.75rem;margin-top:18px}
 </style></head><body><main>
 <h1>Star Chef Dashboard</h1>
-<p class="meta">starchefmia.com · generated ${esc(meta.generatedAt)} UTC · ${meta.games} game rows, ${meta.loads} arrival rows (${INCLUDE_DEV ? 'INCLUDING DEV TEST ROWS' : 'production only; bots and our own ?dev=1 browsers excluded'})</p>
+<p class="meta">starchefmia.com · generated ${esc(meta.generatedAt)} UTC · ${meta.games} game rows, ${meta.loads} arrival rows (${INCLUDE_DEV ? 'INCLUDING DEV TEST ROWS' : `production only; bots, ${d.excludedScanners} link-scanner arrivals and our own ?dev=1 browsers excluded`})</p>
 ${meta.truncated ? '<p class="banner">Row cap reached: some older rows were not fetched. Numbers undercount.</p>' : ''}
 <div class="tiles">
 ${tile('Visits', t.visits, `${t.arrivals} arrivals logged`)}
