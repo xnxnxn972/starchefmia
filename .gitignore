@@ -1,4 +1,5 @@
-# dist/ is committed on purpose — GitHub Pages serves it at
-# /5-star-chef/dist/. Rebuild with `npm run build` before pushing.
+# docs/ is the build output and is committed on purpose: GitHub Pages serves main:/docs.
+# Rebuild with `npm run build` before pushing.
 node_modules/
+dist/
 .claude/

@@ -10,15 +10,15 @@ Node is at `C:\Program Files\nodejs` on this machine and isn't on PATH by defaul
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173 (the repo's .claude/launch.json uses port 5175)
+npm run dev        # http://localhost:5173 (the games folder's .claude/launch.json runs it on port 5175)
 npm test           # engine + catalog tests (vitest)
-npm run build      # typecheck + production build into dist/
+npm run build      # typecheck + production build into docs/ (what Pages serves)
 npm run preview    # serve the production build
 ```
 
-The build uses a relative base (`./`), so `dist/` works from any static host path, such as a GitHub Pages subfolder.
+The build uses a relative base (`./`), so `docs/` works at the domain root and at the github.io project path.
 
-**Live:** https://xnxnxn972.github.io/gardening-tycoon/5-star-chef/dist/ — `dist/` is committed on purpose (same convention as Brick Tower Defenders). Run `npm run build` and commit `dist/` before pushing to `main`.
+**Live:** https://starchefmia.com (GitHub Pages from `main:/docs` in [xnxnxn972/starchefmia](https://github.com/xnxnxn972/starchefmia)). `docs/` is the committed build output: run `npm run build` and commit `docs/` before pushing.
 
 ## Layout
 
