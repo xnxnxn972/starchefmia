@@ -1,6 +1,6 @@
 import { COURSE_LABEL, COURSE_SHORT, getDish, ingredientLabel } from './engine/catalog';
 import { checkPurchase, formatMoney, openCourses, remainingCents, RunState } from './engine/engine';
-import type { MiaMood } from './art/Mia';
+export type MiaMood = 'welcome' | 'curious' | 'thoughtful' | 'serving' | 'celebrate';
 
 const WORDS = ['zero', 'one', 'two', 'three', 'four', 'five'];
 

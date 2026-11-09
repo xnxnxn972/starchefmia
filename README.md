@@ -30,7 +30,7 @@ The build uses a relative base (`./`), so `dist/` works from any static host pat
 | `src/engine/engine.test.ts` | Tests (see below). |
 | `src/App.tsx` | Phase state machine (reducer) plus turn timers. |
 | `src/components/` | Table, Inspiration (the two label drums), Offers, Results, Dialogs. |
-| `src/art/` | Chef Mia (SVG, 5 poses), course placeholders, empty plates, flags, ingredient icons. |
+| `src/art/` | Course placeholders (fallback only), empty plates, flags, ingredient icons. |
 | `src/config.ts` | `CHEF_NAME` and all timings. |
 | `src/copy.ts` | Mia's state-based lines, reserve messages and announcements. |
 | `public/dishes/` | Dish art for all 90 dishes (transparent WebP, 512×512). |
@@ -69,7 +69,7 @@ Not tested: real iOS/Android devices, native share sheets, or a screen reader en
 - The art fields in the catalog (`imageSrc`, `imageAlt`, `imagePrompt`, `artStatus`) come from the art package's catalog. `imageSrc` stays relative (`dishes/<id>.webp`, not the package's `/assets/...`) so the GitHub Pages subfolder works. All other gameplay data is unchanged.
 - `references/asset-manifest.json` (hashes and sizes of the source PNGs) and `references/generation-prompts.json` are kept so future art can match the style. The source PNGs aren't in the repo.
 - The course placeholders in `src/art/FoodArt.tsx` are kept only as a fallback if an image fails to load. Unfilled courses still show an empty plate.
-- **Chef Mia** is an original SVG character with 5 poses (welcome, curious, thoughtful, serving, celebrate).
+- **Chef Mia and the restaurant** come from one painted background (`public/scene/table-mia.webp`, 1024×1536, plus a 640px version for 1× screens). The wall and Mia fill the top 33.4% of the image, and the table edge sits exactly there; the plates sit on the painted linen. Her speech bubble and name tag are live HTML placed over the wall. Her mood (welcome, curious, thoughtful, serving, celebrate) now shows only through what she says and the bubble's style, since the painting has a single pose.
 - To replace a dish's art: export a square transparent PNG and convert it to 512×512 WebP at quality 82, saved over `public/dishes/<id>.webp`.
 
 ## Not in this version (by design)

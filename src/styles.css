@@ -1,5 +1,5 @@
 :root {
-  --linen: #f6efe3;
+  --linen: #efdfd2; /* sampled from the bottom of the scene image */
   --linen-2: #efe5d4;
   --porcelain: #fffdf9;
   --ink: #2b1a22;
@@ -29,9 +29,6 @@ body {
 
 body {
   background: var(--linen);
-  background-image:
-    repeating-linear-gradient(0deg, rgba(120, 90, 60, 0.025) 0 2px, transparent 2px 5px),
-    repeating-linear-gradient(90deg, rgba(120, 90, 60, 0.025) 0 2px, transparent 2px 5px);
   color: var(--ink);
   font-family: var(--sans);
   font-size: 16px;
@@ -182,53 +179,6 @@ textarea {
   margin-bottom: 4px;
 }
 
-.chef {
-  display: flex;
-  align-items: flex-start;
-  gap: 4px;
-  justify-content: flex-end;
-  min-width: 0;
-}
-.mia {
-  margin: 0;
-  width: clamp(66px, 19vw, 124px);
-  flex: none;
-  text-align: center;
-  position: relative;
-}
-.mia svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  transform-origin: 50% 100%;
-}
-.mia figcaption {
-  display: inline-block;
-  margin-top: -6px;
-  padding: 2px 10px;
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 0.78rem;
-  background: var(--porcelain);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  position: relative;
-}
-.mood-celebrate svg {
-  animation: hop 0.7s ease-out 2;
-}
-.mood-curious svg {
-  animation: lean 0.6s ease-out 1;
-}
-@keyframes hop {
-  0%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-6px); }
-}
-@keyframes lean {
-  0% { transform: rotate(0); }
-  50% { transform: rotate(-3deg); }
-  100% { transform: rotate(0); }
-}
 .bubble {
   margin: 8px 0 0;
   max-width: 190px;
@@ -263,7 +213,7 @@ textarea {
   gap: 8px;
   padding: 8px 16px;
   padding-top: max(8px, env(safe-area-inset-top));
-  background: rgba(246, 239, 227, 0.92);
+  background: rgba(240, 224, 211, 0.92);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(226, 214, 196, 0.7);
@@ -297,19 +247,6 @@ textarea {
 .layout {
   flex: 1;
   padding: 0 16px 16px;
-}
-
-.scene-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 8px;
-  padding-top: 4px;
-  margin: 0 -16px;
-  padding-left: 16px;
-  padding-right: 16px;
-  background: radial-gradient(120% 90% at 85% 0%, #f3e2cb 0%, rgba(243, 226, 203, 0) 70%);
-  border-bottom: 3px solid rgba(90, 35, 67, 0.08);
 }
 
 /* ---------- table ---------- */
@@ -640,7 +577,7 @@ textarea {
   gap: 12px;
   padding: 10px 16px;
   padding-bottom: max(10px, env(safe-area-inset-bottom));
-  background: linear-gradient(180deg, rgba(246, 239, 227, 0), rgba(246, 239, 227, 0.96) 22%);
+  background: linear-gradient(180deg, rgba(240, 224, 211, 0), rgba(240, 224, 211, 0.96) 22%);
 }
 .after-note {
   margin: 0;
@@ -668,23 +605,6 @@ textarea {
   flex-direction: column;
   align-items: center;
   text-align: center;
-}
-.intro-head {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  text-align: left;
-  gap: 8px;
-}
-.intro-head .chef {
-  flex-direction: column;
-  align-items: flex-end;
-}
-.intro-head .bubble {
-  border-radius: 18px 18px 18px 4px;
-  max-width: 160px;
-  font-size: 0.85rem;
 }
 .intro-table {
   width: 100%;
@@ -1053,10 +973,7 @@ textarea {
     margin-top: 4px;
   }
 }
-.mia figcaption,
-.brand.small .brand-name {
-  white-space: nowrap;
-}
+
 @media (max-width: 480px) {
   .brand.small .brand-name {
     font-size: 1.05rem;
@@ -1094,4 +1011,122 @@ textarea {
 /* Fraunces goes hairline-thin at large optical sizes; keep the big score sturdy. */
 .score-num {
   font-variation-settings: 'opsz' 36;
+}
+
+
+/* ---------- restaurant scene (background art with Chef Mia) ---------- */
+/* Image: 1024x1536. The wall + Mia band ends at the table edge, 342px = 33.4% of the width. */
+.scene {
+  container-type: inline-size;
+  position: relative;
+  --scene-pad: 16px;
+  margin: 0 -16px;
+  padding: 0 var(--scene-pad) 14px;
+  background-color: var(--linen);
+  background-image: url('/scene/table-mia-640.webp');
+  background-image: image-set(url('/scene/table-mia-640.webp') 1x, url('/scene/table-mia.webp') 2x);
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+/* soften the seam where the image's linen meets the page */
+.scene::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 90px;
+  background: linear-gradient(180deg, rgba(239, 223, 210, 0), var(--linen) 85%);
+  pointer-events: none;
+}
+.scene > * {
+  position: relative;
+  z-index: 1;
+}
+.scene-head {
+  position: relative;
+  height: 130px; /* fallback without container units */
+  /* cqw is the content box; the image spans the padding box too */
+  height: calc((100cqw + 2 * var(--scene-pad)) * 0.334);
+  margin: 0 calc(-1 * var(--scene-pad));
+}
+.scene-head .bubble {
+  position: absolute;
+  top: 6%;
+  right: 29%;
+  max-width: min(46%, 240px);
+  margin: 0;
+  padding: 8px 12px;
+  background: rgba(255, 253, 249, 0.96);
+  border-radius: 18px 18px 4px 18px;
+  font-size: clamp(0.78rem, 2.6cqw, 1rem);
+  animation: bubble-in 0.25s ease-out;
+}
+@keyframes bubble-in {
+  from { opacity: 0; transform: translateY(4px) scale(0.97); }
+}
+.mood-celebrate .bubble {
+  box-shadow: 0 0 0 3px rgba(201, 143, 18, 0.35), 0 3px 10px rgba(80, 50, 30, 0.1);
+}
+.mia-tag {
+  position: absolute;
+  right: 3%;
+  bottom: -4px;
+  padding: 2px 10px;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  background: var(--porcelain);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(80, 50, 30, 0.12);
+}
+.scene .table {
+  margin-top: 8px;
+}
+
+/* intro: brand sits on the linen below the wall */
+.intro-scene {
+  width: calc(100% + 32px);
+  text-align: center;
+}
+.intro-scene .brand {
+  margin-top: 14px;
+}
+.intro-scene .brand h1 {
+  align-items: center;
+}
+.intro-scene .brand-name {
+  font-size: clamp(1.6rem, 7.5vw, 2.4rem);
+}
+.intro .scene {
+  margin-top: calc(-1 * max(16px, env(safe-area-inset-top)));
+}
+
+@media (min-width: 900px), (orientation: landscape) and (max-height: 560px) and (min-width: 600px) {
+  .scene {
+    --scene-pad: 14px;
+    margin: 12px 0 0;
+    padding: 0 var(--scene-pad) 16px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(80, 50, 30, 0.12);
+    position: sticky;
+    top: 72px;
+  }
+  .intro .scene {
+    position: relative;
+    top: auto;
+  }
+}
+/* results on phones: the scene is just the wall band, so keep the fade short */
+@media (max-width: 899px) {
+  .at-results .scene {
+    padding-bottom: 20px;
+  }
+  .at-results .scene::after {
+    height: 22px;
+  }
 }

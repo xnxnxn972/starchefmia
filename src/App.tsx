@@ -12,7 +12,6 @@ import {
 } from './engine/engine';
 import { loadPrefs, loadRun, Prefs, saveRun, savePrefs, loadBest } from './engine/persist';
 import { freshSeed } from './engine/rng';
-import { Mia } from './art/Mia';
 import { Table } from './components/Table';
 import { Inspiration } from './components/Inspiration';
 import { Offers } from './components/Offers';
@@ -191,21 +190,7 @@ export function App() {
 
       <main className="layout">
         <div className="scene">
-          <div className="scene-head">
-            <div className="brand small">
-              <span className="brand-name">5-Star Chef</span>
-              <span className="brand-sub">Restaurant</span>
-            </div>
-            <div className="chef">
-              <p className="bubble" aria-hidden="true">
-                {mia.line}
-              </p>
-              <figure className={`mia mood-${mia.mood}`}>
-                <Mia mood={mia.mood} />
-                <figcaption>{CHEF_NAME}</figcaption>
-              </figure>
-            </div>
-          </div>
+          <SceneHead line={mia.line} mood={mia.mood} />
           <Table picks={run.picks} previewCourse={selDish?.course} servedCourse={servedCourse} />
         </div>
 
@@ -294,27 +279,18 @@ function Intro(props: {
   const preview = ['in-main-02', 'fr-soup-02', 'it-appetizer-01', 'mx-salad-02', 'jp-dessert-02'];
   return (
     <div className="intro">
-      <div className="intro-head">
+      <div className="scene intro-scene">
+        <SceneHead line={props.miaLine} mood="welcome" />
         <div className="brand">
           <ToqueIcon />
           <h1>
-            <span className="brand-name">5-Star Chef</span>
-            <span className="brand-name">Restaurant</span>
+            <span className="brand-name">5-Star Chef Restaurant</span>
           </h1>
           <p className="brand-studio">by {catalog.studio}</p>
         </div>
-        <div className="chef">
-          <p className="bubble" aria-hidden="true">
-            {props.miaLine}
-          </p>
-          <figure className="mia mood-welcome">
-            <Mia mood="welcome" />
-            <figcaption>{CHEF_NAME}</figcaption>
-          </figure>
+        <div className="intro-table" aria-hidden="true">
+          <Table picks={preview} compact />
         </div>
-      </div>
-      <div className="intro-table" aria-hidden="true">
-        <Table picks={preview} compact />
       </div>
       <p className="tagline">Five picks. Fifty dollars. Your five-star dinner.</p>
       <p className="intro-explain">Build five courses within $50. Your choices become your restaurant’s rating.</p>
@@ -332,6 +308,18 @@ function Intro(props: {
       {best && <p className="best-line">Personal best: {formatStars(best.hundredths)} / 5</p>}
       <p className="fineprint">Prices and ratings are fictional game values.</p>
       <HelpDialog open={props.helpOpen} onClose={props.onCloseHelp} />
+    </div>
+  );
+}
+
+/** Wall + Chef Mia come from the background image; only her speech bubble and name tag are live elements. */
+function SceneHead({ line, mood }: { line: string; mood: string }) {
+  return (
+    <div className={`scene-head mood-${mood}`}>
+      <p className="bubble" key={line} aria-hidden="true">
+        {line}
+      </p>
+      <span className="mia-tag">{CHEF_NAME}</span>
     </div>
   );
 }
