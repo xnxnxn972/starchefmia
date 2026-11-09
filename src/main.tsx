@@ -33,7 +33,7 @@ const app = (
 // nothing saved sees exactly that screen first, so React adopts the existing markup
 // (hydration) instead of laying the page out a second time. With a saved game (or a
 // failed restore notice) the first screen differs, so start clean.
-if (root.firstElementChild && loadRun().kind === 'none') {
+if (root.firstElementChild && loadRun().kind === 'none' && !location.hash) {
   hydrateRoot(root, app);
 } else {
   root.textContent = '';

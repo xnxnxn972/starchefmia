@@ -19,7 +19,8 @@ import { Table } from './components/Table';
 import { Inspiration } from './components/Inspiration';
 import { Offers } from './components/Offers';
 import { Results } from './components/Results';
-import { HelpDialog, LeaderboardDialog, SettingsDialog } from './components/Dialogs';
+import { HelpDialog, SettingsDialog } from './components/Dialogs';
+import { LeaderboardScreen } from './components/LeaderboardScreen';
 import { CHEF_NAME, TIMING } from './config';
 import { inspirationAnnouncement, miaFor } from './copy';
 import { formatStars, scoreHundredths } from './engine/engine';
@@ -114,6 +115,29 @@ export function App() {
   const [restoreFailed, setRestoreFailed] = useState(init.restoreFailed);
   const [prefs, setPrefs] = useState<Prefs>(loadPrefs);
   const [helpOpen, setHelpOpen] = useState(false);
+
+  // The leaderboards are their own screen at #leaderboard, so the phone's back button closes them.
+  const [boardOpen, setBoardOpen] = useState(() => typeof location !== 'undefined' && location.hash === '#leaderboard');
+  const boardPushed = useRef(false);
+  useEffect(() => {
+    const sync = () => setBoardOpen(location.hash === '#leaderboard');
+    window.addEventListener('hashchange', sync);
+    return () => window.removeEventListener('hashchange', sync);
+  }, []);
+  function openBoard() {
+    boardPushed.current = true;
+    location.hash = 'leaderboard';
+  }
+  function closeBoard() {
+    if (boardPushed.current) {
+      boardPushed.current = false;
+      history.back(); // undo our own history entry, same as the phone's back button
+    } else {
+      // Arrived straight on #leaderboard: drop the hash without leaving the site.
+      history.replaceState(null, '', location.pathname + location.search);
+      setBoardOpen(false);
+    }
+  }
   const [settingsOpen, setSettingsOpen] = useState(false);
   const systemReduced = useSystemReducedMotion();
   const reduceMotion = systemReduced || prefs.reduceMotion;
@@ -199,9 +223,29 @@ export function App() {
 
   const mia = miaFor(run, selected, lastServed);
 
+  if (boardOpen) {
+    return (
+      <LeaderboardScreen
+        onBack={closeBoard}
+        refreshKey={run ? `${run.seed}-${run.phase}` : 'none'}
+        entry={
+          run?.phase === 'results'
+            ? {
+                score: scoreHundredths(run.picks),
+                dishIds: run.picks,
+                restaurantName: prefs.restaurantName,
+                onRestaurantName: (s) => setPrefs((p) => ({ ...p, restaurantName: s })),
+              }
+            : undefined
+        }
+      />
+    );
+  }
+
   if (!run) {
     return (
       <Intro
+        onBoard={openBoard}
         onStart={start}
         restoreFailed={restoreFailed}
         miaLine={mia.line}
@@ -244,6 +288,9 @@ export function App() {
           )}
         </div>
         <div className="topbar-actions">
+          <button type="button" className="icon-btn" onClick={openBoard} aria-label="Leaderboards" title="Leaderboards">
+            <TrophyIcon />
+          </button>
           <button
             type="button"
             className="icon-btn"
@@ -276,6 +323,7 @@ export function App() {
               restaurantName={prefs.restaurantName}
               onRestaurantName={(s) => setPrefs((p) => ({ ...p, restaurantName: s }))}
               onCookAgain={start}
+              onOpenBoard={openBoard}
             />
           ) : shownOffer ? (
             <>
@@ -357,12 +405,12 @@ export function Intro(props: {
   restoreFailed: boolean;
   miaLine: string;
   onHelp: () => void;
+  onBoard: () => void;
   helpOpen: boolean;
   onCloseHelp: () => void;
 }) {
   // Read after mount so the first render matches the pre-rendered HTML exactly (hydration).
   const [best, setBest] = useState<PersonalBest | null>(null);
-  const [boardOpen, setBoardOpen] = useState(false);
   useEffect(() => setBest(loadBest()), []);
   const preview = ['in-main-02', 'fr-soup-02', 'it-appetizer-01', 'mx-salad-02', 'jp-dessert-02'];
   return (
@@ -396,7 +444,7 @@ export function Intro(props: {
           <button type="button" className="link-btn" onClick={props.onHelp}>
             How to play
           </button>
-          <button type="button" className="link-btn" onClick={() => setBoardOpen(true)}>
+          <button type="button" className="link-btn" onClick={props.onBoard}>
             Leaderboard
           </button>
         </div>
@@ -405,7 +453,6 @@ export function Intro(props: {
       </div>
       <AboutGame />
       <HelpDialog open={props.helpOpen} onClose={props.onCloseHelp} />
-      <LeaderboardDialog open={boardOpen} onClose={() => setBoardOpen(false)} />
     </main>
   );
 }
@@ -462,6 +509,14 @@ function SceneHead({ line, mood }: { line: string; mood: string }) {
   );
 }
 
+function TrophyIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="ico" aria-hidden="true">
+      <path d="M8 4h8v5a4 4 0 0 1-8 0V4z" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+      <path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 function SoundOnIcon() {
   return (
     <svg viewBox="0 0 24 24" className="ico" aria-hidden="true">

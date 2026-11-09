@@ -14,6 +14,7 @@ export function render(): string {
       restoreFailed={false}
       miaLine="Let's build your opening-night menu."
       onHelp={noop}
+      onBoard={noop}
       helpOpen={false}
       onCloseHelp={noop}
     />,

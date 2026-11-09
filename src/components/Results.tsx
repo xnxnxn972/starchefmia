@@ -6,13 +6,13 @@ import { Table } from './Table';
 import { StarIcon } from '../art/icons';
 import { copyText, downloadBlob, nativeShare, shareImage, shareText } from '../share';
 import { trackShare } from '../telemetry';
-import { Leaderboard } from './Leaderboard';
 
 interface Props {
   run: RunState;
   restaurantName: string;
   onRestaurantName: (s: string) => void;
   onCookAgain: () => void;
+  onOpenBoard: () => void;
 }
 
 function StarRow({ hundredths }: { hundredths: number }) {
@@ -33,7 +33,7 @@ function StarRow({ hundredths }: { hundredths: number }) {
   );
 }
 
-export function Results({ run, restaurantName, onRestaurantName, onCookAgain }: Props) {
+export function Results({ run, restaurantName, onRestaurantName, onCookAgain, onOpenBoard }: Props) {
   const hundredths = scoreHundredths(run.picks);
   const saved = remainingCents(run);
   const dishes = COURSES.map((c) => run.picks.map(getDish).find((d) => d.course === c)!);
@@ -131,6 +131,9 @@ export function Results({ run, restaurantName, onRestaurantName, onCookAgain }: 
         <button type="button" className="btn secondary" onClick={onShare} disabled={busy}>
           {busy ? 'Preparing…' : 'Share menu'}
         </button>
+        <button type="button" className="btn secondary" onClick={onOpenBoard}>
+          Post to leaderboard
+        </button>
       </div>
 
       {fallback && (
@@ -147,11 +150,6 @@ export function Results({ run, restaurantName, onRestaurantName, onCookAgain }: 
       <p className="share-status" role="status">
         {shareStatus}
       </p>
-      <Leaderboard
-        refreshKey={String(run.seed)}
-        entry={{ score: hundredths, dishIds: run.picks, restaurantName, onRestaurantName }}
-      />
-
       <Table picks={run.picks} compact />
 
       <table className="menu-card">

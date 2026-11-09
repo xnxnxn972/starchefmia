@@ -1413,3 +1413,60 @@ textarea {
   font-size: 0.82rem;
   color: var(--ink-2);
 }
+
+/* ---------- leaderboard screen ---------- */
+.board-screen {
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.board-topbar h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  color: var(--aubergine);
+  outline: none;
+}
+.board-main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px 16px max(24px, env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.board-name-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 200px;
+  font-size: 0.8rem;
+  color: var(--ink-2);
+}
+.board-name-field input {
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid #cdbca3;
+  background: var(--porcelain);
+  font-size: 1rem;
+}
+.board-post p {
+  flex-basis: 100%;
+}
+.board-post .btn {
+  align-self: flex-end;
+  min-height: 48px;
+}
+
+/* Top bar on narrow phones now holds four 48px buttons: drop the pill icons there. */
+@media (max-width: 400px) {
+  .topbar .pill .ico {
+    display: none;
+  }
+  .topbar .pill {
+    padding: 0 10px;
+  }
+}

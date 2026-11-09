@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Boards, fetchBoards, Period, PERIODS, PostResult, postErrorText, postToBoards, timeLeft } from '../board';
 import { formatStars } from '../engine/engine';
 import { trackExtra } from '../telemetry';
@@ -18,6 +18,7 @@ export function Leaderboard({ entry, refreshKey }: Props) {
   const [posting, setPosting] = useState(false);
   const [error, setError] = useState('');
   const [posted, setPosted] = useState<PostResult | null>(null);
+  const nameRef = useRef<HTMLInputElement>(null);
 
   const score = entry?.score;
   useEffect(() => {
@@ -43,8 +44,8 @@ export function Leaderboard({ entry, refreshKey }: Props) {
     if (!entry) return;
     const name = entry.restaurantName.trim();
     if (!name) {
-      setError('Name your restaurant above to post your menu.');
-      document.querySelector<HTMLInputElement>('.name-field input')?.focus();
+      setError('Enter your restaurant name to post your menu.');
+      nameRef.current?.focus();
       return;
     }
     setPosting(true);
@@ -91,8 +92,19 @@ export function Leaderboard({ entry, refreshKey }: Props) {
             )}
             .
           </p>
-          <button type="button" className="btn secondary" onClick={post} disabled={posting}>
-            {posting ? 'Posting…' : entry.restaurantName.trim() ? `Post as ${entry.restaurantName.trim()}` : 'Post to leaderboard'}
+          <label className="board-name-field">
+            <span>Restaurant name</span>
+            <input
+              ref={nameRef}
+              type="text"
+              maxLength={28}
+              value={entry.restaurantName}
+              placeholder="e.g. The Linen Table"
+              onChange={(e) => entry.onRestaurantName(e.target.value)}
+            />
+          </label>
+          <button type="button" className="btn primary" onClick={post} disabled={posting}>
+            {posting ? 'Posting…' : 'Post my menu'}
           </button>
         </div>
       )}
