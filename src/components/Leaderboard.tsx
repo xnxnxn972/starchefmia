@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Boards, fetchBoards, Period, PERIODS, PostResult, postErrorText, postToBoards, timeLeft } from '../board';
 import { formatStars } from '../engine/engine';
 import { trackExtra } from '../telemetry';
+import { metaTrack } from '../metaPixel';
 
 interface Props {
   /** Results screen: the finished menu that can be posted. Omit to just browse. */
@@ -58,6 +59,7 @@ export function Leaderboard({ entry, refreshKey }: Props) {
     }
     setPosted(r.result);
     trackExtra('board_posted', true);
+    metaTrack('SubmitApplication');
     const fresh = await fetchBoards(entry.score);
     if (fresh) setBoards(fresh);
   }

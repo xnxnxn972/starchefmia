@@ -449,7 +449,9 @@ export function Intro(props: {
           </button>
         </div>
         {best && <p className="best-line">Personal best: {formatStars(best.hundredths)} / 5</p>}
-        <p className="fineprint">Prices and ratings are fictional game values.</p>
+        <p className="fineprint">
+          Prices and ratings are fictional game values. <a href="./privacy/">Privacy</a>
+        </p>
       </div>
       <AboutGame />
       <HelpDialog open={props.helpOpen} onClose={props.onCloseHelp} />

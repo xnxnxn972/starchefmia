@@ -3,9 +3,11 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 import { App } from './App';
 import './styles.css';
 import { initTelemetry } from './telemetry';
+import { initMetaPixel } from './metaPixel';
 import { loadRun } from './engine/persist';
 
-initTelemetry();
+initTelemetry(); // first: it records a ?dev=1 opt-out, which the pixel also honours
+initMetaPixel();
 
 // Installable app + offline play. Production builds only: the dev server has no sw.js.
 if (import.meta.env.PROD && 'serviceWorker' in navigator) {

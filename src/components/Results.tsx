@@ -6,6 +6,7 @@ import { Table } from './Table';
 import { StarIcon } from '../art/icons';
 import { copyText, downloadBlob, nativeShare, shareImage, shareText } from '../share';
 import { trackShare } from '../telemetry';
+import { metaTrack } from '../metaPixel';
 
 interface Props {
   run: RunState;
@@ -66,6 +67,7 @@ export function Results({ run, restaurantName, onRestaurantName, onCookAgain, on
     const outcome = await nativeShare(text, image);
     setBusy(false);
     trackShare(outcome);
+    if (outcome === 'shared') metaTrack('AddToWishlist');
     if (outcome === 'unsupported') {
       setFallback(true);
       setShareStatus('Sharing isn’t available here. Copy the text or save the image instead.');
@@ -74,7 +76,10 @@ export function Results({ run, restaurantName, onRestaurantName, onCookAgain, on
 
   async function onCopy() {
     const ok = await copyText(shareText(run.picks, restaurantName));
-    if (ok) trackShare('copied');
+    if (ok) {
+      trackShare('copied');
+      metaTrack('AddToWishlist');
+    }
     setShareStatus(ok ? 'Menu copied to clipboard.' : 'Copy failed. Select the text below instead.');
   }
 
@@ -83,6 +88,7 @@ export function Results({ run, restaurantName, onRestaurantName, onCookAgain, on
     if (image) {
       downloadBlob(image, 'my-opening-night-menu.png');
       trackShare('downloaded');
+      metaTrack('AddToWishlist');
       setShareStatus('Image saved.');
     } else setShareStatus('Could not create the image on this device.');
   }

@@ -50,7 +50,7 @@ export function HelpDialog({ open, onClose }: { open: boolean; onClose: () => vo
       </ul>
       <p className="fineprint">
         {CHEF_NAME} is here to keep you company; her comments never change your score. Prices and ratings are fictional
-        game values. Ingredient tags are not an allergy guide.
+        game values. Ingredient tags are not an allergy guide. <a href="./privacy/">Privacy</a>
       </p>
     </Modal>
   );
