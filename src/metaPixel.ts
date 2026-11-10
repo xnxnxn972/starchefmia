@@ -1,5 +1,5 @@
 /**
- * Meta Pixel (ads measurement), pixel id 831439776938556.
+ * Meta Pixel (ads measurement), pixel id 1101250316215474.
  *
  * This is Meta's standard base code, loaded from here rather than pasted into index.html so it
  * follows the same rules as our own play log: it does NOT load for our own testing browsers
@@ -11,7 +11,7 @@
  *   AddToWishlist      a menu was shared (share sheet completed, text copied or image saved)
  */
 
-const PIXEL_ID = '831439776938556';
+const PIXEL_ID = '1101250316215474';
 
 type Fbq = ((...args: unknown[]) => void) & { callMethod?: (...a: unknown[]) => void; queue?: unknown[][]; loaded?: boolean; version?: string; push?: unknown };
 
