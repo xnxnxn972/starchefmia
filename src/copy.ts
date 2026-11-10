@@ -1,4 +1,4 @@
-import { COURSE_LABEL, COURSE_SHORT, getDish, ingredientLabel } from './engine/catalog';
+import { COURSE_LABEL, COURSE_SHORT, Course, COURSES, getDish, ingredientLabel, minCostByCourse } from './engine/catalog';
 import { checkPurchase, formatMoney, openCourses, remainingCents, RunState } from './engine/engine';
 export type MiaMood = 'welcome' | 'curious' | 'thoughtful' | 'serving' | 'celebrate';
 
@@ -12,14 +12,55 @@ function cap(s: string) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-export function reserveMessage(reserveCents: number, coursesLeft: number): string {
-  return `Keep ${formatMoney(reserveCents)} for your remaining ${countWord(coursesLeft)} course${coursesLeft === 1 ? '' : 's'}.`;
+/** How a course reads mid-sentence: "appetizer", "soup", "salad", "main course", "dessert". */
+const COURSE_IN_SENTENCE: Record<Course, string> = {
+  appetizer: 'appetizer',
+  soup: 'soup',
+  salad: 'salad',
+  main: 'main course',
+  dessert: 'dessert',
+};
+/** "the cheapest main is $10" */
+const COURSE_SINGULAR: Record<Course, string> = {
+  appetizer: 'appetizer',
+  soup: 'soup',
+  salad: 'salad',
+  main: 'main',
+  dessert: 'dessert',
+};
+
+/** "soup", "soup and salad", "soup, salad and dessert" */
+export function listJoin(items: string[]): string {
+  if (items.length <= 1) return items.join('');
+  return `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
+}
+
+/** The courses still to buy after this dish, in menu order. */
+function coursesAfter(run: RunState, dishId: string): Course[] {
+  const course = getDish(dishId).course;
+  return COURSES.filter((c) => c !== course && openCourses(run).includes(c));
+}
+
+/**
+ * Why a dish is blocked by the completion reserve, naming the course(s) the money is held for
+ * and what each costs at the least, so it matches the situation:
+ *   "Keep $10 for your main course (the cheapest main is $10)."
+ *   "Keep $18 for your salad (from $4) and main course (from $10)."
+ */
+export function reserveMessage(courses: Course[]): string {
+  const total = courses.reduce((sum, c) => sum + minCostByCourse[c], 0);
+  if (courses.length === 1) {
+    const c = courses[0];
+    return `Keep ${formatMoney(total)} for your ${COURSE_IN_SENTENCE[c]} (the cheapest ${COURSE_SINGULAR[c]} is ${formatMoney(minCostByCourse[c])}).`;
+  }
+  const parts = courses.map((c) => `${COURSE_IN_SENTENCE[c]} (from ${formatMoney(minCostByCourse[c])})`);
+  return `Keep ${formatMoney(total)} for your ${listJoin(parts)}.`;
 }
 
 export function ineligibleNote(run: RunState, dishId: string): string | null {
   const e = checkPurchase(run, dishId);
   if (e.ok) return null;
-  if (e.reason === 'reserve') return reserveMessage(e.reserveCents!, e.coursesLeft!);
+  if (e.reason === 'reserve') return reserveMessage(coursesAfter(run, dishId));
   if (e.reason === 'cash') return `Costs more than your ${formatMoney(remainingCents(run))} left.`;
   return 'Course already served.';
 }
@@ -27,9 +68,9 @@ export function ineligibleNote(run: RunState, dishId: string): string | null {
 export function leavesLine(run: RunState, dishId: string): string {
   const d = getDish(dishId);
   const left = remainingCents(run) - d.costCents;
-  const coursesLeft = openCourses(run).length - 1;
-  if (coursesLeft === 0) return `That completes your menu with ${formatMoney(left)} to spare.`;
-  return `That leaves ${formatMoney(left)} for ${countWord(coursesLeft)} course${coursesLeft === 1 ? '' : 's'}.`;
+  const rest = coursesAfter(run, dishId);
+  if (rest.length === 0) return `That completes your menu with ${formatMoney(left)} to spare.`;
+  return `That leaves ${formatMoney(left)} for your ${listJoin(rest.map((c) => COURSE_IN_SENTENCE[c]))}.`;
 }
 
 export interface MiaState {
