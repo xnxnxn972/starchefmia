@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>American Dinner Menu Game – Five Courses for $50 | 5-Star Chef Restaurant</title>
+    <meta name="description" content="Plan a five-course American dinner on a $50 budget. See all 15 American dishes, their prices and star ratings, and the best American menu you can serve. Free browser game." />
+    <link rel="canonical" href="https://starchefmia.com/cuisine/american/" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#5a2343" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="5-Star Chef Restaurant" />
+    <meta property="og:title" content="American dinner for $50 – can you earn five stars?" />
+    <meta property="og:description" content="Plan a five-course American dinner on a $50 budget. See all 15 American dishes, their prices and star ratings, and the best American menu you can serve. Free browser game." />
+    <meta property="og:url" content="https://starchefmia.com/cuisine/american/" />
+    <meta property="og:image" content="https://starchefmia.com/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://starchefmia.com/cuisine/american/","url":"https://starchefmia.com/cuisine/american/","name":"American Dinner Menu Game – Five Courses for $50 | 5-Star Chef Restaurant","description":"Plan a five-course American dinner on a $50 budget. See all 15 American dishes, their prices and star ratings, and the best American menu you can serve. Free browser game.","isPartOf":{"@type":"WebSite","name":"5-Star Chef Restaurant","url":"https://starchefmia.com/"},"about":{"@type":"VideoGame","name":"5-Star Chef Restaurant","url":"https://starchefmia.com/"},"primaryImageOfPage":"https://starchefmia.com/dishes/us-appetizer-02.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"5-Star Chef Restaurant","item":"https://starchefmia.com/"},{"@type":"ListItem","position":2,"name":"American menu","item":"https://starchefmia.com/cuisine/american/"}]},{"@type":"ItemList","name":"American dishes in 5-Star Chef Restaurant","numberOfItems":15,"itemListElement":[{"@type":"ListItem","position":1,"name":"Corn Fritters"},{"@type":"ListItem","position":2,"name":"Stuffed Mushrooms"},{"@type":"ListItem","position":3,"name":"Shrimp Cakes"},{"@type":"ListItem","position":4,"name":"Creamy Tomato Soup"},{"@type":"ListItem","position":5,"name":"Corn Chowder"},{"@type":"ListItem","position":6,"name":"Chicken Wild Rice Soup"},{"@type":"ListItem","position":7,"name":"Garden Salad"},{"@type":"ListItem","position":8,"name":"Apple Walnut Salad"},{"@type":"ListItem","position":9,"name":"Grilled Chicken Salad"},{"@type":"ListItem","position":10,"name":"Mac and Cheese"},{"@type":"ListItem","position":11,"name":"Roast Chicken with Mash"},{"@type":"ListItem","position":12,"name":"Steak and Mash"},{"@type":"ListItem","position":13,"name":"Baked Apples"},{"@type":"ListItem","position":14,"name":"Strawberry Shortcake"},{"@type":"ListItem","position":15,"name":"Chocolate Brownie Sundae"}]}]}</script>
+    <style>
+      :root { --bg: #efdfd2; --card: #fffdf9; --ink: #2b1a22; --ink2: #6d5a62; --accent: #5a2343; --cta: #b5223a; --line: #e4d3c6; }
+      @media (prefers-color-scheme: dark) { :root { --bg: #1d1519; --card: #2a1f25; --ink: #f3e9ee; --ink2: #c3b0b9; --accent: #e3a6c4; --cta: #d8455d; --line: #3d2f36; } }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+      main { max-width: 860px; margin: 0 auto; padding: 24px max(16px, env(safe-area-inset-left)) 48px; }
+      nav.crumbs { font-size: 0.9rem; color: var(--ink2); }
+      nav.crumbs a { color: var(--ink2); }
+      h1, h2, h3, h4 { font-family: Georgia, serif; color: var(--accent); line-height: 1.25; }
+      h1 { font-size: clamp(1.6rem, 4.5vw, 2.2rem); margin: 12px 0 8px; }
+      h2 { font-size: 1.3rem; margin: 32px 0 8px; }
+      h3 { font-size: 1.1rem; margin: 24px 0 8px; }
+      h4 { font-size: 1rem; margin: 0 0 2px; color: var(--ink); }
+      p { max-width: 68ch; }
+      a { color: var(--accent); }
+      .cta { display: inline-block; background: var(--cta); color: #fff; text-decoration: none; font-weight: 700; padding: 12px 22px; border-radius: 999px; margin: 8px 0; }
+      .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+      ul.dishes { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+      li.dish { display: flex; gap: 12px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px; }
+      li.dish img { width: 72px; height: 72px; object-fit: contain; flex: none; }
+      li.dish p { margin: 0; font-size: 0.92rem; color: var(--ink2); }
+      li.dish p.meta { color: var(--ink); font-weight: 600; margin-top: 2px; }
+      table { border-collapse: collapse; width: 100%; }
+      th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+      td.num, th.num { text-align: right; white-space: nowrap; }
+      tfoot td { font-weight: 700; border-bottom: none; }
+      ul.others { padding-left: 20px; }
+      .fineprint { color: var(--ink2); font-size: 0.85rem; margin-top: 36px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">5-Star Chef Restaurant</a> › American menu</nav>
+      <h1>American dinner menu game: five courses for $50</h1>
+      <p>The American menu is comfort food: corn fritters, chowder, mac and cheese, steak and mash and a chocolate brownie sundae. Two dishes rate a perfect 5.0, but the steak alone costs $27, so an all-American five-star dinner needs careful saving.</p>
+      <p>In <a href="/">5-Star Chef Restaurant</a> you plan a five-course dinner (appetizer, soup, salad, main course and dessert) with $50 per guest. Each turn, Chef Mia reveals a cuisine and an ingredient, you pick a matching dish, and your menu's rating is the average of your five dishes.</p>
+      <p><a class="cta" href="/?s=cuisine_american">Play free – no download</a></p>
+
+      <h2>The best American menu for $50</h2>
+      <div class="card">
+        <p>If the wheel only ever landed on American, this is the highest-rated dinner you could serve within the budget:</p>
+        <table>
+          <thead><tr><th>Course</th><th>Dish</th><th class="num">Price</th><th class="num">Rating</th></tr></thead>
+          <tbody>
+            <tr><td>Appetizer</td><td>Stuffed Mushrooms</td><td class="num">$8</td><td class="num">★ 4.4</td></tr>
+            <tr><td>Soup</td><td>Corn Chowder</td><td class="num">$7</td><td class="num">★ 4.3</td></tr>
+            <tr><td>Salad</td><td>Apple Walnut Salad</td><td class="num">$8</td><td class="num">★ 4.5</td></tr>
+            <tr><td>Main course</td><td>Roast Chicken with Mash</td><td class="num">$18</td><td class="num">★ 4.7</td></tr>
+            <tr><td>Dessert</td><td>Strawberry Shortcake</td><td class="num">$9</td><td class="num">★ 4.6</td></tr>
+          </tbody>
+          <tfoot><tr><td colspan="2">Total</td><td class="num">$50</td><td class="num">★ 4.50</td></tr></tfoot>
+        </table>
+        <p>The cheapest American dinner costs $29 and rates ★ 3.92. The best value is the Creamy Tomato Soup: ★ 3.8 for $4. Perfect 5.0 American dishes: Steak and Mash, Chocolate Brownie Sundae.</p>
+      </div>
+
+      <h2>All 15 American dishes</h2>
+      <h3>American appetizers</h3>
+      <ul class="dishes">
+        <li class="dish">
+          <img src="/dishes/sm/us-appetizer-01.webp" alt="Corn Fritters in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Corn Fritters</h4>
+            <p>Golden corn fritters with egg-and-flour batter.</p>
+            <p class="meta"><span>$5</span> · <span>★ 3.9</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/us-appetizer-02.webp" alt="Stuffed Mushrooms in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Stuffed Mushrooms</h4>
+            <p>Roasted mushrooms filled with cream cheese and herbs.</p>
+            <p class="meta"><span>$8</span> · <span>★ 4.4</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/us-appetizer-03.webp" alt="Shrimp Cakes in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Shrimp Cakes</h4>
+            <p>Pan-fried shrimp cakes with a light crumb crust.</p>
+            <p class="meta"><span>$13</span> · <span>★ 4.8</span></p>
+          </div>
+        </li>
+      </ul>
+      <h3>American soups</h3>
+      <ul class="dishes">
+        <li class="dish">
+          <img src="/dishes/sm/us-soup-01.webp" alt="Creamy Tomato Soup in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Creamy Tomato Soup</h4>
+            <p>American-style creamy tomato soup.</p>
+            <p class="meta"><span>$4</span> · <span>★ 3.8</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/us-soup-02.webp" alt="Corn Chowder in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Corn Chowder</h4>
+            <p>Creamy corn and potato soup.</p>
+            <p class="meta"><span>$7</span> · <span>★ 4.3</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/us-soup-03.webp" alt="Chicken Wild Rice Soup in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Chicken Wild Rice Soup</h4>
+            <p>Chicken and wild rice in creamy broth with carrots.</p>
+            <p class="meta"><span>$11</span> · <span>★ 4.8</span></p>
+          </div>
+        </li>
+      </ul>
+      <h3>American salads</h3>
+      <ul class="dishes">
+        <li class="dish">
+          <img src="/dishes/sm/us-salad-01.webp" alt="Garden Salad in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Garden Salad</h4>
+            <p>Fresh lettuce, tomato and cucumber.</p>
+            <p class="meta"><span>$4</span> · <span>★ 3.8</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/us-salad-02.webp" alt="Apple Walnut Salad in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Apple Walnut Salad</h4>
+            <p>Crisp apple, walnuts and leafy greens.</p>
+            <p class="meta"><span>$8</span> · <span>★ 4.5</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/us-salad-03.webp" alt="Grilled Chicken Salad in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Grilled Chicken Salad</h4>
+            <p>Grilled chicken over lettuce and tomatoes.</p>
+            <p class="meta"><span>$12</span> · <span>★ 4.8</span></p>
+          </div>
+        </li>
+      </ul>
+      <h3>American main courses</h3>
+      <ul class="dishes">
+        <li class="dish">
+          <img src="/dishes/sm/us-main-01.webp" alt="Mac and Cheese in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Mac and Cheese</h4>
+            <p>Baked macaroni in creamy cheese sauce.</p>
+            <p class="meta"><span>$11</span> · <span>★ 4.1</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/us-main-02.webp" alt="Roast Chicken with Mash in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Roast Chicken with Mash</h4>
+            <p>Roast chicken with buttery mashed potatoes.</p>
+            <p class="meta"><span>$18</span> · <span>★ 4.7</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/us-main-03.webp" alt="Steak and Mash in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Steak and Mash</h4>
+            <p>Seared steak with creamy mashed potatoes.</p>
+            <p class="meta"><span>$27</span> · <span>★ 5.0</span></p>
+          </div>
+        </li>
+      </ul>
+      <h3>American desserts</h3>
+      <ul class="dishes">
+        <li class="dish">
+          <img src="/dishes/sm/us-dessert-01.webp" alt="Baked Apples in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Baked Apples</h4>
+            <p>Baked apples with cinnamon.</p>
+            <p class="meta"><span>$5</span> · <span>★ 4.0</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/us-dessert-02.webp" alt="Strawberry Shortcake in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Strawberry Shortcake</h4>
+            <p>Shortcake with strawberries and whipped cream.</p>
+            <p class="meta"><span>$9</span> · <span>★ 4.6</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/us-dessert-03.webp" alt="Chocolate Brownie Sundae in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Chocolate Brownie Sundae</h4>
+            <p>Chocolate brownie with ice cream and chocolate sauce.</p>
+            <p class="meta"><span>$13</span> · <span>★ 5.0</span></p>
+          </div>
+        </li>
+      </ul>
+
+      <h2>Can you earn five stars?</h2>
+      <p>In the game you won't get to choose only American: every turn brings a new cuisine and ingredient, and the game keeps enough money aside to finish every course. Knowing which dishes are worth the money is what turns a 4.3 into a 4.8.</p>
+      <p><a class="cta" href="/?s=cuisine_american">Cook a American dinner now</a></p>
+
+      <h2>Explore the other cuisines</h2>
+      <ul class="others">
+        <li><a href="/cuisine/italian/">Italian dinner menu for $50</a></li>
+        <li><a href="/cuisine/french/">French dinner menu for $50</a></li>
+        <li><a href="/cuisine/japanese/">Japanese dinner menu for $50</a></li>
+        <li><a href="/cuisine/indian/">Indian dinner menu for $50</a></li>
+        <li><a href="/cuisine/mexican/">Mexican dinner menu for $50</a></li>
+      </ul>
+
+      <p class="fineprint">5-Star Chef Restaurant by 5 Star Studios. Dish prices and ratings are fictional game values. <a href="/privacy/">Privacy</a></p>
+    </main>
+  </body>
+</html>

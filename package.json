@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build && node tools/prerender.mjs",
+    "build": "tsc --noEmit && node tools/gen_cuisine_pages.mjs && vite build && node tools/prerender.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",

@@ -36,6 +36,7 @@ function serviceWorker(): Plugin {
           .filter(
             (f) =>
               !f.startsWith('dishes/') &&
+              !f.startsWith('cuisine/') &&
               !['index.html', 'sw.js', 'CNAME', '404.html', 'robots.txt', 'sitemap.xml', 'og-image.jpg', 'icon-512.png', 'icon-maskable-512.png'].includes(f),
           )
           .map((f) => `./${f}`),

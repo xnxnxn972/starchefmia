@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mexican Dinner Menu Game – Five Courses for $50 | 5-Star Chef Restaurant</title>
+    <meta name="description" content="Plan a five-course Mexican dinner on a $50 budget. See all 15 Mexican dishes, their prices and star ratings, and the best Mexican menu you can serve. Free browser game." />
+    <link rel="canonical" href="https://starchefmia.com/cuisine/mexican/" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#5a2343" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="5-Star Chef Restaurant" />
+    <meta property="og:title" content="Mexican dinner for $50 – can you earn five stars?" />
+    <meta property="og:description" content="Plan a five-course Mexican dinner on a $50 budget. See all 15 Mexican dishes, their prices and star ratings, and the best Mexican menu you can serve. Free browser game." />
+    <meta property="og:url" content="https://starchefmia.com/cuisine/mexican/" />
+    <meta property="og:image" content="https://starchefmia.com/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://starchefmia.com/cuisine/mexican/","url":"https://starchefmia.com/cuisine/mexican/","name":"Mexican Dinner Menu Game – Five Courses for $50 | 5-Star Chef Restaurant","description":"Plan a five-course Mexican dinner on a $50 budget. See all 15 Mexican dishes, their prices and star ratings, and the best Mexican menu you can serve. Free browser game.","isPartOf":{"@type":"WebSite","name":"5-Star Chef Restaurant","url":"https://starchefmia.com/"},"about":{"@type":"VideoGame","name":"5-Star Chef Restaurant","url":"https://starchefmia.com/"},"primaryImageOfPage":"https://starchefmia.com/dishes/mx-appetizer-02.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"5-Star Chef Restaurant","item":"https://starchefmia.com/"},{"@type":"ListItem","position":2,"name":"Mexican menu","item":"https://starchefmia.com/cuisine/mexican/"}]},{"@type":"ItemList","name":"Mexican dishes in 5-Star Chef Restaurant","numberOfItems":15,"itemListElement":[{"@type":"ListItem","position":1,"name":"Bean Tostadas"},{"@type":"ListItem","position":2,"name":"Cheese Quesadillas"},{"@type":"ListItem","position":3,"name":"Shrimp Tostadas"},{"@type":"ListItem","position":4,"name":"Sopa de Fideo"},{"@type":"ListItem","position":5,"name":"Chicken Tortilla Soup"},{"@type":"ListItem","position":6,"name":"Shrimp Corn Chowder"},{"@type":"ListItem","position":7,"name":"Jicama Cucumber Salad"},{"@type":"ListItem","position":8,"name":"Mexican Corn Salad"},{"@type":"ListItem","position":9,"name":"Chicken Black Bean Salad"},{"@type":"ListItem","position":10,"name":"Bean Enchiladas"},{"@type":"ListItem","position":11,"name":"Chicken Mole with Rice"},{"@type":"ListItem","position":12,"name":"Beef Barbacoa Tacos"},{"@type":"ListItem","position":13,"name":"Cinnamon Bananas"},{"@type":"ListItem","position":14,"name":"Coconut Rice Pudding"},{"@type":"ListItem","position":15,"name":"Chocolate Churros"}]}]}</script>
+    <style>
+      :root { --bg: #efdfd2; --card: #fffdf9; --ink: #2b1a22; --ink2: #6d5a62; --accent: #5a2343; --cta: #b5223a; --line: #e4d3c6; }
+      @media (prefers-color-scheme: dark) { :root { --bg: #1d1519; --card: #2a1f25; --ink: #f3e9ee; --ink2: #c3b0b9; --accent: #e3a6c4; --cta: #d8455d; --line: #3d2f36; } }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+      main { max-width: 860px; margin: 0 auto; padding: 24px max(16px, env(safe-area-inset-left)) 48px; }
+      nav.crumbs { font-size: 0.9rem; color: var(--ink2); }
+      nav.crumbs a { color: var(--ink2); }
+      h1, h2, h3, h4 { font-family: Georgia, serif; color: var(--accent); line-height: 1.25; }
+      h1 { font-size: clamp(1.6rem, 4.5vw, 2.2rem); margin: 12px 0 8px; }
+      h2 { font-size: 1.3rem; margin: 32px 0 8px; }
+      h3 { font-size: 1.1rem; margin: 24px 0 8px; }
+      h4 { font-size: 1rem; margin: 0 0 2px; color: var(--ink); }
+      p { max-width: 68ch; }
+      a { color: var(--accent); }
+      .cta { display: inline-block; background: var(--cta); color: #fff; text-decoration: none; font-weight: 700; padding: 12px 22px; border-radius: 999px; margin: 8px 0; }
+      .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+      ul.dishes { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+      li.dish { display: flex; gap: 12px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px; }
+      li.dish img { width: 72px; height: 72px; object-fit: contain; flex: none; }
+      li.dish p { margin: 0; font-size: 0.92rem; color: var(--ink2); }
+      li.dish p.meta { color: var(--ink); font-weight: 600; margin-top: 2px; }
+      table { border-collapse: collapse; width: 100%; }
+      th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+      td.num, th.num { text-align: right; white-space: nowrap; }
+      tfoot td { font-weight: 700; border-bottom: none; }
+      ul.others { padding-left: 20px; }
+      .fineprint { color: var(--ink2); font-size: 0.85rem; margin-top: 36px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">5-Star Chef Restaurant</a> › Mexican menu</nav>
+      <h1>Mexican dinner menu game: five courses for $50</h1>
+      <p>Mexican dishes are built on corn, beans, tomato and chocolate: tostadas, chicken tortilla soup, chicken mole and beef barbacoa tacos, finished with chocolate churros. The barbacoa tacos earn a perfect 5.0 but take half the budget.</p>
+      <p>In <a href="/">5-Star Chef Restaurant</a> you plan a five-course dinner (appetizer, soup, salad, main course and dessert) with $50 per guest. Each turn, Chef Mia reveals a cuisine and an ingredient, you pick a matching dish, and your menu's rating is the average of your five dishes.</p>
+      <p><a class="cta" href="/?s=cuisine_mexican">Play free – no download</a></p>
+
+      <h2>The best Mexican menu for $50</h2>
+      <div class="card">
+        <p>If the wheel only ever landed on Mexican, this is the highest-rated dinner you could serve within the budget:</p>
+        <table>
+          <thead><tr><th>Course</th><th>Dish</th><th class="num">Price</th><th class="num">Rating</th></tr></thead>
+          <tbody>
+            <tr><td>Appetizer</td><td>Cheese Quesadillas</td><td class="num">$8</td><td class="num">★ 4.4</td></tr>
+            <tr><td>Soup</td><td>Shrimp Corn Chowder</td><td class="num">$11</td><td class="num">★ 4.8</td></tr>
+            <tr><td>Salad</td><td>Mexican Corn Salad</td><td class="num">$7</td><td class="num">★ 4.5</td></tr>
+            <tr><td>Main course</td><td>Bean Enchiladas</td><td class="num">$10</td><td class="num">★ 4.1</td></tr>
+            <tr><td>Dessert</td><td>Chocolate Churros</td><td class="num">$12</td><td class="num">★ 4.9</td></tr>
+          </tbody>
+          <tfoot><tr><td colspan="2">Total</td><td class="num">$48</td><td class="num">★ 4.54</td></tr></tfoot>
+        </table>
+        <p>The cheapest Mexican dinner costs $28 and rates ★ 3.92. The best value is the Sopa de Fideo: ★ 3.8 for $4. Perfect 5.0 Mexican dishes: Beef Barbacoa Tacos.</p>
+      </div>
+
+      <h2>All 15 Mexican dishes</h2>
+      <h3>Mexican appetizers</h3>
+      <ul class="dishes">
+        <li class="dish">
+          <img src="/dishes/sm/mx-appetizer-01.webp" alt="Bean Tostadas in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Bean Tostadas</h4>
+            <p>Corn tostadas with beans and tomato salsa.</p>
+            <p class="meta"><span>$5</span> · <span>★ 3.9</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/mx-appetizer-02.webp" alt="Cheese Quesadillas in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Cheese Quesadillas</h4>
+            <p>Toasted flour tortillas filled with cheese.</p>
+            <p class="meta"><span>$8</span> · <span>★ 4.4</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/mx-appetizer-03.webp" alt="Shrimp Tostadas in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Shrimp Tostadas</h4>
+            <p>Corn tostadas topped with shrimp and fresh salsa.</p>
+            <p class="meta"><span>$12</span> · <span>★ 4.8</span></p>
+          </div>
+        </li>
+      </ul>
+      <h3>Mexican soups</h3>
+      <ul class="dishes">
+        <li class="dish">
+          <img src="/dishes/sm/mx-soup-01.webp" alt="Sopa de Fideo in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Sopa de Fideo</h4>
+            <p>Tomato soup with thin wheat noodles.</p>
+            <p class="meta"><span>$4</span> · <span>★ 3.8</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/mx-soup-02.webp" alt="Chicken Tortilla Soup in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Chicken Tortilla Soup</h4>
+            <p>Chicken and tomato broth with corn tortilla strips.</p>
+            <p class="meta"><span>$7</span> · <span>★ 4.4</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/mx-soup-03.webp" alt="Shrimp Corn Chowder in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Shrimp Corn Chowder</h4>
+            <p>Creamy shrimp and corn soup inspired by Mexican flavors.</p>
+            <p class="meta"><span>$11</span> · <span>★ 4.8</span></p>
+          </div>
+        </li>
+      </ul>
+      <h3>Mexican salads</h3>
+      <ul class="dishes">
+        <li class="dish">
+          <img src="/dishes/sm/mx-salad-01.webp" alt="Jicama Cucumber Salad in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Jicama Cucumber Salad</h4>
+            <p>Jicama and cucumber salad with citrus dressing.</p>
+            <p class="meta"><span>$4</span> · <span>★ 3.8</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/mx-salad-02.webp" alt="Mexican Corn Salad in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Mexican Corn Salad</h4>
+            <p>Roasted corn with creamy dressing and crumbled cheese.</p>
+            <p class="meta"><span>$7</span> · <span>★ 4.5</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/mx-salad-03.webp" alt="Chicken Black Bean Salad in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Chicken Black Bean Salad</h4>
+            <p>Chicken, black beans, tomatoes and leafy greens.</p>
+            <p class="meta"><span>$12</span> · <span>★ 4.8</span></p>
+          </div>
+        </li>
+      </ul>
+      <h3>Mexican main courses</h3>
+      <ul class="dishes">
+        <li class="dish">
+          <img src="/dishes/sm/mx-main-01.webp" alt="Bean Enchiladas in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Bean Enchiladas</h4>
+            <p>Corn tortillas with beans, tomato sauce and cheese.</p>
+            <p class="meta"><span>$10</span> · <span>★ 4.1</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/mx-main-02.webp" alt="Chicken Mole with Rice in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Chicken Mole with Rice</h4>
+            <p>Chicken in savory mole containing cocoa, with rice.</p>
+            <p class="meta"><span>$18</span> · <span>★ 4.7</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/mx-main-03.webp" alt="Beef Barbacoa Tacos in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Beef Barbacoa Tacos</h4>
+            <p>Corn tortillas with slow-cooked beef and onions.</p>
+            <p class="meta"><span>$25</span> · <span>★ 5.0</span></p>
+          </div>
+        </li>
+      </ul>
+      <h3>Mexican desserts</h3>
+      <ul class="dishes">
+        <li class="dish">
+          <img src="/dishes/sm/mx-dessert-01.webp" alt="Cinnamon Bananas in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Cinnamon Bananas</h4>
+            <p>Warm caramelized banana with cinnamon.</p>
+            <p class="meta"><span>$5</span> · <span>★ 4.0</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/mx-dessert-02.webp" alt="Coconut Rice Pudding in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Coconut Rice Pudding</h4>
+            <p>Creamy milk and coconut rice pudding.</p>
+            <p class="meta"><span>$8</span> · <span>★ 4.5</span></p>
+          </div>
+        </li>
+        <li class="dish">
+          <img src="/dishes/sm/mx-dessert-03.webp" alt="Chocolate Churros in white porcelain" width="128" height="128" loading="lazy" decoding="async" />
+          <div>
+            <h4>Chocolate Churros</h4>
+            <p>Churros with creamy chocolate dipping sauce.</p>
+            <p class="meta"><span>$12</span> · <span>★ 4.9</span></p>
+          </div>
+        </li>
+      </ul>
+
+      <h2>Can you earn five stars?</h2>
+      <p>In the game you won't get to choose only Mexican: every turn brings a new cuisine and ingredient, and the game keeps enough money aside to finish every course. Knowing which dishes are worth the money is what turns a 4.3 into a 4.8.</p>
+      <p><a class="cta" href="/?s=cuisine_mexican">Cook a Mexican dinner now</a></p>
+
+      <h2>Explore the other cuisines</h2>
+      <ul class="others">
+        <li><a href="/cuisine/italian/">Italian dinner menu for $50</a></li>
+        <li><a href="/cuisine/french/">French dinner menu for $50</a></li>
+        <li><a href="/cuisine/japanese/">Japanese dinner menu for $50</a></li>
+        <li><a href="/cuisine/indian/">Indian dinner menu for $50</a></li>
+        <li><a href="/cuisine/american/">American dinner menu for $50</a></li>
+      </ul>
+
+      <p class="fineprint">5-Star Chef Restaurant by 5 Star Studios. Dish prices and ratings are fictional game values. <a href="/privacy/">Privacy</a></p>
+    </main>
+  </body>
+</html>

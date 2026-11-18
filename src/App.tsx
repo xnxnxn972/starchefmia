@@ -464,6 +464,9 @@ export function Intro(props: {
  * pre-rendered HTML (tools/prerender.mjs), so search engines read it without
  * running any JavaScript. Keep it true to the game: every fact here is checkable.
  */
+/** Static pages built by tools/gen_cuisine_pages.mjs (public/cuisine/<slug>/). */
+const CUISINE_PAGES = ['Italian', 'French', 'Japanese', 'Indian', 'Mexican', 'American'];
+
 function AboutGame() {
   return (
     <section className="about" aria-labelledby="about-title">
@@ -488,6 +491,15 @@ function AboutGame() {
         90 illustrated dishes from six cuisines: Italian, French, Japanese, Indian, Mexican and American, built from 25
         ingredients, from butter chicken and beef bourguignon to tiramisu and strawberry daifuku. A game takes about a minute
         and a half, so it is easy to cook again and chase a better score.
+      </p>
+      <p className="cuisine-links">
+        Browse every dish and the best $50 menu for each cuisine:{' '}
+        {CUISINE_PAGES.map((c, i) => (
+          <span key={c}>
+            {i > 0 && ' · '}
+            <a href={`./cuisine/${c.toLowerCase()}/`}>{c}</a>
+          </span>
+        ))}
       </p>
       <h3>Play anywhere</h3>
       <p>
