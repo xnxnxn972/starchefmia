@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://starchefmia.com/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <image:image><image:loc>https://starchefmia.com/og-image.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://starchefmia.com/cuisine/italian/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <image:image><image:loc>https://starchefmia.com/dishes/it-appetizer-01.webp</image:loc></image:image>
     <image:image><image:loc>https://starchefmia.com/dishes/it-appetizer-02.webp</image:loc></image:image>
     <image:image><image:loc>https://starchefmia.com/dishes/it-appetizer-03.webp</image:loc></image:image>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://starchefmia.com/cuisine/french/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <image:image><image:loc>https://starchefmia.com/dishes/fr-appetizer-01.webp</image:loc></image:image>
     <image:image><image:loc>https://starchefmia.com/dishes/fr-appetizer-02.webp</image:loc></image:image>
     <image:image><image:loc>https://starchefmia.com/dishes/fr-appetizer-03.webp</image:loc></image:image>
@@ -45,7 +45,7 @@
   </url>
   <url>
     <loc>https://starchefmia.com/cuisine/japanese/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <image:image><image:loc>https://starchefmia.com/dishes/jp-appetizer-01.webp</image:loc></image:image>
     <image:image><image:loc>https://starchefmia.com/dishes/jp-appetizer-02.webp</image:loc></image:image>
     <image:image><image:loc>https://starchefmia.com/dishes/jp-appetizer-03.webp</image:loc></image:image>
@@ -64,7 +64,7 @@
   </url>
   <url>
     <loc>https://starchefmia.com/cuisine/indian/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <image:image><image:loc>https://starchefmia.com/dishes/in-appetizer-01.webp</image:loc></image:image>
     <image:image><image:loc>https://starchefmia.com/dishes/in-appetizer-02.webp</image:loc></image:image>
     <image:image><image:loc>https://starchefmia.com/dishes/in-appetizer-03.webp</image:loc></image:image>
@@ -83,7 +83,7 @@
   </url>
   <url>
     <loc>https://starchefmia.com/cuisine/mexican/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <image:image><image:loc>https://starchefmia.com/dishes/mx-appetizer-01.webp</image:loc></image:image>
     <image:image><image:loc>https://starchefmia.com/dishes/mx-appetizer-02.webp</image:loc></image:image>
     <image:image><image:loc>https://starchefmia.com/dishes/mx-appetizer-03.webp</image:loc></image:image>
@@ -102,7 +102,7 @@
   </url>
   <url>
     <loc>https://starchefmia.com/cuisine/american/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <image:image><image:loc>https://starchefmia.com/dishes/us-appetizer-01.webp</image:loc></image:image>
     <image:image><image:loc>https://starchefmia.com/dishes/us-appetizer-02.webp</image:loc></image:image>
     <image:image><image:loc>https://starchefmia.com/dishes/us-appetizer-03.webp</image:loc></image:image>
